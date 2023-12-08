@@ -1,0 +1,64 @@
+body {
+    background-color: #27272a;
+    font-family: Consolas, monospace;
+    color: #a7f3d0; /* Set text color to white */
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.left h1 {
+    margin: 0; /* Remove default margin for h1 */
+    color: #fff; /* Set heading color to white */
+}
+
+.right {
+    display: flex;
+    align-items: center;
+}
+
+/* Style for social media icons using Bootstrap Icons */
+.social-links a {
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 24px; /* Adjust the font size as needed */
+    color: #fff; /* Set icon color to white */
+}
+
+/* Style for resume download link */
+.resume-link {
+    background-color: #4CAF50; /* Green */
+    border-radius: 15px 0 15px 0;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.recuriter-link {
+    background-color: #316c51; /* Green */
+    border-radius: 15px 0 15px 0;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.resume-link:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
