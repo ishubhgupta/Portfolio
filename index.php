@@ -11,11 +11,12 @@
 <body>
     <header class="header">
         <div class="left">
-            <h1>Shubh Gupta</h1>
+            <h1 class="headerName">Shubh Gupta</h1>
         </div>
         <div class="right">
             <nav class="social-links">
                 <!-- Bootstrap Icons for social media -->
+                <a href="https://github.com/ishubhgupta" target="_blank" class="bi bi-github"></a>
                 <a href="https://twitter.com/ishubhguptaa" target="_blank" class="bi bi-twitter"></a>
                 <a href="https://instagram.com/ishubhgupta" target="_blank" class="bi bi-instagram"></a>
                 <a href="https://linkedin.com/in/ishubhgupta" target="_blank" class="bi bi-linkedin"></a>
