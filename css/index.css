@@ -1,8 +1,9 @@
+/* Header Styles */
 body {
-    background-color: #27272a;
-    font-family: Consolas, monospace;
-    color: #a7f3d0; /* Set text color to white */
     margin: 0;
+    font-family: 'Consolas', monospace;
+    background-color: #27272a;
+    color: #a7f3d0;
 }
 
 .header {
@@ -12,28 +13,22 @@ body {
     padding: 15px;
 }
 
-
-.left h1 {
-    margin: 0; /* Remove default margin for h1 */
-    color: #a7f3d0; /* Set heading color to white */
+.headerName {
+    margin: 0;
+    font-size: 1.5em; /* Adjust font size */
+    color: #a7f3d0;
 }
 
-.right {
-    display: flex;
-    align-items: center;
-}
-
-/* Style for social media icons using Bootstrap Icons */
 .social-links a {
     margin-right: 10px;
     text-decoration: none;
-    font-size: 24px; /* Adjust the font size as needed */
-    color: #fff; /* Set icon color to white */
+    font-size: 1.5em; /* Adjust font size */
+    color: #fff;
 }
 
-/* Style for resume download link */
+.recuriter-link,
 .resume-link {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
     border-radius: 15px 0 15px 0;
     border: none;
     color: white;
@@ -41,26 +36,48 @@ body {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 1em; /* Adjust font size */
     margin-left: 10px;
     cursor: pointer;
-}
-
-.recuriter-link {
-    background-color: #316c51; /* Green */
-    border-radius: 15px 0 15px 0;
-    border: none;
-    color: white;
-    padding: 6px 12px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-left: 10px;
-    cursor: pointer;
-    border-color: 4px, solid, white;
 }
 
 .resume-link:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #45a049;
+}
+
+/* Section Styles */
+.content {
+    display: flex;
+    align-items: flex-start; /* Align items at the start of the cross axis (top) */
+    padding: 20px;
+    height: 80vh /* Set height to screen height minus double the header padding */
+}
+
+.left {
+    flex: 0 0 20%; /* Adjust the width of the left section */
+    padding: 20px;
+    margin-right: 18px;
+    border-radius: 5px;
+    overflow: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    height: 95%; /* Take the full height of the .content section */
+}
+
+.right {
+    flex: 0 0 72%; /* Adjust the width of the right section */
+    padding: 20px;
+    border-radius: 5px;
+    overflow: auto;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    height: 95%; /* Take the full height of the .content section */
+}
+
+.nav-option {
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 8px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
 }
