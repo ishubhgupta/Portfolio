@@ -6,9 +6,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="css/index.css"> <!-- Your custom styles -->
+    <link rel="icon" type="image/png" href="assets\images\shubhImage2.jpg" alt="evolkai">
     <title>Shubh Gupta</title>
 </head>
-<body>
+<body onload="loadContent('home')">
     <header class="header">
         <div class="header-left">
             <h1 class="headerName">Shubh Gupta</h1>
@@ -26,25 +27,68 @@
     </header>
     <section class="content">
         <div class="left">
-            <div class="nav-option" onclick="loadContent('tech-stack')">Tech Stack</div>
-            <div class="nav-option" onclick="loadContent('nav')">Navigation</div>
-            <div class="nav-option" onclick="loadContent('projects')">Projects</div>
-            <div class="nav-option" onclick="loadContent('intro')">Introduction</div>
+            <div class="above">
+                <div class="profile-image">
+                    <img src="assets/images/shubhImage2.png" alt="Profile Image">
+                </div>
+                <div class="name">
+                    Shubh Gupta
+                </div>
+            </div>
+            <div class="line"></div> <!-- White line between above and below divs -->
+            <div class="below">
+                <div class="nav-option" onclick="loadContent('home')">Home</div>
+                <div class="nav-option" onclick="loadContent('intro')">Introduction</div>
+                <div class="nav-option" onclick="loadContent('tech-stack')">Tech Stack</div>
+                <div class="nav-option" onclick="loadContent('projects')">Projects</div>
+                <div class="nav-option" onclick="loadContent('researchContribution')">Research Contribution</div>
+            </div>
         </div>
         <div class="right" id="dynamic-content">
             <!-- Content will be loaded here -->
         </div>
     </section>
+
+    <div id="home" style="display: none;">
+        <h2>Home</h2>
+        <p>Welcome to my homepage!</p>
+    </div>
+
+    <div id="intro" style="display: none;">
+        <h2>Introduction</h2>
+        <p>This is the introduction content about Shubh Gupta. Feel free to customize this with your own information.</p>
+        <p>LOREM20</p>
+    </div>
+
+    <div id="tech-stack" style="display: none;">
+        <h2>Tech Stack</h2>
+        <p>This is the tech stack content about Shubh Gupta. Feel free to customize this with your own information.</p>
+        <p>LOREM20</p>
+    </div>
+
+    <div id="projects" style="display: none;">
+        <h2>Projects</h2>
+        <p>This is the projects content about Shubh Gupta. Feel free to customize this with your own information.</p>
+        <p>LOREM20</p>
+    </div>
+
+    <div id="researchContribution" style="display: none;">
+        <h2>Research Contribution</h2>
+        <p>This is the research contribution content about Shubh Gupta. Feel free to customize this with your own information.</p>
+        <p>LOREM20</p>
+    </div>
+
     <script>
         function loadContent(option) {
+            var dynamicContent = document.getElementById('dynamic-content');
             var contentMap = {
-                'tech-stack': '<h2>Tech Stack</h2><p>Placeholder content for Tech Stack.</p>',
-                'nav': '<h2>Navigation</h2><p>Placeholder content for Navigation.</p>',
-                'projects': '<h2>Projects</h2><p>Placeholder content for Projects.</p>',
-                'intro': '<h2>Introduction</h2><p>Placeholder content for Introduction.</p>',
+                'home': document.getElementById('home').innerHTML,
+                'tech-stack': document.getElementById('tech-stack').innerHTML,
+                'projects': document.getElementById('projects').innerHTML,
+                'researchContribution': document.getElementById('researchContribution').innerHTML,
+                'intro': document.getElementById('intro').innerHTML,
             };
 
-            var dynamicContent = document.getElementById('dynamic-content');
             dynamicContent.innerHTML = contentMap[option];
         }
     </script>

@@ -75,9 +75,68 @@ body {
 
 .nav-option {
     cursor: pointer;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     padding: 8px;
-    background-color: #007bff;
     color: white;
-    border-radius: 5px;
+    border-width: 1px 1px 0 1px; /* Top, Right, Left, Bottom */
+    border-style: solid;
+    border-color: white;
+    border-radius: 20px 100px 0 0;
+    box-shadow: 0 -5px 20px 0 rgba(23, 22, 22, 0.5); /* Add box-shadow to the top */
+    /* transition: all 0.3s ease; */
+}
+/* .nav-option:hover {
+    background-color: #0056b3;
+    transform: translateY(5px);
+} */
+
+.nav-option:active {
+    transform: translateX(5px);
+    box-shadow: none; /* Remove box-shadow on click */
+}
+
+
+
+/* Add your existing styles here */
+
+.left {
+    position: relative;
+}
+
+.above {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    margin: 10px 0; /* Adjust margin as needed */
+}
+
+.profile-image img {
+    border-radius: 50%;
+    width: 135px; /* Adjust width as needed */
+    height: 135px; /* Adjust height as needed */
+    object-fit: cover;
+    border: 1px solid white; /* Add border color and width */
+    transition: transform 0.5s ease, transform-origin 0.3s ease, scale 0.3s ease;
+}
+
+.profile-image img:hover {
+    transform: perspective(1500px) rotateY(45deg) scale(1.1); /* Enlarge and rotate slightly on hover */
+}
+
+.profile-image img:active {
+    transform: perspective(1500px) rotateY(360deg) scale(1); /* Rotate 360 degrees and reset scale on click */
+}
+
+
+
+.name {
+    color: white;
+    margin-top: 10px; /* Adjust margin as needed */
 }
