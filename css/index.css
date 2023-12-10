@@ -1,4 +1,4 @@
-/* Header Styles */
+/* General Styles */
 body {
     margin: 0;
     font-family: 'Consolas', monospace;
@@ -6,6 +6,7 @@ body {
     color: #a7f3d0;
 }
 
+/* Header Styles */
 .header {
     display: flex;
     justify-content: space-between;
@@ -15,14 +16,14 @@ body {
 
 .headerName {
     margin: 0;
-    font-size: 1.5em; 
+    font-size: 1.5em;
     color: #a7f3d0;
 }
 
 .social-links a {
     margin-right: 10px;
     text-decoration: none;
-    font-size: 1.5em; 
+    font-size: 1.5em;
     color: #fff;
 }
 
@@ -36,7 +37,7 @@ body {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 1em; 
+    font-size: 1em;
     margin-left: 10px;
     cursor: pointer;
 }
@@ -48,29 +49,29 @@ body {
 /* Section Styles */
 .content {
     display: flex;
-    align-items: flex-start; /* Align items at the start of the cross axis (top) */
+    align-items: flex-start;
     padding: 20px;
-    height: 80vh /*height of content section*/
+    height: 80vh;
 }
 
 .left {
-    flex: 0 0 20%; /* Adjust the width of the left section */
+    flex: 0 0 20%;
     padding: 20px;
     margin-right: 18px;
     border-radius: 5px;
     overflow: auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    height: 95%; /* Take the full height of the .content section */
+    height: 95%;
 }
 
 .right {
-    flex: 0 0 72%; /* Adjust the width of the right section */
+    flex: 0 0 72%;
     padding: 20px;
     border-radius: 5px;
     overflow: auto;
     color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    height: 95%; /* Take the full height of the .content section */
+    height: 95%;
 }
 
 .nav-option {
@@ -78,27 +79,19 @@ body {
     margin-bottom: 15px;
     padding: 8px;
     color: white;
-    border-width: 1px 1px 0 1px; /* Top, Right, Left, Bottom */
+    border-width: 1px 1px 0 1px;
     border-style: solid;
     border-color: white;
     border-radius: 20px 100px 0 0;
-    box-shadow: 0 -5px 20px 0 rgba(23, 22, 22, 0.5); /* Add box-shadow to the top */
-    /* transition: all 0.3s ease; */
+    box-shadow: 0 -5px 20px 0 rgba(23, 22, 22, 0.5);
 }
-/* .nav-option:hover {
-    background-color: #0056b3;
-    transform: translateY(5px);
-} */
 
 .nav-option:active {
     transform: translateX(5px);
-    box-shadow: none; /* Remove box-shadow on click */
+    box-shadow: none;
 }
 
-
-
-/* Add your existing styles here */
-
+/* Profile Section Styles */
 .left {
     position: relative;
 }
@@ -114,29 +107,147 @@ body {
     width: 100%;
     height: 2px;
     background-color: white;
-    margin: 10px 0; /* Adjust margin as needed */
+    margin: 10px 0;
 }
 
 .profile-image img {
     border-radius: 50%;
-    width: 135px; /* Adjust width as needed */
-    height: 135px; /* Adjust height as needed */
+    width: 135px;
+    height: 135px;
     object-fit: cover;
-    border: 1px solid white; /* Add border color and width */
+    border: 1px solid white;
     transition: transform 0.5s ease, transform-origin 0.3s ease, scale 0.3s ease;
 }
 
 .profile-image img:hover {
-    transform: perspective(1500px) rotateY(45deg) scale(1.1); /* Enlarge and rotate slightly on hover */
+    transform: perspective(1500px) rotateY(45deg) scale(1.1);
 }
 
 .profile-image img:active {
-    transform: perspective(1500px) rotateY(360deg) scale(1); /* Rotate 360 degrees and reset scale on click */
+    transform: perspective(1500px) rotateY(360deg) scale(1);
 }
-
-
 
 .name {
     color: white;
-    margin-top: 10px; /* Adjust margin as needed */
+    margin-top: 10px;
+}
+
+/* Project Section Styles */
+.prj-category {
+    position: relative;
+}
+
+.prj-scroll-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    scrollbar-width: thin; /* Set the scrollbar width to thin for Firefox */
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    height: 5px; /* for horizontal bar */
+    width: 5px;  /* for vertical bar */
+    display: none; /* Hide the scrollbar by default */
+    transition: opacity 0.3s ease; /* Add a transition effect for smooth appearance */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(243, 242, 242, 0.3);
+    border-radius: 6px;
+    width: 5px; /* Adjust the width as needed */
+}
+
+::-moz-scrollbar {
+    height: 5px; /* Adjust the height as needed */
+    width: 5px; /* Adjust the width as needed */
+    display: none; /* Hide the scrollbar by default */
+    transition: opacity 0.3s ease; /* Add a transition effect for smooth appearance */
+}
+
+::-moz-scrollbar-thumb {
+    background-color: rgba(243, 242, 242, 0.3);
+    border-radius: 6px;
+}
+
+.prj-scroll-container:hover ::-webkit-scrollbar,
+.prj-scroll-container:hover ::-moz-scrollbar {
+    display: block; /* Make the scrollbar visible on hover */
+}
+
+.prj-scroll-container::-webkit-scrollbar-thumb,
+.prj-scroll-container::-moz-scrollbar-thumb {
+    background-color: rgba(243, 242, 242, 0.8); /* Scrollbar thumb color with reduced transparency */
+    border-radius: 6px;
+}
+
+.prj-scroll-container::-webkit-scrollbar-track,
+.prj-scroll-container::-moz-scrollbar-track {
+    background-color: transparent;
+}
+
+/* Project Box Styles */
+.prj-box {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+    background-color: #dc6060ad;
+}
+
+.prj-box h4 {
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.prj-box p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Add this to your existing CSS */
+
+/* Add this to your existing CSS */
+
+.prj-box {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.prj-box:hover {
+    transform: rotateY(180deg);
+}
+
+.prj-box .front,
+.prj-box .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.prj-box .back {
+    display: none;
+    transform: rotateY(180deg);
+}
+
+.prj-box:hover .front {
+    display: none;
+}
+
+.prj-box:hover .back {
+    display: block;
+}
+
+.full-description {
+    display: none;
+}
+
+.prj-box.active .full-description {
+    display: block;
 }

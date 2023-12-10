@@ -53,34 +53,95 @@
     </section>
 
     <div id="home" style="display: none;">
-        <h2>Home</h2>
-        <p>Welcome to my homepage!</p>
+        <h2>Welcome to My Portfolio</h2>
+        <p>Hello, I'm Shubh Gupta, a passionate student at VIT Bhopal University, focusing on machine learning and artificial intelligence. This portfolio showcases my journey, achievements, and projects in the exciting world of technology.</p>
+        <p>Feel free to explore my introduction, tech stack, projects, and research contributions. If you have any questions or opportunities, don't hesitate to reach out. Happy browsing!</p>
+        <!-- You can add more personalized content or adjust it based on your preferences. -->
     </div>
+    
 
     <div id="intro" style="display: none;">
         <h2>Introduction</h2>
         <p>This is the introduction content about Shubh Gupta. Feel free to customize this with your own information.</p>
-        <p>LOREM20</p>
+        <p>Lorem10</p>
     </div>
 
     <div id="tech-stack" style="display: none;">
         <h2>Tech Stack</h2>
         <p>This is the tech stack content about Shubh Gupta. Feel free to customize this with your own information.</p>
-        <p>LOREM20</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae atque sunt veniam consequuntur quaerat dolore suscipit velit quas blanditiis totam rem temporibus, in laudantium praesentium eligendi, quis illum amet nobis quod! Eum, aut. Cupiditate reiciendis, voluptate soluta, voluptas magnam eum alias et, rem dolores obcaecati eveniet id dolorum repellat nihil ducimus enim veniam facere earum fuga corrupti culpa.</p>
     </div>
 
     <div id="projects" style="display: none;">
         <h2>Projects</h2>
-        <p>This is the projects content about Shubh Gupta. Feel free to customize this with your own information.</p>
-        <p>LOREM20</p>
-    </div>
+    
+        <!-- Machine Learning Projects -->
+        <div class="prj-category" id="machine-learning">
+            <h3>Machine Learning</h3>
+            <div class="prj-scroll-container">
 
+                <div class="prj-box" onclick="this.classList.toggle('active')">
+                    <div class="front">
+                        <h4>Project 1</h4>
+                        <p class="short-description">Short description of Project 1 goes here.</p>
+                    </div>
+                    <div class="back">
+                        <h4>Project 1</h4>
+                        <p class="short-description">Short description of Project 1 goes here.</p>
+                        <div class="full-description">
+                            <h4>Project 1</h4>
+                            <p>Complete description of Project 1 goes here.</p>
+                            <!-- Add more details as needed -->
+                            <button onclick="this.closest('.prj-box').classList.remove('active')">Close</button>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Add more project boxes as needed -->
+        
+            </div>
+        </div>
+        
+        <!-- Web Development Projects -->
+        <div class="prj-category">
+            <h3>Web Development</h3>
+            <div class="prj-scroll-container">
+                <div class="prj-box">
+                    <h4>Project 1</h4>
+                    <p>Description of Project 1 goes here.</p>
+                </div>
+        
+                <div class="prj-box">
+                    <h4>Project 2</h4>
+                    <p>Description of Project 2 goes here.</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- NLP Projects -->
+        <div class="prj-category">
+            <h3>NLP</h3>
+            <div class="prj-scroll-container">
+                <div class="prj-box">
+                    <h4>Project 1</h4>
+                    <p>Description of Project 1 goes here.</p>
+                </div>
+        
+                <div class="prj-box">
+                    <h4>Project 2</h4>
+                    <p>Description of Project 2 goes here.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <div id="researchContribution" style="display: none;">
         <h2>Research Contribution</h2>
         <p>This is the research contribution content about Shubh Gupta. Feel free to customize this with your own information.</p>
-        <p>LOREM20</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam! Quia, cupiditate ipsam libero dolore, quam repudiandae dolorum exercitationem sapiente tempore, dolorem autem doloremque non sequi architecto vel voluptates animi dolor.</p>
     </div>
-
+    
+  
     <script>
         function loadContent(option) {
             var dynamicContent = document.getElementById('dynamic-content');
