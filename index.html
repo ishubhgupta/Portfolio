@@ -75,32 +75,34 @@
     <div id="projects" style="display: none;">
         <h2>Projects</h2>
     
-        <!-- Machine Learning Projects -->
+        <!-- Project Section -->
         <div class="prj-category" id="machine-learning">
-            <h3>Machine Learning</h3>
+            <h3>Machine Learning Projects</h3>
             <div class="prj-scroll-container">
 
-                <div class="prj-box" onclick="this.classList.toggle('active')">
-                    <div class="front">
-                        <h4>Project 1</h4>
-                        <p class="short-description">Short description of Project 1 goes here.</p>
-                    </div>
-                    <div class="back">
-                        <h4>Project 1</h4>
-                        <p class="short-description">Short description of Project 1 goes here.</p>
-                        <div class="full-description">
+                <div class="prj-box flip-box" onclick="this.classList.toggle('active')">
+                    <div class="flip-box-inner">
+                        <div class="flip-box-front">
                             <h4>Project 1</h4>
-                            <p>Complete description of Project 1 goes here.</p>
-                            <!-- Add more details as needed -->
-                            <button onclick="this.closest('.prj-box').classList.remove('active')">Close</button>
+                            <p class="short-description">Short description of Project 1 goes here.</p>
+                        </div>
+                        <div class="flip-box-back">
+                            <h4>Project 1</h4>
+                            <div class="full-description">
+                                <h4>Project 1</h4>
+                                <p>Complete description of Project 1 goes here.</p>
+                                <!-- Add more details as needed -->
+                                <button onclick="this.closest('.prj-box').classList.remove('active')">Close</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-        
-                
-        
+
+                <!-- Add more project boxes as needed -->
+
             </div>
         </div>
+
         
         <!-- Web Development Projects -->
         <div class="prj-category">
@@ -156,5 +158,18 @@
             dynamicContent.innerHTML = contentMap[option];
         }
     </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Add event listeners for each project box
+            var projectBoxes = document.querySelectorAll('.prj-box');
+            projectBoxes.forEach(function (box) {
+                box.addEventListener('click', function () {
+                    this.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>
