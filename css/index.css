@@ -131,6 +131,7 @@ body {
     color: white;
     margin-top: 10px;
 }
+/* Add this to your existing CSS */
 
 /* Project Section Styles */
 .prj-category {
@@ -197,6 +198,8 @@ body {
     display: inline-block;
     vertical-align: top;
     background-color: #dc6060ad;
+    overflow-wrap: break-word;
+
 }
 
 .prj-box h4 {
@@ -209,89 +212,37 @@ body {
     color: #666;
 }
 
-/* Add this to your existing CSS */
 
-/* Add this to your existing CSS */
-.prj-box {
-    perspective: 1000px;
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
-    cursor: pointer;
-}
 
-.prj-box:hover {
-    transform: rotateY(180deg);
-}
+    /* Project Info Styles */
+    .prj-info {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
 
-.prj-box .front,
-.prj-box .back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-}
+    .prj-info h4 {
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
 
-.prj-box .back {
-    display: none;
-    transform: rotateY(180deg);
-}
+    .prj-info p {
+        font-size: 16px;
+        color: #666;
+    }
 
-.prj-box:hover .front {
-    display: none;
-}
-
-.prj-box:hover .back {
-    display: block;
-}
-
-.full-description {
-    display: none;
-}
-
-.prj-box.active .full-description {
-    display: block;
-}
-/* Add this to your existing CSS */
-.prj-box.flip-box {
-    perspective: 1000px;
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
-    cursor: pointer;
-}
-
-.prj-box.flip-box:hover {
-    transform: rotateY(180deg);
-}
-
-.prj-box.flip-box .flip-box-inner {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.6s;
-}
-
-.prj-box.flip-box:hover .flip-box-inner {
-    transform: rotateY(180deg);
-}
-
-.prj-box.flip-box .flip-box-front,
-.prj-box.flip-box .flip-box-back {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    backface-visibility: hidden;
-}
-
-.prj-box.flip-box .flip-box-front {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.prj-box.flip-box .flip-box-back {
-    transform: rotateY(180deg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    .prj-info .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        font-size: 14px;
+        color: #999;
+    }

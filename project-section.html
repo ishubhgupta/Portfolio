@@ -1,0 +1,119 @@
+
+
+<!-- Machine Learning Projects -->
+<div class="prj-category">
+    <h3>Machine Learning</h3>
+    <div class="prj-scroll-container">
+        <div class="prj-box" onclick="showProjectInfo('Project 1', 'Description of Project 1 goes here.')">
+            <h4>Project 1</h4>
+            <p>Description of Project 1 goes here.</p>
+            <!-- Project Info Container for Project 1 -->
+            <div class="prj-info" id="prj-info-1">
+                <span class="close-btn" onclick="closeProjectInfo('prj-info-1')">Close</span>
+                <h4 id="prj-title-1"></h4>
+                <p id="prj-description-1"></p>
+            </div>
+        </div>
+
+        <!-- Add more project boxes as needed -->
+
+    </div>
+</div>
+
+<!-- Web Development Projects -->
+<div class="prj-category">
+    <h3>Web Development</h3>
+    <div class="prj-scroll-container">
+        <div class="prj-box" onclick="showProjectInfo('Project 1', 'Description of Project 1 goes here.')">
+            <h4>Project 1</h4>
+            <p>Description of Project 1 goes here.</p>
+            <!-- Project Info Container for Project 1 -->
+            <div class="prj-info" id="prj-info-web-1">
+                <span class="close-btn" onclick="closeProjectInfo('prj-info-web-1')">Close</span>
+                <h4 id="prj-title-web-1"></h4>
+                <p id="prj-description-web-1"></p>
+            </div>
+        </div>
+
+        <div class="prj-box" onclick="showProjectInfo('Project 2', 'Description of Project 2 goes here.')">
+            <h4>Project 2</h4>
+            <p>Description of Project 2 goes here.</p>
+            <!-- Project Info Container for Project 2 -->
+            <div class="prj-info" id="prj-info-web-2">
+                <span class="close-btn" onclick="closeProjectInfo('prj-info-web-2')">Close</span>
+                <h4 id="prj-title-web-2"></h4>
+                <p id="prj-description-web-2"></p>
+            </div>
+        </div>
+
+        <!-- Add more project boxes as needed -->
+
+    </div>
+</div>
+
+<!-- NLP Projects -->
+<div class="prj-category">
+    <h3>NLP</h3>
+    <div class="prj-scroll-container">
+        <div class="prj-box" onclick="showProjectInfo('Project 1', 'Description of Project 1 goes here.')">
+            <h4>Project 1</h4>
+            <p>Description of Project 1 goes here.</p>
+            <!-- Project Info Container for Project 1 -->
+            <div class="prj-info" id="prj-info-nlp-1">
+                <span class="close-btn" onclick="closeProjectInfo('prj-info-nlp-1')">Close</span>
+                <h4 id="prj-title-nlp-1"></h4>
+                <p id="prj-description-nlp-1"></p>
+            </div>
+        </div>
+
+        <div class="prj-box" onclick="showProjectInfo('Project 2', 'Description of Project 2 goes here.')">
+            <h4>Project 2</h4>
+            <p>Description of Project 2 goes here.</p>
+            <!-- Project Info Container for Project 2 -->
+            <div class="prj-info" id="prj-info-nlp-2">
+                <span class="close-btn" onclick="closeProjectInfo('prj-info-nlp-2')">Close</span>
+                <h4 id="prj-title-nlp-2"></h4>
+                <p id="prj-description-nlp-2"></p>
+            </div>
+        </div>
+
+        <!-- Add more project boxes as needed -->
+
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+    function showProjectInfo(title, description, infoId) {
+        document.getElementById('prj-title-' + infoId).innerText = title;
+        document.getElementById('prj-description-' + infoId).innerText = description;
+        document.getElementById('prj-info-' + infoId).style.display = 'block';
+    }
+
+    function closeProjectInfo(infoId) {
+        document.getElementById('prj-info-' + infoId).style.display = 'none';
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var projectBoxes = document.querySelectorAll('.prj-box');
+
+        projectBoxes.forEach(function (box, index) {
+            box.addEventListener('click', function () {
+                var title = this.querySelector('h4').innerText;
+                var description = this.querySelector('p').innerText;
+                var infoId = this.classList.contains('web') ? 'web-' + (index + 1) : 'nlp-' + (index + 1);
+                showProjectInfo(title, description, infoId);
+            });
+
+            // Add cursor style on hover
+            box.addEventListener('mouseover', function () {
+                box.style.cursor = 'pointer';
+            });
+
+            // Remove cursor style when not hovering
+            box.addEventListener('mouseout', function () {
+                box.style.cursor = 'default';
+            });
+        });
+    });
+</script>
