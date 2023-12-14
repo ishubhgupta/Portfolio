@@ -52,66 +52,48 @@
         </div>
     </section>
 
-    <div id="home" style="display: none;">
-        <h2>Welcome to My Portfolio</h2>
-        <p>Hello, I'm Shubh Gupta, a passionate student at VIT Bhopal University, focusing on machine learning and artificial intelligence. This portfolio showcases my journey, achievements, and projects in the exciting world of technology.</p>
-        <p>Feel free to explore my introduction, tech stack, projects, and research contributions. If you have any questions or opportunities, don't hesitate to reach out. Happy browsing!</p>
-        
-    </div>
+    <div id="home" style="display: none;"></div>
+    <div id="intro" style="display: none;"></div>
+    <div id="tech-stack" style="display: none;"></div>
+    <div id="projects project-section-container" style="display: none;"></div>
+    <div id="researchContribution" style="display: none;"></div>
     
-
-    <div id="intro" style="display: none;">
-        <h2>Introduction</h2>
-        <p>This is the introduction content about Shubh Gupta. Feel free to customize this with your own information.</p>
-        <p>Lorem10</p>
-    </div>
-
-    <div id="tech-stack" style="display: none;">
-        <h2>Tech Stack</h2>
-        <p>This is the tech stack content about Shubh Gupta. Feel free to customize this with your own information.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae atque sunt veniam consequuntur quaerat dolore suscipit velit quas blanditiis totam rem temporibus, in laudantium praesentium eligendi, quis illum amet nobis quod! Eum, aut. Cupiditate reiciendis, voluptate soluta, voluptas magnam eum alias et, rem dolores obcaecati eveniet id dolorum repellat nihil ducimus enim veniam facere earum fuga corrupti culpa.</p>
-    </div>
-
-    <div id="projects" style="display: none;">
-        <h2>Projects</h2>
-        <!-- Load project section content from external file -->
-        <div id="project-section-container"></div>
-    </div>
-    
-    <div id="researchContribution" style="display: none;">
-        <h2>Research Contribution</h2>
-        <p>This is the research contribution content about Shubh Gupta. Feel free to customize this with your own information.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, totam! Quia, cupiditate ipsam libero dolore, quam repudiandae dolorum exercitationem sapiente tempore, dolorem autem doloremque non sequi architecto vel voluptates animi dolor.</p>
-    </div>
-    
-    <script>
-        function loadContent(option) {
-            var dynamicContent = document.getElementById('dynamic-content');
-            var contentMap = {
-                'home': document.getElementById('home').innerHTML,
-                'tech-stack': document.getElementById('tech-stack').innerHTML,
-                'projects': document.getElementById('projects').innerHTML,
-                'researchContribution': document.getElementById('researchContribution').innerHTML,
-                'intro': document.getElementById('intro').innerHTML,
-            };
-
-            dynamicContent.innerHTML = contentMap[option];
-        }
-    </script>
-
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Load project section content
             var projectSectionContainer = document.getElementById('project-section-container');
             var projectSectionURL = 'project-section.html';
-
+    
             fetch(projectSectionURL)
                 .then(response => response.text())
                 .then(data => {
                     projectSectionContainer.innerHTML = data;
                 });
         });
+    
+        function loadContent(option) {
+            var dynamicContent = document.getElementById('dynamic-content');
+            var contentMap = {
+                'home': 'home.html',
+                'tech-stack': 'tech-stack.html',
+                'projects': 'project-section.html',
+                'researchContribution': 'researchContribution.html',
+                'intro': 'intro.html',
+            };
+    
+            var contentURL = contentMap[option];
+    
+            if (contentURL) {
+                fetch(contentURL)
+                    .then(response => response.text())
+                    .then(data => {
+                        dynamicContent.innerHTML = data;
+                    });
+            } else {
+                dynamicContent.innerHTML = ''; // Clear content if no URL is available
+            }
+        }
     </script>
-
+    
 </body>
 </html>
