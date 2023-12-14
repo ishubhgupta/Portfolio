@@ -140,7 +140,7 @@ body {
 
 .prj-scroll-container {
     overflow-x: auto;
-    #e4e4e7-space: nowrap;
+    white-space: nowrap;
     display: flex;
     scrollbar-width: thin; /* Set the scrollbar width to thin for Firefox */
 }
