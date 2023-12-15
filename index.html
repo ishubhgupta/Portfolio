@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/index.css"> <!-- Your custom styles -->
     <link rel="icon" type="image/png" href="assets\images\shubhImage1.png" alt="evolkai">
     <title>Shubh Gupta</title>
+    <script src="index.js"></script>
 </head>
 <body onload="loadContent('home')">
     <header class="header">
@@ -16,17 +17,16 @@
         </div>
         <div class="header-right">
             <nav class="social-links">
-                
-                <a href="https://github.com/ishubhgupta" target="_blank" class="bi bi-github"></a>
-                <a href="link-to-your-blog" target="_blank" class="bi bi-file-earmark-text"></a>
-                <a href="https://twitter.com/ishubhguptaa" target="_blank" class="bi bi-twitter"></a>
-                <a href="https://instagram.com/ishubhgupta" target="_blank" class="bi bi-instagram"></a>
-                <a href="https://linkedin.com/in/ishubhgupta" target="_blank" class="bi bi-linkedin"></a>
-                <a href="mailto:shubhorai12@gmail.com" class="bi bi-envelope" target="_blank"></a>
-
-
-                <a href="#" class="recuriter-link">Recruiter?</a>
-                <a href="link-to-resume" class="resume-link" download>Resume <span class="material-symbols-outlined"> Download </span></a>
+                <a href="https://github.com/ishubhgupta" target="_blank" class="bi bi-github" title="GitHub"></a>
+                <a href="link-to-your-blog" target="_blank" class="bi bi-file-earmark-text" title="Blog"></a>
+                <a href="https://twitter.com/ishubhguptaa" target="_blank" class="bi bi-twitter" title="Twitter"></a>
+                <a href="https://instagram.com/ishubhgupta" target="_blank" class="bi bi-instagram" title="Instagram"></a>
+                <a href="https://linkedin.com/in/ishubhgupta" target="_blank" class="bi bi-linkedin" title="LinkedIn"></a>
+                <a href="mailto:shubhorai12@gmail.com" class="bi bi-envelope" title="Email"></a>
+                <a href="#" class="recuriter-link" title="Recruiter?">Recruiter?</a>
+                <a href="link-to-resume" class="resume-link" download title="Download Resume">
+                    Resume <span class="material-symbols-outlined"> Download </span>
+                </a>
             </nav>
         </div>
     </header>
@@ -62,46 +62,11 @@
     <div id="projects project-section-container" style="display: none;"></div>
     <div id="researchContribution" style="display: none;"></div>
     <div id="achivement" style="display: none;"></div>
-    <div id="contact" style="display: none;"></div>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Load project section content
-            var projectSectionContainer = document.getElementById('project-section-container');
-            var projectSectionURL = 'project-section.html';
-    
-            fetch(projectSectionURL)
-                .then(response => response.text())
-                .then(data => {
-                    projectSectionContainer.innerHTML = data;
-                });
-        });
-    
-        function loadContent(option) {
-            var dynamicContent = document.getElementById('dynamic-content');
-            var contentMap = {
-                'home': 'home.html',
-                'tech-stack': 'tech-stack.html',
-                'projects': 'project-section.html',
-                'researchContribution': 'researchContribution.html',
-                'intro': 'intro.html',
-                'achivement': 'achivement.html',
-                'contact': 'contact.html',
-            };
-    
-            var contentURL = contentMap[option];
-    
-            if (contentURL) {
-                fetch(contentURL)
-                    .then(response => response.text())
-                    .then(data => {
-                        dynamicContent.innerHTML = data;
-                    });
-            } else {
-                dynamicContent.innerHTML = ''; // Clear content if no URL is available
-            }
-        }
-    </script>
-    
+    <div id="contact" style="display: none;"></div>    
 </body>
+
+<script>
+
+</script>
+
 </html>

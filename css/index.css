@@ -99,6 +99,28 @@ body {
     box-shadow: none;
 }
 
+.nav-option {
+        cursor: pointer;
+        margin-bottom: 15px;
+        padding: 8px;
+        color: #e4e4e7;
+        border-width: 1px 1px 0 1px;
+        border-style: solid;
+        border-color: #e4e4e7;
+        border-radius: 20px 100px 0 0;
+        box-shadow: 0 -5px 20px 0 rgba(23, 22, 22, 0.5);
+        position: relative;
+    }
+
+    .nav-option:active {
+        transform: translateX(5px);
+        box-shadow: none;
+    }
+
+      
+    .nav-option:hover:after {
+        opacity: 1;
+    }
 /* Profile Section Styles */
 .left {
     position: relative;
