@@ -1,4 +1,9 @@
 /* General Styles */
+link[rel="icon"] {
+    border-radius: 500%;
+    /* overflow: hidden; */
+}
+
 body {
     margin: 0;
     font-family: 'Consolas', monospace;
@@ -163,18 +168,6 @@ body {
 }
 /* Add this to your existing CSS */
 
-/* Project Section Styles */
-.prj-category {
-    position: relative;
-}
-
-.prj-scroll-container {
-    overflow-x: auto;
-    white-space: nowrap;
-    display: flex;
-    scrollbar-width: thin; /* Set the scrollbar width to thin for Firefox */
-}
-
 /* Scrollbar Styles */
 ::-webkit-scrollbar {
     height: 5px; /* for horizontal bar */
@@ -200,145 +193,3 @@ body {
     background-color: rgba(243, 242, 242, 0.3);
     border-radius: 6px;
 }
-
-.prj-scroll-container:hover ::-webkit-scrollbar,
-.prj-scroll-container:hover ::-moz-scrollbar {
-    display: block; /* Make the scrollbar visible on hover */
-}
-
-.prj-scroll-container::-webkit-scrollbar-thumb,
-.prj-scroll-container::-moz-scrollbar-thumb {
-    background-color: rgba(243, 242, 242, 0.8); /* Scrollbar thumb color with reduced transparency */
-    border-radius: 6px;
-}
-
-.prj-scroll-container::-webkit-scrollbar-track,
-.prj-scroll-container::-moz-scrollbar-track {
-    background-color: transparent;
-}
-
-/* Project Box Styles */
-.prj-box {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    width: 200px;
-    display: inline-block;
-    vertical-align: top;
-    background-color: #dc6060ad;
-    overflow-wrap: break-word;
-
-}
-
-.prj-box h4 {
-    margin-bottom: 5px;
-    font-size: 16px;
-}
-
-.prj-box p {
-    font-size: 14px;
-    color: #666;
-}
-
-
-
-/* Project Info Styles */
-.prj-info {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-}
-
-.prj-info h4 {
-    margin-bottom: 10px;
-    font-size: 18px;
-}
-
-.prj-info p {
-    font-size: 16px;
-    color: #666;
-}
-
-.prj-info .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    font-size: 14px;
-    color: #999;
-}
-
-/* tech stack */
-.tech-stack {
-    display: flex;
-    justify-content: space-around; /* Adjust alignment as needed */
-    flex-wrap: wrap; /* Allow items to wrap to the next line */
-    padding: 20px;
-}
-
-.tech-category {
-    width: 150px; /* Adjust the width as needed */
-    background-color: #1c1b23;
-    margin: 10px; /* Adjust the margin as needed */
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 -5px 20px 0 rgba(23, 22, 22, 0.5);
-}
-
-h2 {
-    color: #e4e4e7;
-    font-size: 20px;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-li {
-    background-color: #14131a; /* Background color for each list item */
-    padding: 8px;
-    
-    margin: 5px ;
-    border-radius: 5px;
-    color: #e4e4e7;
-}
-
-/* Highlighted items with colorful borders */
-li.highlight {
-    /* Randomly select a border color */
-    border: 1px solid var(--highlight-border-color);
-}
-
-/* Highlight border colors */
-li.highlight.color-1 {
-    --highlight-border-color: #ff8c00; /* Orange */
-}
-
-li.highlight.color-2 {
-    --highlight-border-color: #00ff00; /* Green */
-}
-
-li.highlight.color-3 {
-    --highlight-border-color: #0000ff; /* Blue */
-}
-
-li.highlight.color-4 {
-    --highlight-border-color: #ff0000; /* Red */
-}
-li.highlight.color-5 {
-    --highlight-border-color: #6d3b9f; /* Red */
-}
-
-/* Add more colors as needed */
-
