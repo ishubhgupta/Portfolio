@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/achievements.css">
+    <title>Achievements</title>
+</head>
+<body>
+
+<div class="filter-bar" id="filter-bar">
+    <!-- Filter categories will be dynamically loaded here -->
+</div>
+
+<div class="achievements-container" id="achievements-container">
+    <!-- Achievement items will be dynamically loaded here -->
+</div>
+
+<div class="image-viewer" id="image-viewer">
+    <!-- Image viewer content will be dynamically loaded here -->
+</div>
+
+<script src="js/achievements.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        displayFilterCategories();
+        displayAllAchievements(); // Display all achievements by default
+    });
+</script>
+
+</body>
+</html>
