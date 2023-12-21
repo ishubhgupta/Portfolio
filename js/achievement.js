@@ -1,50 +1,24 @@
-const filterBar = document.getElementById('filter-bar');
-const achievementsContainer = document.getElementById('achievements-container');
-const imageViewer = document.getElementById('image-viewer');
-
-// Sample achievements data
-const achievementsData = [
-    { name: 'Achievement 1', category: 'ML' },
-    { name: 'Achievement 2', category: 'Web Development' },
-    { name: 'Achievement 2', category: 'Web Development' },
-    { name: 'Achievement 2', category: 'Web Development' },
-    { name: 'Achievement 2', category: 'Web Development' },
-    // Add more achievements with different categories
-];
-
-function displayFilterCategories() {
-    const categories = [...new Set(achievementsData.map(achievement => achievement.category))];
+document.addEventListener('DOMContentLoaded', function () {
+    const categoryDropdown = document.getElementById('categoryDropdown');
+    const achievementsContainer = document.querySelector('.achievements');
     
-    categories.forEach(category => {
-        const categoryButton = document.createElement('button');
-        categoryButton.textContent = category;
-        categoryButton.addEventListener('click', () => displayAchievements(category));
-        filterBar.appendChild(categoryButton);
+    categoryDropdown.addEventListener('change', function () {
+        filterAchievements(this.value);
     });
-}
 
-function displayAllAchievements() {
-    displayAchievements('all'); // Display all achievements by default
-}
+    function filterAchievements(category) {
+        const articles = document.querySelectorAll('.achievements article');
 
-function displayAchievements(category) {
-    achievementsContainer.innerHTML = '';
-    
-    achievementsData
-        .filter(achievement => category === 'all' || achievement.category === category)
-        .forEach(achievement => {
-            const achievementItem = document.createElement('div');
-            achievementItem.classList.add('achievement-item');
-            achievementItem.textContent = achievement.name;
-
-            achievementItem.addEventListener('click', () => showImageOrPdf(achievement));
-
-            achievementsContainer.appendChild(achievementItem);
+        articles.forEach(article => {
+            const articleCategory = article.classList[1]; // Assuming the category class is the second class in the list
+            if (category === 'all' || articleCategory === category) {
+                article.style.display = 'block';
+            } else {
+                article.style.display = 'none';
+            }
         });
-}
+    }
 
-function showImageOrPdf(achievement) {
-    // Logic to display the image or PDF in the imageViewer
-    // You can use the imageViewer element and load the content dynamically
-    // based on the selected achievement.
-}
+    // Initialize with 'All' selected
+    filterAchievements('all');
+});

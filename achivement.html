@@ -3,30 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/achievements.css">
-    <title>Achievements</title>
+    <title>Shubh Gupta's Achievements</title>
+    <link rel="stylesheet" href="css/achievement.css">
 </head>
 <body>
 
-<div class="filter-bar" id="filter-bar">
-    <!-- Filter categories will be dynamically loaded here -->
-</div>
+    <header>
+        <h1>Shubh Gupta's Achievements</h1>
+    </header>
 
-<div class="achievements-container" id="achievements-container">
-    <!-- Achievement items will be dynamically loaded here -->
-</div>
+    <nav id="filterNav">
+        <label for="categoryDropdown">Filter by Category:</label>
+        <select id="categoryDropdown">
+            <option value="all">All</option>
+            <option value="ml">Machine Learning</option>
+            <option value="ai">AI</option>
+            <option value="webd">Web Development</option>
+            <option value="problemsolving">Problem Solving</option>
+            <option value="school">School</option>
+        </select>
+    </nav>
 
-<div class="image-viewer" id="image-viewer">
-    <!-- Image viewer content will be dynamically loaded here -->
-</div>
+    <section class="achievements">
+        <article class="ml">
+            <h2>Machine Learning Competition Winner</h2>
+            <p>Received first place in the XYZ Machine Learning Challenge.</p>
+            <span class="date">Date: January 1, 2023</span>
+        </article>
+        <!-- Add more articles for each achievement/certificate -->
+    </section>
 
-<script src="js/achievements.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        displayFilterCategories();
-        displayAllAchievements(); // Display all achievements by default
-    });
-</script>
+    <footer>
+        <p>&copy; 2023 Shubh Gupta. All rights reserved.</p>
+    </footer>
 
+    <script src="js/achievements.js"></script>
 </body>
 </html>
