@@ -1,25 +1,48 @@
-.contact-info {
-    background-color: #27272a;
-    box-shadow: 20px 20px 20px 20px rgba(23, 22, 22, 0.5);
-    border-radius: 10px;
+#contact-form {
+    background-color: #172758;
+    color: white;
+    text-align: center;
     padding: 20px;
-    text-align: center; /* Align content at the center */
-
-    /* Add the following styles for better spacing */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-top: 15vh;
+    border-radius: 15px; /* Rounded corners for a modern look */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); /* Soft shadow effect */
+    position: relative; /* Needed for pseudo-elements */
 }
 
-.contact-social-links a {
-    display: block;
-    margin: 10px 0; /* Adjust spacing between social media links */
+#contact-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+    border-radius: 15px; /* Match the form's border-radius */
+    z-index: -1; /* Place it behind the form */
+}
+
+#contact-form h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for a subtle glow */
+}
+
+#contact-form p {
+    margin-bottom: 10px;
+}
+
+#contact-form ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#contact-form li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#contact-form a {
+    color: #fff;
     text-decoration: none;
-    /* color: #007BFF; */
 }
 
-/* Adjust the following styles to make the links more visible on hover */
-.contact-social-links a:hover {
-    /* color: #0056b3; */
-    text-decoration: underline;
-}

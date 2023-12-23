@@ -1,24 +1,14 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const categoryDropdown = document.getElementById('categoryDropdown');
-    const achievementsContainer = document.querySelector('.achievements');
-    
-    categoryDropdown.addEventListener('change', function () {
-        filterAchievements(this.value);
-    });
+const categoryDropdown = document.getElementById("categoryDropdown");
+const achievementDivs = document.querySelectorAll(".achievements > div");
 
-    function filterAchievements(category) {
-        const articles = document.querySelectorAll('.achievements article');
+categoryDropdown.addEventListener("change", (event) => {
+  const selectedCategory = event.target.value;
 
-        articles.forEach(article => {
-            const articleCategory = article.classList[1]; // Assuming the category class is the second class in the list
-            if (category === 'all' || articleCategory === category) {
-                article.style.display = 'block';
-            } else {
-                article.style.display = 'none';
-            }
-        });
+  achievementDivs.forEach((achievementDiv) => {
+    if (selectedCategory === "all" || achievementDiv.id === selectedCategory) {
+      achievementDiv.style.display = "block";
+    } else {
+      achievementDiv.style.display = "none";
     }
-
-    // Initialize with 'All' selected
-    filterAchievements('all');
+  });
 });

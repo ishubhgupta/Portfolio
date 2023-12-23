@@ -14,7 +14,7 @@
 
     <nav id="filterNav">
         <label for="categoryDropdown">Filter by Category:</label>
-        <select id="categoryDropdown">
+        <select id="categoryDropdown" onchange="filterAchievements()">
             <option value="all">All</option>
             <option value="ml">Machine Learning</option>
             <option value="ai">AI</option>
@@ -25,18 +25,51 @@
     </nav>
 
     <section class="achievements">
-        <article class="ml">
-            <h2>Machine Learning Competition Winner</h2>
-            <p>Received first place in the XYZ Machine Learning Challenge.</p>
-            <span class="date">Date: January 1, 2023</span>
-        </article>
-        <!-- Add more articles for each achievement/certificate -->
+        <div id="ml" class="category">
+            <!-- Content will be loaded here dynamically -->
+            <article class="ml"></article>
+        </div>
+
+        <div id="ai" class="category">
+            <!-- Content will be loaded here dynamically -->
+        </div>
+
+        <div id="webd" class="category">
+            <!-- Content will be loaded here dynamically -->
+        </div>
+
+        <!-- Add more divs for each category -->
     </section>
 
     <footer>
         <p>&copy; 2023 Shubh Gupta. All rights reserved.</p>
     </footer>
 
-    <script src="js/achievements.js"></script>
+    <script>
+        function filterAchievements() {
+            var categoryDropdown = document.getElementById("categoryDropdown");
+            var selectedCategory = categoryDropdown.value;
+
+            var categories = document.querySelectorAll(".category");
+            categories.forEach(function (category) {
+                if (category.id === selectedCategory || selectedCategory === "all") {
+                    // Load content dynamically (you can use AJAX here)
+                    loadContent(category, selectedCategory);
+                    category.style.display = "block";
+                } else {
+                    category.style.display = "none";
+                }
+            });
+        }
+
+        function loadContent(category, selectedCategory) {
+            // Example: You can load content from a server using AJAX
+            // For simplicity, I'm adding static content here
+            var content = "<article><h2>Sample Achievement</h2><p>This is a sample achievement.</p></article>";
+
+            // Set the content to the category
+            category.innerHTML = content;
+        }
+    </script>
 </body>
 </html>

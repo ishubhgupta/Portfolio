@@ -25,6 +25,9 @@ body {
     color: #a7f3d0;
 }
 
+.contact{
+    background-color: #131314;
+}
 .social-links a {
     margin-right: 10px;
     text-decoration: none;
