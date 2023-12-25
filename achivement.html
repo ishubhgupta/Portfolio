@@ -1,75 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shubh Gupta's Achievements</title>
-    <link rel="stylesheet" href="css/achievement.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shubh Gupta's Achievements</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-option {
+      background-color: #2ecc71;
+      color: #fff;
+      padding: 10px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    #achive-dynamic-content {
+      padding: 20px;
+    }
+
+    #ml, #webd, #ps, #SchoolAcheivement {
+      display: none;
+    }
+
+    #ml p, #webd p, #ps p, #SchoolAcheivement p {
+      margin-top: 0;
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1>Shubh Gupta's Achievements</h1>
-    </header>
+  <header>
+    <h1>Shubh Gupta's Achievements</h1>
+  </header>
+  
+  <div class="achieve-upper">
+    <div class="nav-option" onclick="loadContent('All')">Home</div>
+    <div class="nav-option" onclick="loadContent('machineLearning')">Machine Learning</div>
+    <div class="nav-option" onclick="loadContent('webDevelopment')">Web Development</div>
+    <div class="nav-option" onclick="loadContent('problemSolving')">Problem Solving</div>
+    <div class="nav-option" onclick="loadContent('School')">School</div>
+  </div>
 
-    <nav id="filterNav">
-        <label for="categoryDropdown">Filter by Category:</label>
-        <select id="categoryDropdown" onchange="filterAchievements()">
-            <option value="all">All</option>
-            <option value="ml">Machine Learning</option>
-            <option value="ai">AI</option>
-            <option value="webd">Web Development</option>
-            <option value="problemsolving">Problem Solving</option>
-            <option value="school">School</option>
-        </select>
-    </nav>
+  <div class="achieve-lower">
+    <div class="right" id="achive-dynamic-content"></div>
 
-    <section class="achievements">
-        <div id="ml" class="category">
-            <!-- Content will be loaded here dynamically -->
-            <article class="ml"></article>
-        </div>
+    <div id="ml">
+        <h2>Machine Learning Achievements</h2>
+        <p>Your machine learning achievements go here.</p>
+    </div>
 
-        <div id="ai" class="category">
-            <!-- Content will be loaded here dynamically -->
-        </div>
+    <div id="webd">
+        <h2>Web Development Achievements</h2>
+        <p>Your web development achievements go here.</p>
+    </div>
 
-        <div id="webd" class="category">
-            <!-- Content will be loaded here dynamically -->
-        </div>
+    <div id="ps">
+        <h2>Problem Solving Achievements</h2>
+        <p>Your problem-solving achievements go here.</p>
+    </div>
 
-        <!-- Add more divs for each category -->
-    </section>
+    <div id="SchoolAcheivement">
+        <h2>School Achievements</h2>
+        <p>Your school achievements go here.</p>
+    </div>
 
-    <footer>
-        <p>&copy; 2023 Shubh Gupta. All rights reserved.</p>
-    </footer>
+  </div>
+  
+  <script>
+    function loadContent(option) {
+      var dynamicContent = document.getElementById('achive-dynamic-content');
+      var contentMap = {
+        'machineLearning': document.getElementById('ml'),
+        'webDevelopment': document.getElementById('webd'),
+        'problemSolving': document.getElementById('ps'),
+        'School': document.getElementById('SchoolAcheivement'),
+        'All': document.getElementById('achive-dynamic-content')
+      };
 
-    <script>
-        function filterAchievements() {
-            var categoryDropdown = document.getElementById("categoryDropdown");
-            var selectedCategory = categoryDropdown.value;
+      // Hide all content divs
+      ['ml', 'webd', 'ps', 'SchoolAcheivement'].forEach(function (id) {
+        document.getElementById(id).style.display = 'none';
+      });
 
-            var categories = document.querySelectorAll(".category");
-            categories.forEach(function (category) {
-                if (category.id === selectedCategory || selectedCategory === "all") {
-                    // Load content dynamically (you can use AJAX here)
-                    loadContent(category, selectedCategory);
-                    category.style.display = "block";
-                } else {
-                    category.style.display = "none";
-                }
-            });
-        }
-
-        function loadContent(category, selectedCategory) {
-            // Example: You can load content from a server using AJAX
-            // For simplicity, I'm adding static content here
-            var content = "<article><h2>Sample Achievement</h2><p>This is a sample achievement.</p></article>";
-
-            // Set the content to the category
-            category.innerHTML = content;
-        }
-    </script>
+      // Display the selected content or default content if it exists
+      if (contentMap[option]) {
+        dynamicContent.innerHTML = contentMap[option].innerHTML;
+        document.getElementById(option).style.display = 'block';
+      }
+    }
+  </script>
 </body>
 </html>

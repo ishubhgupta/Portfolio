@@ -37,10 +37,10 @@ body {
 
 .recuriter-link,
 .resume-link {
-    background-color: #4CAF50;
+    background-color: #4af8ff;
     border-radius: 15px 0 15px 0;
     border: none;
-    color: #e4e4e7;
+    color: #27272a;
     padding: 6px 12px;
     text-align: center;
     text-decoration: none;
@@ -50,8 +50,8 @@ body {
     cursor: pointer;
 }
 
-.resume-link:hover {
-    background-color: #45a049;
+.resume-link:hover, .recuriter-link:hover {
+    background-color: #47d8dd;
 }
 
 .material-symbols-outlined {
