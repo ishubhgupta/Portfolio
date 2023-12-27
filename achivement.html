@@ -1,98 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shubh Gupta's Achievements</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+<link rel="stylesheet" href="css/achievement.css">
 
-    .nav-option {
-      background-color: #2ecc71;
-      color: #fff;
-      padding: 10px;
-      cursor: pointer;
-      text-align: center;
-    }
 
-    #achive-dynamic-content {
-      padding: 20px;
-    }
-
-    #ml, #webd, #ps, #SchoolAcheivement {
-      display: none;
-    }
-
-    #ml p, #webd p, #ps p, #SchoolAcheivement p {
-      margin-top: 0;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>Shubh Gupta's Achievements</h1>
-  </header>
-  
-  <div class="achieve-upper">
-    <div class="nav-option" onclick="loadContent('All')">Home</div>
-    <div class="nav-option" onclick="loadContent('machineLearning')">Machine Learning</div>
-    <div class="nav-option" onclick="loadContent('webDevelopment')">Web Development</div>
-    <div class="nav-option" onclick="loadContent('problemSolving')">Problem Solving</div>
-    <div class="nav-option" onclick="loadContent('School')">School</div>
+<div class="achievement-container">
+  <!-- Achievement 1 -->
+  <div class="achievement" onclick="showProof('assets/images/shubhImage1')">
+    <h2>Achievement 1</h2>
+    <p>Description of Achievement 1 goes here.</p>
   </div>
 
-  <div class="achieve-lower">
-    <div class="right" id="achive-dynamic-content"></div>
-
-    <div id="ml">
-        <h2>Machine Learning Achievements</h2>
-        <p>Your machine learning achievements go here.</p>
-    </div>
-
-    <div id="webd">
-        <h2>Web Development Achievements</h2>
-        <p>Your web development achievements go here.</p>
-    </div>
-
-    <div id="ps">
-        <h2>Problem Solving Achievements</h2>
-        <p>Your problem-solving achievements go here.</p>
-    </div>
-
-    <div id="SchoolAcheivement">
-        <h2>School Achievements</h2>
-        <p>Your school achievements go here.</p>
-    </div>
-
+  <!-- Achievement 2 -->
+  <div class="achievement" onclick="showProof('ProofImage2.jpg')">
+    <h2>Achievement 2</h2>
+    <p>Description of Achievement 2 goes here.</p>
   </div>
   
-  <script>
-    function loadContent(option) {
-      var dynamicContent = document.getElementById('achive-dynamic-content');
-      var contentMap = {
-        'machineLearning': document.getElementById('ml'),
-        'webDevelopment': document.getElementById('webd'),
-        'problemSolving': document.getElementById('ps'),
-        'School': document.getElementById('SchoolAcheivement'),
-        'All': document.getElementById('achive-dynamic-content')
-      };
+  <!-- Add more achievements as needed -->
+</div>
 
-      // Hide all content divs
-      ['ml', 'webd', 'ps', 'SchoolAcheivement'].forEach(function (id) {
-        document.getElementById(id).style.display = 'none';
-      });
+<!-- Modal -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modalImage" src="" alt="Achievement Proof">
+  </div>
+</div>
 
-      // Display the selected content or default content if it exists
-      if (contentMap[option]) {
-        dynamicContent.innerHTML = contentMap[option].innerHTML;
-        document.getElementById(option).style.display = 'block';
-      }
-    }
-  </script>
-</body>
-</html>
+<script>
+  function showProof(imageSrc) {
+    var modal = document.getElementById('myModal');
+    var modalImage = document.getElementById('modalImage');
+
+    modal.style.display = 'flex';
+    modalImage.src = imageSrc;
+  }
+
+  function closeModal() {
+    var modal = document.getElementById('myModal');
+    modal.style.display = 'none';
+  }
+</script>
+
+
