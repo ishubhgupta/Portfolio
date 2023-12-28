@@ -20,6 +20,7 @@ function loadContent(option) {
         'intro': 'intro.html',
         'achivement': 'achivement.html',
         'contact': 'contact.html',
+        'github': 'github.html',
     };
 
     var contentURL = contentMap[option];
@@ -34,3 +35,47 @@ function loadContent(option) {
         dynamicContent.innerHTML = ''; // Clear content if no URL is available
     }
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const nextButton = document.querySelector('.next-screen');
+    const prevButton = document.querySelector('.prev-screen');
+    const walkthroughScreens = document.querySelector('.screens');
+
+    let currentScreenIndex = 0;
+    const totalScreens = document.querySelectorAll('.screen').length;
+
+    // Function to show/hide screens
+    function updateScreens() {
+        const screens = document.querySelectorAll('.screen');
+        screens.forEach((screen, index) => {
+            if (index === currentScreenIndex) {
+                screen.classList.add('active');
+            } else {
+                screen.classList.remove('active');
+            }
+        });
+
+        // Enable/disable prev and next buttons based on the current screen
+        prevButton.disabled = currentScreenIndex === 0;
+        nextButton.disabled = currentScreenIndex === totalScreens - 1;
+    }
+
+    // Event listener for the Next button
+    nextButton.addEventListener('click', function () {
+        if (currentScreenIndex < totalScreens - 1) {
+            currentScreenIndex++;
+            updateScreens();
+        }
+    });
+
+    // Event listener for the Prev button
+    prevButton.addEventListener('click', function () {
+        if (currentScreenIndex > 0) {
+            currentScreenIndex--;
+            updateScreens();
+        }
+    });
+
+    // Initial update of screens
+    updateScreens();
+});

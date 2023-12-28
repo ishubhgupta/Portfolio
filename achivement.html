@@ -1,15 +1,22 @@
-<link rel="stylesheet" href="css/achievement.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/achievement.css">
 
+</head>
+<body>
 
 <div class="achievement-container">
   <!-- Achievement 1 -->
-  <div class="achievement" onclick="showProof('assets/images/shubhImage1')">
+  <div class="achievement" onclick="showProof('assets/images/shubhImage1', 'Description of Achievement 1 goes here.')">
     <h2>Achievement 1</h2>
     <p>Description of Achievement 1 goes here.</p>
   </div>
 
   <!-- Achievement 2 -->
-  <div class="achievement" onclick="showProof('ProofImage2.jpg')">
+  <div class="achievement" onclick="showProof('assets/images/ProofImage2.jpg', 'Description of Achievement 2 goes here.')">
     <h2>Achievement 2</h2>
     <p>Description of Achievement 2 goes here.</p>
   </div>
@@ -17,27 +24,5 @@
   <!-- Add more achievements as needed -->
 </div>
 
-<!-- Modal -->
-<div id="myModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <img id="modalImage" src="" alt="Achievement Proof">
-  </div>
-</div>
-
-<script>
-  function showProof(imageSrc) {
-    var modal = document.getElementById('myModal');
-    var modalImage = document.getElementById('modalImage');
-
-    modal.style.display = 'flex';
-    modalImage.src = imageSrc;
-  }
-
-  function closeModal() {
-    var modal = document.getElementById('myModal');
-    modal.style.display = 'none';
-  }
-</script>
-
-
+</body>
+</html>
