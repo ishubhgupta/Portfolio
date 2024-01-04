@@ -37,45 +37,36 @@ function loadContent(option) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    const nextButton = document.querySelector('.next-screen');
-    const prevButton = document.querySelector('.prev-screen');
-    const walkthroughScreens = document.querySelector('.screens');
+    let currentIndex = 0;
+    const carouselItems = document.querySelectorAll('.carousel');
 
-    let currentScreenIndex = 0;
-    const totalScreens = document.querySelectorAll('.screen').length;
+    function moveCarousel(direction) {
+        const totalItems = carouselItems.length;
 
-    // Function to show/hide screens
-    function updateScreens() {
-        const screens = document.querySelectorAll('.screen');
-        screens.forEach((screen, index) => {
-            if (index === currentScreenIndex) {
-                screen.classList.add('active');
-            } else {
-                screen.classList.remove('active');
-            }
-        });
+        // Hide the current active item
+        carouselItems[currentIndex].classList.remove('active');
 
-        // Enable/disable prev and next buttons based on the current screen
-        prevButton.disabled = currentScreenIndex === 0;
-        nextButton.disabled = currentScreenIndex === totalScreens - 1;
+        if (direction === 'right') {
+            currentIndex = (currentIndex + 1) % totalItems;
+        } else if (direction === 'left') {
+            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        }
+
+        // Show the new active item
+        carouselItems[currentIndex].classList.add('active');
     }
 
-    // Event listener for the Next button
-    nextButton.addEventListener('click', function () {
-        if (currentScreenIndex < totalScreens - 1) {
-            currentScreenIndex++;
-            updateScreens();
-        }
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    prevBtn.addEventListener('click', function () {
+        moveCarousel('left');
     });
 
-    // Event listener for the Prev button
-    prevButton.addEventListener('click', function () {
-        if (currentScreenIndex > 0) {
-            currentScreenIndex--;
-            updateScreens();
-        }
+    nextBtn.addEventListener('click', function () {
+        moveCarousel('right');
     });
 
-    // Initial update of screens
-    updateScreens();
+    // Show the initial active item
+    carouselItems[currentIndex].classList.add('active');
 });
