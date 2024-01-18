@@ -557,6 +557,7 @@ body {
   transform: translateX(-50%); /* Updated for centering */
   transition: transform 1s ease, opacity 0.5s ease;
   text-align: center;
+  color: white;
 }
 
 .carousel.active {
@@ -597,6 +598,11 @@ body {
   top: 50px;
   left: 50%;
   transform: translateX(-50%);
-  color: white;
   font-size: 30px;
+}
+.carousel a{
+  
+  /* text-decoration: none; */
+  font-size: 1.5em;
+  color: #fff;
 }
