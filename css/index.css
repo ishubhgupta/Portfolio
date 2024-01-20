@@ -612,3 +612,9 @@ body {
   text-align: left;
   /* align-items: center; */
 }
+
+.git-tech-stack{
+  display: flex;
+  text-align: center;
+
+}
