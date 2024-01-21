@@ -622,11 +622,13 @@ body {
 
 .tech-stack-left {
     margin-right: 10px;
+    width: 140px;
 }
 
 .git-tech-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 .item {
