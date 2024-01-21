@@ -523,98 +523,118 @@ body {
   .walkthrough .screens .screen.active .media.comm .status-badge {
     transition-delay: 1.6s;
   }
-
-/* github */
-#github-repos {
-  margin: 5vh 2vh;
-  height: 90vh;
-  border: 1px solid #ddd;
-  text-align: center;
-  position: relative;
+  #github-repos {
+    margin: 5vh 2vh;
+    height: 90vh;
+    border: 1px solid #ddd;
+    text-align: center;
+    position: relative;
 }
 
 .carousel-container {
-  display: flex;
-  background-color: #010409;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  overflow: hidden;
-  position: relative; /* Added for positioning */
+    display: flex;
+    background-color: #010409;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
 }
 
 .carousel {
-  width: 30%;
-  height: 60%;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #0d1117;
-  opacity: 0;
-  position: absolute; /* Updated for positioning */
-  left: 50%; /* Updated for centering */
-  transform: translateX(-50%); /* Updated for centering */
-  transition: transform 1s ease, opacity 0.5s ease;
-  text-align: center;
-  color: white;
+    width: 30%;
+    height: 60%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #0d1117;
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: transform 1s ease, opacity 0.5s ease;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
 }
 
 .carousel.active {
-  opacity: 1;
+    opacity: 1;
 }
 
 .controls {
-  position: absolute; /* Added for positioning */
-  width: 50%; /* Added for full-width controls */
-  left: 25%;
-  display: flex;
-  justify-content: space-between;
-  top: 50%; /* Added for centering */
-  transform: translateY(-50%); /* Added for centering */
+    position: absolute;
+    width: 50%;
+    left: 25%;
+    display: flex;
+    justify-content: space-between;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 #prevBtn,
 #nextBtn {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-#prevBtn {
-  order: 1; /* Added for correct order */
-}
-
-#nextBtn {
-  order: 2; /* Added for correct order */
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
 }
 
 .carousel-container .heading {
-  position: absolute;
-  top: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 30px;
-}
-.carousel span a{
-  
-  /* text-decoration: none; */
-  font-size: 1.5em;
-  color: #fff;
-  text-decoration: none;
-  /* justify-content:space-around; */
- 
-  display: inline-block;
-  text-align: left;
-  /* align-items: center; */
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
 }
 
-.git-tech-stack{
-  display: flex;
-  text-align: center;
+.carousel span a {
+    font-size: 1.5em;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+}
 
+.git-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.git-visibility {
+    border: 1px solid #758d97;
+    border-radius: 20px;
+    padding: 1px 10px 3px 10px;
+    color: #758d97;
+}
+
+.git-tech-stack {
+    display: flex;
+    text-align: justify;
+    /* flex-direction: column; */
+    /* flex-wrap: wrap; */
+}
+
+.tech-stack-left {
+    margin-right: 10px;
+}
+
+.git-tech-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item {
+    padding: 3px 10px;
+    margin: 5px;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: medium;
+    background-color: #010409;
 }
