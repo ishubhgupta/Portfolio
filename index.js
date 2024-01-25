@@ -70,6 +70,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // Show the initial active item
     carouselItems[currentIndex].classList.add('active');
 });
+
+
+
+
+//contact
+
 document.addEventListener('DOMContentLoaded', function () {
     const contactButton = document.getElementById('contactButton');
     const contactContent = document.getElementById('contactContent');
