@@ -659,14 +659,27 @@ body {
 
 .contact-content {
   position: fixed;
-  top: 50%;
-  right: -120px; /* Adjust this value as needed */
-  transform: rotate(270deg);
-  display: none;
+  top: -90%;
+  right: 30px;
+  /* left: 200px; */
+  
+  transform: translate(0%, -50%) rotate(90deg); /* Update transform property */
   background-color: #fff; /* Add your desired background color */
   padding: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 999;
+}
+
+.contact-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-options a {
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #333; /* Add your desired text color */
+  font-size: 20px; /* Add your desired font size */
 }
 
 /* Add your styles here */

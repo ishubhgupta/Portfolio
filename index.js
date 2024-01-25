@@ -70,14 +70,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Show the initial active item
     carouselItems[currentIndex].classList.add('active');
 });
-
-// contact us
 document.addEventListener('DOMContentLoaded', function () {
-    const contactSection = document.getElementById('contactSection');
     const contactButton = document.getElementById('contactButton');
-    const githubReposSection = document.getElementById('github-repos');
-    const contentSection = document.getElementById('dynamic-content');
-    const contactContent = document.getElementById('contactContent'); // Added this line
+    const contactContent = document.getElementById('contactContent');
 
     function isInViewport(element) {
         const rect = element.getBoundingClientRect();
@@ -90,10 +85,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function updateContactButtonVisibility() {
+        const githubReposSection = document.getElementById('github-repos');
+        const contentSection = document.getElementById('dynamic-content');
+
         if (isInViewport(githubReposSection) && !isInViewport(contentSection)) {
             contactButton.style.display = 'block';
         } else {
             contactButton.style.display = 'none';
+            // Hide the contact content when not in the visible sections
+            contactContent.classList.add('hidden');
         }
     }
 
@@ -103,7 +103,23 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initial visibility check
     updateContactButtonVisibility();
 
-    contactButton.addEventListener('click', function () {
-        contactContent.classList.toggle('hidden'); // Changed 'contactOptions' to 'contactContent'
+    // Toggle the contact content visibility on button click
+    contactButton.addEventListener('click', function (event) {
+        event.stopPropagation(); // Prevent the click event from propagating to the document
+        contactContent.classList.toggle('hidden');
+
+        if (!contactContent.classList.contains('hidden')) {
+            // Show the content
+            document.addEventListener('click', hideContactContent);
+        } else {
+            // Remove the event listener when hiding the content
+            document.removeEventListener('click', hideContactContent);
+        }
     });
+
+    // Function to hide contact content
+    function hideContactContent() {
+        contactContent.classList.add('hidden');
+        document.removeEventListener('click', hideContactContent);
+    }
 });
