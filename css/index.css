@@ -649,12 +649,27 @@ body {
 .contact-section {
   position: fixed;
   top: 50%;
-  right: -39px;
+  right: -33px;
   transform: rotate(270deg);
 }
 
 .contact-section button {
-  font-size: large;
+  font-size: 25px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 15px 15px 0 0;
+  background-color: #4a90e2; /* Adjust the background color as needed */
+  color: #fff; /* Text color */
+  cursor: pointer;
+  transition: background-color 0.5s ease; /* Transition for background color */
+}
+
+.contact-section button:hover {
+  background-color: #357ebd; /* Adjust the hover background color */
+}
+
+.contact-section:hover .contact-content {
+  top: -70%;
 }
 
 .contact-content {
@@ -663,15 +678,18 @@ body {
   right: 30px;
   border-radius: 5px;
   transform: translate(0%, -50%) rotate(90deg); /* rotate*/
+  transition: opacity 0.3s ease, top 1s ease;
   background-color: #fff; 
   padding: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 999;
+  width: 30px;
 }
 
 .contact-options {
   display: flex;
   flex-direction: column;
+  align-content: center;
 }
 
 .contact-options a {
@@ -680,3 +698,9 @@ body {
   color: #333; 
   font-size: 20px; 
 }
+
+.contact-options a:hover{
+  font-size: 30px;
+  align-content: center;
+}
+
