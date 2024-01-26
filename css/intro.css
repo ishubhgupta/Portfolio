@@ -1,0 +1,34 @@
+/* Add your additional styling here if needed */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.intro-container {
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+h2 {
+    /* color: #2c3e50; */
+}
+
+p {
+    /* color: #34495e; */
+}
+
+strong {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.highlight {
+    background-color: #191818; /* Highlight color */
+    padding: 2px;
+    border-radius: 2px;
+}
+
+/* Add any other styles you'd like */
