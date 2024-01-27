@@ -75,7 +75,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 //contact
-
 document.addEventListener('DOMContentLoaded', function () {
     const contactButton = document.getElementById('contactButton');
     const contactContent = document.getElementById('contactContent');
@@ -93,8 +92,9 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateContactButtonVisibility() {
         const githubReposSection = document.getElementById('github-repos');
         const contentSection = document.getElementById('dynamic-content');
+        const scrollPosition = window.scrollY || window.pageYOffset;
 
-        if (isInViewport(githubReposSection) && !isInViewport(contentSection)) {
+        if (scrollPosition >= window.innerHeight || (!isInViewport(contentSection))) {
             contactButton.style.display = 'block';
         } else {
             contactButton.style.display = 'none';
