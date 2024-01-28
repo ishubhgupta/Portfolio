@@ -1,0 +1,29 @@
+.git-tech-stack {
+    display: flex;
+    text-align: justify;
+    /* flex-direction: column; */
+    /* flex-wrap: wrap; */
+}
+
+.tech-stack-left {
+    margin-right: 10px;
+    width: 140px;
+}
+
+.git-tech-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.items {
+    background-color: #14131a; /* Background color for each list item */
+    padding: 8px;
+    margin: 5px ;
+    border-radius: 5px;
+    color: #e4e4e7;
+}
+
+.items:nth-child(1) {
+    border: 1px solid orangered; 
+}
