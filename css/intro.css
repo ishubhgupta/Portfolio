@@ -1,26 +1,31 @@
-
-body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
 .intro-container {
-    max-width: 800px;
-    margin: 50px auto;
+    max-width: 900px;
+    margin: 0 auto;
     text-align: justify;
+  }
+  
+  h2 {
+    /* color: #333; */
+    text-align: center;
+  }
+  
+  p {
     line-height: 1.6;
-}
-
-
-strong {
+    margin-bottom: 15px;
+  }
+  
+  .strong-highlight {
+    color: #e6683c;
     font-weight: bold;
-    font-size: 20px;
-}
-
-.highlight {
-    background-color: #191818; 
-    padding: 2px;
-    border-radius: 2px;
-}
-
+  }
+  
+  .highlight {
+    color: #bc1888;
+    font-weight: bold;
+  }
+  
+  .intro-container p:last-child {
+    margin-bottom: 0;
+  }
+  
+  
