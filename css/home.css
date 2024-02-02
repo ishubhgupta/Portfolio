@@ -17,13 +17,13 @@
 }
 
 .items {
-    background-color: #14131a; /* Background color for each list item */
+    background-color: #EFECEC; /* Background color for each list item */
     padding: 8px;
     margin: 5px ;
     border-radius: 5px;
-    color: #e4e4e7;
+    color: black;
 }
 
 .items:nth-child(1) {
-    border: 1px solid orangered; 
+    border: 2px solid orangered; 
 }

@@ -39,7 +39,7 @@
     width: 200px;
     display: inline-block;
     vertical-align: top;
-    background-color: #dc6060ad;
+    background-color: #FFB0B0;
     overflow-wrap: break-word;
 
 }
@@ -51,7 +51,7 @@
 
 .prj-box p {
     font-size: 14px;
-    color: #666;
+    color: #EFECEC;
 }
 
 
