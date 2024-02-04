@@ -6,7 +6,7 @@ link[rel="icon"] {
 
 body {
     margin: 0;
-    font-family: 'Consolas', monospace;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: #0C2D57;
     color: #a7f3d0;
     height: 100%;
@@ -63,7 +63,7 @@ body {
 }
 
 .resume-link:hover, .recuriter-link:hover {
-    background-color: #FC6736;
+    background-color: #d8592e;
 }
 
 .bi-github:hover{
@@ -727,8 +727,11 @@ body {
   background-color: #fff; 
   padding: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  z-index: 999;
+  z-index: 9;
   width: 30px;
+}
+.contact-content:hover{
+  padding-bottom: -10px;
 }
 
 .contact-options {
@@ -747,6 +750,7 @@ body {
 .contact-options a:hover{
   font-size: 30px;
   align-content: center;
+  
 }
 
 .check{
