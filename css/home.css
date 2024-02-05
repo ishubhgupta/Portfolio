@@ -1,8 +1,6 @@
 .git-tech-stack {
     display: flex;
     text-align: justify;
-    /* flex-direction: column; */
-    /* flex-wrap: wrap; */
 }
 
 .tech-stack-left {
@@ -18,7 +16,7 @@
 
 .items {
     background-color: #EFECEC; /* Background color for each list item */
-    padding: 8px;
+    padding: 3px 8px;
     margin: 5px ;
     border-radius: 5px;
     color: black;

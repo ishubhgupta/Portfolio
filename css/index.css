@@ -113,12 +113,12 @@ body {
 
 .left {
     flex: 0 0 17%;
-    padding: 20px;
+    padding: 0px 20px 20px 20px;
     margin-right: 18px;
     border-radius: 5px;
     overflow: auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    height: 95%;
+    height: 99%;
 }
 
 .right {
@@ -132,44 +132,35 @@ body {
 }
 
 .nav-option {
-    cursor: pointer;
-    margin-bottom: 15px;
-    padding: 8px;
-    color: #e4e4e7;
-    border-width: 1px 1px 0 1px;
-    border-style: solid;
-    border-color: #e4e4e7;
-    border-radius: 20px 100px 0 0;
-    box-shadow: 0 -5px 20px 0 rgba(23, 22, 22, 0.5);
+  cursor: pointer;
+  margin-bottom: 10px;
+  padding: 8px 8px;
+  color: #e4e4e7;
+  border-width: 1px 1px 0 1px;
+  border-style: solid;
+  border-color: #e4e4e7;
+  border-radius: 20px 100px 0 0;
+  box-shadow: 0 -5px 20px 0 rgba(23, 22, 22, 0.5);
+  position: relative;
+  transition: color 0.3s; 
 }
 
 .nav-option:active {
-    transform: translateX(5px);
-    box-shadow: none;
+  transform: translateX(5px);
+  box-shadow: none;
 }
 
-.nav-option {
-        cursor: pointer;
-        margin-bottom: 15px;
-        padding: 8px;
-        color: #e4e4e7;
-        border-width: 1px 1px 0 1px;
-        border-style: solid;
-        border-color: #e4e4e7;
-        border-radius: 20px 100px 0 0;
-        box-shadow: 0 -5px 20px 0 rgba(23, 22, 22, 0.5);
-        position: relative;
-    }
+.nav-option:hover {
+  /* color: #3e94f5;  */
+  background: linear-gradient(to bottom, #bc1888, #bc18886d);
+  /* border-color: #bc1888; */
+}
 
-    .nav-option:active {
-        transform: translateX(5px);
-        box-shadow: none;
-    }
 
-      
-    .nav-option:hover:after {
-        opacity: 1;
-    }
+.nav-option:hover:after {
+  opacity: 1;
+}
+
 /* Profile Section Styles */
 .left {
     position: relative;
