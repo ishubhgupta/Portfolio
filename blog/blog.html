@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <title>EvolkAI - Insights</title>
+    <link rel="stylesheet" href="css/blog.css">
+    <script src="wave.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .menu-icon {
+          font-size: 24px;
+          cursor: pointer;
+        }
+        .menu-content {
+          display: none;
+        }
+        .menu-content.active {
+          display: block;
+        }
+        .social-icons {
+      display: flex;
+      justify-content: center;
+    }
+    
+    .social-icons span {
+      margin: 10px;
+    }
+    </style>
+</head>
+<body>
+    <div class="video-section-blog">
+      <img src="images/blog.jpg" width="1226px" height="1226px" class="img">
+        <header class="header sticky">
+          <a href="index.html"><img src="images/evolkai_dark.png" alt="logo" class="logo" href="index.html"></a>
+            <nav>
+              <ul>
+                <li><a href="index.html"><h3>Home</h3></a></li>
+                <li><a href="school.html"><h3>School</h3></a></li>
+                <li><a href="college.html"><h3>College</h3></a></li>
+                <li><a href="research_consultation.html"><h3>Researchers</h3></a></li>
+                <li class="dropdown">
+                    <a><h3>Learn</h3></a>
+                    <div class="dropdown-content-learn">
+                        <div>
+                            <a href="machinelearning.html">Machine Learning</a>
+                            <a href="deeplearning.html">Deep Learning</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="project1.php"><h3>Our Projects</h3></a></li>
+                <li><a href="contact.html"><h3>Contact Us</h3></a></li>
+                <li class="dropdown">
+                    <a><h3>Menu</h3></a>
+                    <div class="dropdown-content-menu">
+                        <div>
+                            <a href="blog.html">Insights</a>
+                            <a href="faq.html">FAQs</a>
+                        </div>
+                    </div>
+                </li> 
+            </ul>
+            </nav>
+            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+            <div class="menu-content">
+              <ul>
+                <li><a href="index.html"><h3>Home</h3></a></li>
+                <li><a href="school.html"><h3>School</h3></a></li>
+                <li><a href="college.html"><h3>College</h3></a></li>
+                <li><a href="research_consultation.html"><h3>Researchers</h3></a></li>
+                <li><a href="machinelearning.html"><h3>Machine Learning</h3></a></li>
+                <li><a href="deeplearning.html"><h3>Deep Learning</h3></a></li>
+                <li><a href="project1.php"><h3>Our Projects</h3></a></li>
+                <li><a href="contact.html"><h3>Contact Us</h3></a></li>
+                <li><a href="blog.html"><h3>Insights</h3></a></li>
+                <li><a href="faq.html"><h3>FAQs</h3></a></li>
+            </ul>
+            </div>
+        </header>
+          <section class="blurry-section-blog">
+            <div class="blog-post">
+              <h2 class="post-title">EvolkAI</h2>
+              <p class="post-content">
+                Evolkai is a company that specializes in helping individuals and businesses with their projects, particularly those that involve Machine Learning tasks. With a team of experts in the field, Evolkai provides high-quality solutions for a wide range of applications.
+                <br>
+                One of the main areas of focus for Evolkai is in the development of Machine Learning models. This involves analyzing and processing large datasets to train algorithms that can make predictions or classifications based on new data. The company has experience in a range of Machine Learning techniques, including deep learning, reinforcement learning, and natural language processing.
+                <br>
+                In addition to developing Machine Learning models, Evolkai also provides consulting services to help clients better understand the capabilities and limitations of the technology. This can involve working with clients to define project goals and requirements, as well as identifying the most appropriate tools and techniques to use for a particular application.
+                <br>
+                Evolkai takes a collaborative approach to project development, working closely with clients throughout the process to ensure that their needs and expectations are met. This includes regular communication and feedback, as well as a focus on delivering results that are both accurate and scalable.
+                <br>
+                Overall, Evolkai is a company that is committed to providing high-quality Machine Learning solutions to help individuals and businesses achieve their goals. With a strong focus on collaboration, expertise, and innovation, Evolkai is well-positioned to help clients stay at the forefront of this rapidly evolving field.</p>
+                <img src="images/logo.png" height="25px" width="25px"><p>by developers</p>
+                <p class="post-date">Posted on May 2, 2023</p>
+              </p>
+            </div>
+          </section>
+      </div>
+      
+    <script>
+        function toggleMenu() {
+          var menu = document.querySelector('.menu-content');
+          menu.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>
+

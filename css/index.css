@@ -748,3 +748,36 @@ body {
   height: 100vh;
   border: 1px solid white;
 }
+
+/* blog */
+.blog {
+  width: 100%;
+  margin: 20px 0;
+  height: 100vh;
+}
+
+.most-recent-blog {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.most-recent-blog h2 {
+  color: white;
+}
+
+.most-recent-blog p {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.most-recent-blog a {
+  text-decoration: none;
+ 
+}
+
+.most-recent-blog a:hover {
+  text-decoration: underline;
+}
+
+/* Additional styling can be added based on your design preferences */

@@ -1,3 +1,30 @@
+<?php
+// Database connection (replace with your actual database credentials)
+$db_host = "localhost";
+$db_user = "root";
+$db_password = "123456";
+$db_name = "user_data";
+
+$conn = mysqli_connect($db_host, $db_user, $db_password, $db_name);
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// Retrieve the most recent blog along with the title and content
+$get_recent_blog_sql = "SELECT id, username, title, content FROM blogs ORDER BY submission_date DESC LIMIT 1";
+$recent_blog_result = mysqli_query($conn, $get_recent_blog_sql);
+$recent_blog = mysqli_fetch_assoc($recent_blog_result);
+
+// Retrieve the titles of the last ten blogs (excluding the most recent one)
+$get_last_ten_blogs_sql = "SELECT id, username, title FROM blogs WHERE id != {$recent_blog['id']} ORDER BY submission_date DESC LIMIT 10";
+$last_ten_blogs_result = mysqli_query($conn, $get_last_ten_blogs_sql);
+$last_ten_blogs = mysqli_fetch_all($last_ten_blogs_result, MYSQLI_ASSOC);
+
+mysqli_close($conn);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +48,7 @@
         <div class="header-right">
             <nav class="social-links">
                 <a href="https://github.com/ishubhgupta" target="_blank" class="bi bi-github" title="GitHub"></a>
-                <a href="link-to-your-blog" target="_blank" class="bi bi-file-earmark-text" title="Blog"></a>
+                <a href="blog/index.php" target="_blank" class="bi bi-file-earmark-text" title="Blog"></a>
                 <a href="https://twitter.com/ishubhguptaa" target="_blank" class="bi bi-twitter" title="Twitter"></a>
                 <a href="https://instagram.com/ishubhgupta" target="_blank" class="bi bi-instagram" title="Instagram"></a>
                 <a href="https://linkedin.com/in/ishubhgupta" target="_blank" class="bi bi-linkedin" title="LinkedIn"></a>
@@ -182,7 +209,15 @@
         </div>
     </section>
     
-    <section class="check"></section>
+    <section class="blog">
+        <div class="most-recent-blog">
+            <a href="blog.php?id=<?php echo $recent_blog["id"]; ?>">
+            <h2><?php echo $recent_blog["title"]; ?></h2>
+                <p><?php echo nl2br($recent_blog["content"]); ?></p>
+                <p>by <?php echo $recent_blog["username"]; ?></p>
+                </a>
+            </div>
+    </section>
 
         
     
