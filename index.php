@@ -210,13 +210,14 @@ mysqli_close($conn);
     </section>
     
     <section class="blog">
+        <span class="heading">Blog's</span>
         <div class="most-recent-blog">
             <a href="blog.php?id=<?php echo $recent_blog["id"]; ?>">
             <h2><?php echo $recent_blog["title"]; ?></h2>
                 <p><?php echo nl2br($recent_blog["content"]); ?></p>
                 <p>by <?php echo $recent_blog["username"]; ?></p>
                 </a>
-            </div>
+        </div>
     </section>
 
         
