@@ -1,29 +1,4 @@
-<?php
-// Database connection (replace with your actual database credentials)
-$db_host = "localhost";
-$db_user = "root";
-$db_password = "123456";
-$db_name = "user_data";
 
-$conn = mysqli_connect($db_host, $db_user, $db_password, $db_name);
-
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
-// Retrieve the most recent blog along with the title and content
-$get_recent_blog_sql = "SELECT id, username, title, content FROM blogs ORDER BY submission_date DESC LIMIT 1";
-$recent_blog_result = mysqli_query($conn, $get_recent_blog_sql);
-$recent_blog = mysqli_fetch_assoc($recent_blog_result);
-
-// Retrieve the titles of the last ten blogs (excluding the most recent one)
-$get_last_ten_blogs_sql = "SELECT id, username, title FROM blogs WHERE id != {$recent_blog['id']} ORDER BY submission_date DESC LIMIT 10";
-$last_ten_blogs_result = mysqli_query($conn, $get_last_ten_blogs_sql);
-$last_ten_blogs = mysqli_fetch_all($last_ten_blogs_result, MYSQLI_ASSOC);
-
-mysqli_close($conn);
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -209,19 +184,23 @@ mysqli_close($conn);
         </div>
     </section>
     
-    <section class="blog">
-        <span class="heading">Blog's</span>
-        <div class="most-recent-blog">
-            <a href="blog.php?id=<?php echo $recent_blog["id"]; ?>">
-            <h2><?php echo $recent_blog["title"]; ?></h2>
-                <p><?php echo nl2br($recent_blog["content"]); ?></p>
-                <p>by <?php echo $recent_blog["username"]; ?></p>
-                </a>
-        </div>
-    </section>
+
 
         
-    
+<footer>
+    <div class="leftf">
+        <span> Nice to see you here!</span>
+        <br><br>
+        <p class="mail">shubhorai12@gmail.com</p>
+        <p class="msg">This website is best viewed in desktop</p>
+        <p class="msg">Made with Love by <span class="name">Shubh Gupta</span></p>
+    </div>
+    <div class="rightf">
+        <a href="mailto:shubhorai12@gmail.com">Email</a>
+        <a href="https:/linkedin.com/in/ishubhgupta" class="Linkedin" method="_blank">LinkedIn</a>
+    </div>
+
+</footer>    
 
 </body>
 </html>

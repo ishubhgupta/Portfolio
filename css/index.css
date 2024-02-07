@@ -18,7 +18,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    background-color: #010409;
+    
 }
 
 .headerName {
@@ -108,7 +108,7 @@ body {
     align-items: flex-start;
     padding: 20px;
     height: 80vh;
-    background: linear-gradient(#010409,#0C2D57);
+    background: linear-gradient(#0C2D57);
 }
 
 .left {
@@ -557,7 +557,7 @@ body {
     /* margin: 5vh 2vh; */
     height: 100vh;
     /* border: 1px solid #ddd; */
-    background: linear-gradient(#0C2D57,#010409 );
+    background: linear-gradient(#0C2D57);
     text-align: center;
     position: relative;
 }
@@ -749,45 +749,48 @@ body {
   border: 1px solid white;
 }
 
-/* blog */
-.blog {
-  width: 100%;
-  height: 100vh;
+/* Styles for the footer */
+footer {
   display: flex;
-  flex-direction: column; /* Adjusted to column layout */
-  align-items: center; /* Centered content horizontally */
-  justify-content: center; /* Centered content vertically */
-  background: linear-gradient(#010409, #0C2D57); /* Set text color to white for better visibility */
+  justify-content: space-between;
+  background-color: #ffb0b0aa;
+  padding: 20px;
+  color: #FC6736;
+  color: #0C2D57;
 }
 
-.heading {
-  font-size: 24px; /* Adjusted font size for the heading */
-  margin-bottom: 20px; /* Added margin for separation from the most-recent-blog */
+.leftf {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20vh;
 }
 
-.most-recent-blog {
-  border: 1px solid #ddd;
-  padding: 20px; /* Increased padding for a more aesthetic look */
-  margin-top: 20px; /* Adjusted margin for spacing from the heading */
-  background-color: #EFECEC; /* Added background color for better contrast */
-  border-radius: 8px; /* Rounded corners for a softer appearance */
-  box-shadow: 20px rgb(0, 0, 0); /* Subtle box shadow for depth */
-  width: 70%;
-   /* Added max-width for better responsiveness */
-  text-align: justify; /* Justify the text within the most-recent-blog */
+.leftf span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fc6736;
 }
 
-
-.most-recent-blog h2 {
-  color: #333; /* Darkened text color for better readability */
+.mail, .msg {
+  margin: 5px 0;
+  
 }
 
-.most-recent-blog p {
-  color: #555; /* Adjusted text color for improved contrast */
-  margin-bottom: 15px; /* Increased margin for better spacing */
-}
-
-.most-recent-blog a {
+.rightf a {
   text-decoration: none;
-  color: #0C2D57; /* Changed link color for better visibility */
+  color: #EFECEC;
+  margin-left: 20px;
+}
+
+/* Media query for responsive design */
+@media screen and (max-width: 600px) {
+  footer {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .rightf {
+      margin-top: 10px;
+      margin-right: 20vh;
+  }
 }
