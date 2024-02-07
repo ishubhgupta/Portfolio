@@ -750,12 +750,13 @@ body {
 }
 
 /* Styles for the footer */
+/* Styles for the footer */
 footer {
   display: flex;
+  /* flex-direction: column; */
   justify-content: space-between;
   background-color: #ffb0b0aa;
   padding: 20px;
-  color: #FC6736;
   color: #0C2D57;
 }
 
@@ -768,19 +769,36 @@ footer {
 .leftf span {
   font-size: 18px;
   font-weight: bold;
-  color: #fc6736;
+  color: #EFECEC;
 }
 
 .mail, .msg {
   margin: 5px 0;
-  
+}
+
+.rightf {
+  position: relative;
+  display: flex;
+  left: 15%;
+  /* align-items: flex-end; */
+
 }
 
 .rightf a {
   text-decoration: none;
+  font-size: 20px;
   color: #EFECEC;
   margin-left: 20px;
 }
+
+.copyright {
+  margin-top: auto; /* Set margin-top to auto to push it to the bottom */
+  font-size: 14px;
+  align-items: center;
+  position: relative;
+  left:-45%
+}
+
 
 /* Media query for responsive design */
 @media screen and (max-width: 600px) {
