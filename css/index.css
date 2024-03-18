@@ -181,7 +181,7 @@ body {
 .line {
     width: 100%;
     height: 2px;
-    background-color: #00458B;
+    background-color: #8922b4;
     margin: 10px 0;
 
 }
@@ -245,6 +245,7 @@ body {
     position: relative;
 }
 
+
 .carousel-container {
     display: flex;
     /* background: linear-gradient(#0C2D57,#010409 ); */
@@ -254,6 +255,7 @@ body {
     overflow: hidden;
     position: relative;
 }
+
 
 .carousel {
     width: 30%;
@@ -290,7 +292,7 @@ body {
 
 #prevBtn,
 #nextBtn {
-    background-color: #FC6736;
+    background-color: #8b22b8;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -300,7 +302,7 @@ body {
 }
 
 #prevBtn:hover, #nextBtn:hover{
-  background-color: #fa6330d4;
+  background-color: #6c1f8d;
 }
 
 .carousel-container .heading {
