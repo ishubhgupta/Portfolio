@@ -1,11 +1,11 @@
 #contact-form {
-    background-color: #142832;
+    background-color: #2a2a2b;
     color: white;
     text-align: center;
     padding: 20px;
     margin-top: 15vh;
     border-radius: 15px; /* Rounded corners for a modern look */
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); /* Soft shadow effect */
+    /* box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);  */
     position: relative; /* Needed for pseudo-elements */
 }
 
