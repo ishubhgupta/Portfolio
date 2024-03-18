@@ -126,7 +126,7 @@ body {
 
 .right {
     flex: 0 0 75%;
-    padding: 20px;
+    padding: 0px 20px 20px 20px;
     border-radius: 5px;
     overflow: auto;
     color: #fff;
@@ -183,6 +183,7 @@ body {
     height: 2px;
     background-color: #8922b4;
     margin: 10px 0;
+    align-items: center;
 
 }
 
