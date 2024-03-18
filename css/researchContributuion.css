@@ -1,4 +1,14 @@
-/* tech stack */
+/* Research Contribution */
+h2{
+    text-align: center;
+}
+.line-right-div {
+    width: 50%;
+    height: 2px;
+    background-color: #8922b4;
+    margin: 10px 225px;
+}
+
 .tech-stack {
     display: flex;
     flex-direction: column;

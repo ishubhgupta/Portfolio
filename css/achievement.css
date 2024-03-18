@@ -5,6 +5,16 @@ body {
   box-sizing: border-box;
 }
 
+h2{
+  text-align: center;
+}
+.line-right-div {
+  width: 50%;
+  height: 2px;
+  background-color: #8922b4;
+  margin: 10px 225px;
+}
+
 .achievement-container {
   display: flex;
   flex-wrap: wrap;
