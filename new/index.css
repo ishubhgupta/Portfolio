@@ -1,0 +1,74 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    font-family: 'Lato', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+.home {
+    background-color: #121212;
+    height: 100vh;
+}
+
+
+header {
+    text-align: center; 
+    position: fixed;
+    width: 100%; 
+    padding: 15px 0;
+    z-index: 999;
+}
+
+header a {
+    text-decoration: none; 
+    color: white; 
+    margin: 0 15px; 
+    transition: color 0.3s; 
+}
+
+header a:hover {
+    color: orange; 
+}
+
+
+.home .profile-image{
+    width: 30em;
+    height: 30em;
+    position: relative;
+    top: 5em;
+    left: 45em;
+    object-fit: cover;
+    
+}
+
+.home-name{
+    color: aliceblue;
+    position: relative;
+    top: -20vh;
+    left: 30vh;
+    height: 20vh;
+    
+
+}
+.name{
+    font-size: 5em;
+}
+.profession{
+    font-size: 2em;
+}
+
+/* Add animation keyframes */
+@keyframes typing {
+    from { width: 0 }
+}
+
+.profession {
+    font-size: 1.5em;
+    white-space: nowrap; /* Prevents line breaks */
+    overflow: hidden; /* Hides overflowed content */
+    border-right: .15em solid orange; /* Simulates typing cursor */
+    animation: typing 2s steps(20, end); /* Adjust duration and steps as needed */
+}
