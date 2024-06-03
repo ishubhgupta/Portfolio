@@ -1,74 +1,155 @@
-*{
-    padding: 0px;
-    margin: 0px;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
 }
-body{
-    font-family: 'Lato', sans-serif;
+
+body {
+    font-family: Roboto, Helvetica, sans-serif;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
 }
+
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
 }
+
 .home {
     background-color: #121212;
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-
 header {
-    text-align: center; 
+    text-align: center;
     position: fixed;
-    width: 100%; 
+    width: 100%;
     padding: 15px 0;
     z-index: 999;
+    background-color: #121212;
 }
 
 header a {
-    text-decoration: none; 
-    color: white; 
-    margin: 0 15px; 
-    transition: color 0.3s; 
+    text-decoration: none;
+    color: white;
+    margin: 0 15px;
+    transition: color 0.3s;
+    font-size: 20px;
 }
 
 header a:hover {
-    color: orange; 
+    color: orange;
 }
 
-
-.home .profile-image{
-    width: 30em;
-    height: 30em;
-    position: relative;
-    top: 5em;
-    left: 45em;
-    object-fit: cover;
-    
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px; /* Adjust as needed */
+    padding: 20px;
 }
 
-.home-name{
+.left, .right {
+    flex: 1;
+    min-width: 300px; /* Ensures a minimum width for smaller screens */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-name {
     color: aliceblue;
-    position: relative;
-    top: -20vh;
-    left: 30vh;
-    height: 20vh;
-    
-
+    text-align: center;
 }
-.name{
+
+.name {
     font-size: 5em;
 }
-.profession{
+
+.profession {
     font-size: 2em;
 }
 
 /* Add animation keyframes */
 @keyframes typing {
-    from { width: 0 }
+    from { width: 0; }
 }
 
 .profession {
     font-size: 1.5em;
-    white-space: nowrap; /* Prevents line breaks */
-    overflow: hidden; /* Hides overflowed content */
-    border-right: .15em solid orange; /* Simulates typing cursor */
-    animation: typing 2s steps(20, end); /* Adjust duration and steps as needed */
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .15em solid orange;
+    animation: typing 2s steps(20, end);
+}
+
+.profile-image {
+    width: 80%;
+    max-width: 30em; /* Ensures the image doesn't get too large */
+    height: auto; /* Maintains aspect ratio */
+    object-fit: cover;
+}
+
+/* Responsive design for tablets and smartphones */
+@media (max-width: 1200px) {
+    .profile-image {
+        width: 60%; /* Adjusted for better responsiveness */
+        max-width: 20em;
+    }
+
+    .name {
+        font-size: 4em;
+    }
+
+    .profession {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 768px) {
+    header a {
+        font-size: 18px;
+        margin: 0 10px;
+    }
+
+    .profile-image {
+        width: 50%; /* Adjusted for better responsiveness */
+        max-width: 15em;
+    }
+
+    .name {
+        font-size: 3em;
+    }
+
+    .profession {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    header a {
+        font-size: 16px;
+        margin: 0 5px;
+    }
+
+    .content-wrapper {
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    .profile-image {
+        width: 70%; /* Adjusted for better responsiveness */
+        max-width: 10em;
+    }
+
+    .name {
+        font-size: 2.5em;
+    }
+
+    .profession {
+        font-size: 1em;
+    }
 }
