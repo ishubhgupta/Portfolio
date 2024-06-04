@@ -3,56 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
     <title>Shubh Gupta</title>
 </head>
 <body>
     <header>
-        <a href="#about-me">About Me</a>
-        <a href="#tech-skills">Tech Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#research">Research</a>
-        <a href="#contact-me">Contact</a>
-        
+        <nav>
+            <span class="name-header">Shubh Gupta</span>
+            <span class="menu-icon material-icons" id="menu-icon">menu</span>
+            <div class="nav-links" id="nav-links">
+                <a href="#about-me">About Me</a>
+                <a href="#tech-skills">Tech Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#research">Research</a>
+                <a href="#contact-me">Contact</a>
+            </div>
+        </nav>
     </header>
-
-    <section class="home">
-        <div class="content-wrapper">
-            <div class="left">
-                <div class="home-name">
-                    <span class="profession" id="profession"></span>
-                    <br>
-                    <span class="name">Shubh Gupta</span>
-                </div>
-            </div>
-            <div class="right">
-                <img class="profile-image" src="shubhImage6.png" alt="Profile Image">
-            </div>
-        </div>
-    </section>
     
 
-    <section class="about-me home" id="about-me">
-        <!-- <img class="profile-image" src="shubhImage6.png" alt="Profile Image"> -->
-        Hello
-    </section>
+    <main>
+        <section id="home">
+            <div class="content-wrapper">
+                <div class="left">
+                    <div class="home-name">
+                        <span id="profession" class="profession">Proff</span><br>
+                        <span class="name">Shubh Gupta</span>
+                    </div>
+                </div>
+                <div class="right">
+                    <img class="profile-image" src="shubhImage6.png" alt="Profile Image">
+                </div>
+            </div>
+        </section>
 
-    <section class="tech-skills home" id="tech-skills">
+        <section id="about-me">
+            <p>Hello</p>
+        </section>
 
-    </section>
-
-    <section class="projects home" id="projects">
-
-    </section>
-
-    <section class="research home" id="research">
-
-    </section>
-
-    <section class="contact-me home" id="contact-me">
-        
-    </section>
-
+        <section id="tech-skills"></section>
+        <section id="projects"></section>
+        <section id="research"></section>
+        <section id="contact-me"></section>
+    </main>
 </body>
 </html>

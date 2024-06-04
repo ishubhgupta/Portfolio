@@ -30,3 +30,12 @@ document.addEventListener("DOMContentLoaded", function() {
     // Update profession text every 2 seconds (2000 milliseconds)
     setInterval(updateProfession, 2000);
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const menuIcon = document.getElementById('menu-icon');
+    const navLinks = document.getElementById('nav-links');
+
+    menuIcon.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+    });
+});

@@ -1,20 +1,21 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
+    box-sizing: border-box;
 }
 
 body {
     font-family: Roboto, Helvetica, sans-serif;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
+    overflow-x: hidden;
+    background-color: #121212;
 }
 
 html {
     scroll-behavior: smooth;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
+    overflow-x: hidden;
 }
 
-.home {
+#home, #about-me, #tech-skills, #projects, #research, #contact-me {
     background-color: #121212;
     height: 100vh;
     display: flex;
@@ -29,36 +30,53 @@ header {
     padding: 15px 0;
     z-index: 999;
     background-color: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
 }
 
-header a {
+.name-header {
+    font-size: 20px;
+    color: white;
+    display:  none;
+}
+
+header nav a {
     text-decoration: none;
     color: white;
     margin: 0 15px;
     transition: color 0.3s;
     font-size: 20px;
+    margin-top: 10px;
+    padding-bottom: 10px;
 }
 
-header a:hover {
+
+header nav a:hover {
     color: orange;
 }
 
 .content-wrapper {
     display: flex;
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 1200px; /* Adjust as needed */
+    max-width: 1200px;
     padding: 20px;
 }
 
 .left, .right {
     flex: 1;
-    min-width: 300px; /* Ensures a minimum width for smaller screens */
+    min-width: 300px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    position: relative;
+}
+
+.left .home-name, .right .profile-image {
+    margin-top: auto;
 }
 
 .home-name {
@@ -71,7 +89,11 @@ header a:hover {
 }
 
 .profession {
-    font-size: 2em;
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .15em solid orange;
+    animation: typing 3s steps(20, end);
 }
 
 /* Add animation keyframes */
@@ -79,46 +101,56 @@ header a:hover {
     from { width: 0; }
 }
 
-.profession {
-    font-size: 1.5em;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: .15em solid orange;
-    animation: typing 2s steps(20, end);
-}
-
 .profile-image {
     width: 80%;
-    max-width: 30em; /* Ensures the image doesn't get too large */
-    height: auto; /* Maintains aspect ratio */
+    max-width: 30em;
+    height: auto;
     object-fit: cover;
 }
 
 /* Responsive design for tablets and smartphones */
-@media (max-width: 1200px) {
-    .profile-image {
-        width: 60%; /* Adjusted for better responsiveness */
-        max-width: 20em;
+@media (max-width: 768px) {
+    .name-header {
+        font-size: 1.5em;
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        display: inline-block;
+    
+    
     }
 
-    .name {
-        font-size: 4em;
+    .menu-icon {
+        display: block;
+        color: white;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        z-index: 1000; /* Ensures the icon is above other elements */
+    }
+    
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #121212;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
     }
 
-    .profession {
+    .nav-links a {
+        padding: 10px 20px;
         font-size: 1.5em;
     }
-}
-
-@media (max-width: 768px) {
-    header a {
-        font-size: 18px;
-        margin: 0 10px;
-    }
 
     .profile-image {
-        width: 50%; /* Adjusted for better responsiveness */
-        max-width: 15em;
+        height: 20em;
+        width: 20em;
+        max-width: 25em;
     }
 
     .name {
@@ -126,22 +158,39 @@ header a:hover {
     }
 
     .profession {
-        font-size: 1.2em;
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    .content-wrapper {
+        flex-direction: column-reverse;
+    }
+    .home-name{
+        position: relative;
+        top: 20px;
     }
 }
 
 @media (max-width: 480px) {
-    header a {
+    .name-header {
+        font-size: 16px;
+    }
+
+    .menu-icon {
+        font-size: 30px;
+    }
+
+    .nav-links a {
         font-size: 16px;
         margin: 0 5px;
     }
 
     .content-wrapper {
-        flex-direction: column; /* Stack elements vertically */
+        flex-direction: column-reverse;
     }
 
     .profile-image {
-        width: 70%; /* Adjusted for better responsiveness */
+        /* width: 70%; */
         max-width: 10em;
     }
 
@@ -151,5 +200,31 @@ header a:hover {
 
     .profession {
         font-size: 1em;
+        text-align: center;
     }
+}
+
+/* Additional styles for menu icon */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+}
+
+.nav-links.open {
+    display: flex;
 }
