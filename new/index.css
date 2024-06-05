@@ -1,3 +1,4 @@
+/* General styling */
 * {
     padding: 0;
     margin: 0;
@@ -40,9 +41,10 @@ header {
 .name-header {
     font-size: 20px;
     color: white;
-    display:  none;
+    display: none;
 }
 
+/* Main Navigation */
 header nav a {
     text-decoration: none;
     color: white;
@@ -71,12 +73,13 @@ header nav a:hover {
     padding: 20px;
 }
 
-.left{
+.left {
     flex: 1;
     min-width: 300px;
     display: flex;
     justify-content: center;
 }
+
 .right {
     flex: 1;
     min-width: 300px;
@@ -84,8 +87,7 @@ header nav a:hover {
     justify-content: center;
 }
 
-
-.right-home{
+.right-home {
     position: relative;
     left: 50px;
 }
@@ -111,7 +113,7 @@ header nav a:hover {
     animation: typing 3s steps(20, end);
 }
 
-/*keyframes */
+/* keyframes */
 @keyframes typing {
     from { width: 0; }
 }
@@ -123,17 +125,17 @@ header nav a:hover {
     object-fit: cover;
 }
 
-/* tech skills */
-
-#tech-skills{
+/* Tech skills section */
+#tech-skills {
     display: flex;
     flex-direction: column;
 }
 
-/* tech stack */
-h2{
+/* Tech stack */
+h2 {
     text-align: center;
 }
+
 .line-right-div {
     width: 50%;
     height: 2px;
@@ -143,15 +145,15 @@ h2{
 
 .tech-stack {
     display: flex;
-    justify-content: space-around; 
-    flex-wrap: wrap; 
+    justify-content: space-around;
+    flex-wrap: wrap;
     padding: 20px;
 }
 
 .tech-category {
-    width: 150px; 
+    width: 150px;
     background-color: #2a2a2b;
-    margin: 10px; 
+    margin: 10px;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 -5px 20px 0 rgba(23, 22, 22, 0.5);
@@ -169,10 +171,9 @@ ul {
 }
 
 li {
-    background-color: #14131a; 
+    background-color: #14131a;
     padding: 8px;
-    
-    margin: 5px ;
+    margin: 5px;
     border-radius: 5px;
     color: #e4e4e7;
 }
@@ -182,40 +183,39 @@ li.highlight {
 }
 
 li.highlight.beg {
-    --highlight-border-color: #00ff00; 
+    --highlight-border-color: #00ff00;
 }
 
 li.highlight.int {
-    --highlight-border-color: #e5ff00; 
+    --highlight-border-color: #e5ff00;
 }
 
-li.highlight.adv{
-    --highlight-border-color: #ff0000; 
+li.highlight.adv {
+    --highlight-border-color: #ff0000;
 }
 
-.tech-legend{
+.tech-legend {
     width: fit-content;
 }
-.tech-legend ul{
+
+.tech-legend ul {
     display: flex;
     flex-direction: row;
 }
 
-/* projectss */
-#projects{
+/* Projects section */
+#projects {
     display: flex;
     flex-direction: column;
 }
 
-.prj-nav{
-    display: block;
+/* Project Navigation */
+.prj-nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
     position: relative;
-    top: -180px;
-}
-.ml, .web-dev {
-    display: none;
-    border: 2px solid white;
-
+    top: -100px;
 }
 
 .prj-nav a {
@@ -229,9 +229,22 @@ li.highlight.adv{
     cursor: pointer;
 }
 
-/* Highlight the active link */
+/* Highlight the active link in project navigation */
 .prj-nav a.active {
     color: orange;
+}
+
+.projs {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.ml, .web-dev {
+    display: none;
+    border: 2px solid white;
+
+    width: 170vh;
 }
 
 /* Ensure the active section is displayed */
@@ -240,7 +253,30 @@ li.highlight.adv{
 }
 
 
-/* tablets and smartphones */
+
+.prj {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    width: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Grid layout for project items */
+.ml-prjs, 
+.web-dev-prjs {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    padding: 20px;
+}
+
+/* Tablets and smartphones */
 @media (max-width: 768px) {
     .name-header {
         font-size: 1.5em;
@@ -248,8 +284,6 @@ li.highlight.adv{
         top: 15px;
         left: 15px;
         display: inline-block;
-    
-    
     }
 
     .menu-icon {
@@ -260,7 +294,6 @@ li.highlight.adv{
         right: 15px;
         z-index: 1000; /* Ensures the icon is above other elements */
     }
-    
 
     .nav-links {
         display: none;
@@ -297,9 +330,14 @@ li.highlight.adv{
     .content-wrapper {
         flex-direction: column-reverse;
     }
-    .home-name{
+
+    .home-name {
         position: relative;
         top: 20px;
+    }
+
+    .prj-nav {
+        display: block;
     }
 }
 
@@ -360,5 +398,3 @@ li.highlight.adv{
 .nav-links.open {
     display: flex;
 }
-
-

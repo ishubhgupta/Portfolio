@@ -100,3 +100,46 @@ document.addEventListener('DOMContentLoaded', () => {
     prjNavLinks[0].classList.add('active');
     mlSection.classList.add('active');
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a');
+    const prjNavLinks = document.querySelectorAll('.prj-nav a');
+    const mlSection = document.getElementById('ml');
+    const webDevSection = document.getElementById('web-dev');
+
+    // Function to change nav color on scroll
+    function changeNavColor() {
+        let index = sections.length;
+        while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+        navLinks.forEach((link) => link.style.color = '');
+        navLinks[index].style.color = 'orange';
+    }
+
+    // Initial nav color check and scroll event listener
+    changeNavColor();
+    window.addEventListener('scroll', changeNavColor);
+
+    // Function to show/hide project sections
+    function toggleProjectSection(event) {
+        const targetId = event.target.getAttribute('href').substring(1);
+        if (targetId === 'ml') {
+            mlSection.classList.add('active');
+            webDevSection.classList.remove('active');
+        } else if (targetId === 'web-dev') {
+            webDevSection.classList.add('active');
+            mlSection.classList.remove('active');
+        }
+        prjNavLinks.forEach(link => link.classList.remove('active'));
+        event.target.classList.add('active');
+    }
+
+    // Event listeners for project nav links
+    prjNavLinks.forEach(link => link.addEventListener('click', (event) => {
+        event.preventDefault();
+        toggleProjectSection(event);
+    }));
+
+
+});
