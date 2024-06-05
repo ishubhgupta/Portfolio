@@ -8,6 +8,7 @@ body {
     font-family: Roboto, Helvetica, sans-serif;
     overflow-x: hidden;
     background-color: #121212;
+    color: aliceblue;
 }
 
 html {
@@ -52,6 +53,9 @@ header nav a {
     padding-bottom: 10px;
 }
 
+header nav a.active {
+    color: orange;
+}
 
 header nav a:hover {
     color: orange;
@@ -67,12 +71,23 @@ header nav a:hover {
     padding: 20px;
 }
 
-.left, .right {
+.left{
     flex: 1;
     min-width: 300px;
     display: flex;
     justify-content: center;
+}
+.right {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.right-home{
     position: relative;
+    left: 50px;
 }
 
 .left .home-name, .right .profile-image {
@@ -96,7 +111,7 @@ header nav a:hover {
     animation: typing 3s steps(20, end);
 }
 
-/* Add animation keyframes */
+/*keyframes */
 @keyframes typing {
     from { width: 0; }
 }
@@ -108,7 +123,124 @@ header nav a:hover {
     object-fit: cover;
 }
 
-/* Responsive design for tablets and smartphones */
+/* tech skills */
+
+#tech-skills{
+    display: flex;
+    flex-direction: column;
+}
+
+/* tech stack */
+h2{
+    text-align: center;
+}
+.line-right-div {
+    width: 50%;
+    height: 2px;
+    background-color: #8922b4;
+    margin: 10px 225px;
+}
+
+.tech-stack {
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap: wrap; 
+    padding: 20px;
+}
+
+.tech-category {
+    width: 150px; 
+    background-color: #2a2a2b;
+    margin: 10px; 
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 -5px 20px 0 rgba(23, 22, 22, 0.5);
+}
+
+h2 {
+    color: #e4e4e7;
+    font-size: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background-color: #14131a; 
+    padding: 8px;
+    
+    margin: 5px ;
+    border-radius: 5px;
+    color: #e4e4e7;
+}
+
+li.highlight {
+    border: 1px solid var(--highlight-border-color);
+}
+
+li.highlight.beg {
+    --highlight-border-color: #00ff00; 
+}
+
+li.highlight.int {
+    --highlight-border-color: #e5ff00; 
+}
+
+li.highlight.adv{
+    --highlight-border-color: #ff0000; 
+}
+
+.tech-legend{
+    width: fit-content;
+}
+.tech-legend ul{
+    display: flex;
+    flex-direction: row;
+}
+
+/* projectss */
+#projects{
+    display: flex;
+    flex-direction: column;
+}
+
+.prj-nav{
+    display: block;
+    position: relative;
+    top: -180px;
+}
+.ml, .web-dev {
+    display: none;
+    border: 2px solid white;
+
+}
+
+.prj-nav a {
+    text-decoration: none;
+    color: white;
+    margin: 0 15px;
+    transition: color 0.3s;
+    font-size: 20px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+/* Highlight the active link */
+.prj-nav a.active {
+    color: orange;
+}
+
+/* Ensure the active section is displayed */
+.ml.active, .web-dev.active {
+    display: block;
+}
+
+
+/* tablets and smartphones */
 @media (max-width: 768px) {
     .name-header {
         font-size: 1.5em;
@@ -228,3 +360,5 @@ header nav a:hover {
 .nav-links.open {
     display: flex;
 }
+
+
