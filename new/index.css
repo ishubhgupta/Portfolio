@@ -17,7 +17,7 @@ html {
     overflow-x: hidden;
 }
 
-#home, #about-me, #tech-skills, #projects, #research, #contact-me {
+#home, #about-me, #tech-skills, #projects, #research, #connect-me {
     background-color: #121212;
     height: 100vh;
     display: flex;
@@ -260,6 +260,7 @@ li.highlight.adv {
     padding: 20px;
     margin: 10px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
