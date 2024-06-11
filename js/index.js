@@ -26,9 +26,22 @@ document.addEventListener("DOMContentLoaded", function() {
     // Menu toggle
     const menuIcon = document.getElementById('menu-icon');
     const navLinks = document.getElementById('nav-links');
-
-    menuIcon.addEventListener('click', () => {
+    
+    menuIcon.addEventListener('click', function (e) {
+        e.stopPropagation();
         navLinks.classList.toggle('open');
+    });
+
+    document.addEventListener('click', function (e) {
+        if (!navLinks.contains(e.target) && !menuIcon.contains(e.target)) {
+            navLinks.classList.remove('open');
+        }
+    });
+
+    window.addEventListener('resize', function () {
+        if (window.innerWidth >= 768) {
+            navLinks.classList.remove('open');
+        }
     });
 
     // Navigation link color change on scroll
@@ -96,5 +109,28 @@ document.addEventListener("DOMContentLoaded", function() {
                 alert('Failed to send message. Please try again later.');
                 console.log('Failed to send message:', error);
             });
+    });
+
+    var ctx = document.getElementById('skillsChart').getContext('2d');
+    var skillsChart = new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'MySQL', 'Java', 'C++', 'Python', 'NumPy', 'Sklearn', 'Pandas', 'Matplotlib', 'Keras', 'HTML5'], // Duplicate HTML5 at the end
+            datasets: [{
+                label: 'Skill Level',
+                data: [10, 8, 5, 5, 6, 3, 10, 10, 8, 10, 8, 7, 9, 10], // Duplicate the first skill level at the end
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scale: {
+                ticks: {
+                    beginAtZero: true,
+                    max: 10 // Changed to match the provided skill levels
+                }
+            }
+        }
     });
 });

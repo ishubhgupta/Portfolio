@@ -6,11 +6,19 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicons@2.15.1/css/devicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicons@1.8.0/css/devicons.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/7.18.0/simple-icons.min.css">
     <script src="js/index.js" defer></script>
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script type="text/javascript">
+
         (function(){
-            emailjs.init("ryhAzoTHNpjQ_kZ1K9DHh"); // Replace with your User ID
+            emailjs.init("ryhAzoTHNpjQ_kZ1K9DHh");
         })();
     </script>
     <title>Shubh Gupta</title>
@@ -19,7 +27,7 @@
     <header>
         <nav>
             <span class="name-header">Shubh Gupta</span>
-            <span class="menu-icon material-icons" id="menu-icon" aria-label="Menu">menu</span>
+            <span class="menu-icon fas fa-bars" id="menu-icon" aria-label="Menu"></span>
             <div class="nav-links" id="nav-links">
                 <a href="#home" id="nav-home">Home</a>
                 <a href="#about-me" id="nav-about">About Me</a>
@@ -30,6 +38,7 @@
             </div>
         </nav>
     </header>
+
     <main>
         <section id="home">
             <div class="content-wrapper">
@@ -58,46 +67,43 @@
         </section>
         
         <section id="tech-skills">
-            <div class="tech-stack">
-                <div class="tech-category">
-                    <h2>Web Dev</h2>
+            <h2>Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3>Web Development</h3>
                     <ul>
-                        <li class="highlight adv">HTML</li>
-                        <li class="highlight int">CSS</li>
-                        <li class="highlight beg">JavaScript</li>
-                        <li class="highlight int">PHP</li>
-                        <li class="highlight int">MySQL</li>
+                        <li><i class="fab fa-html5"></i> HTML5 <span class="skill-level advanced">Advanced</span></li>
+                        <li><i class="fab fa-css3-alt"></i> CSS3 <span class="skill-level intermediate">Intermediate</span></li>
+                        <li><i class="fab fa-js-square"></i> JavaScript <span class="skill-level beginner">Beginner</span></li>
+                        <li><i class="fab fa-php"></i> PHP <span class="skill-level intermediate">Intermediate</span></li>
+                        <li><i class="fas fa-database"></i> MySQL <span class="skill-level intermediate">Intermediate</span></li>
                     </ul>
                 </div>
-                <div class="tech-category">
-                    <h2>Programming</h2>
+                <div class="skills-category">
+                    <h3>Programming Languages</h3>
                     <ul>
-                        <li class="highlight int">C</li>
-                        <li class="highlight adv">C++</li>
-                        <li class="highlight adv">Python</li>
-                        <li class="highlight beg">Java</li>
+                        <li><i class="fab fa-python"></i> Python <span class="skill-level advanced">Advanced</span></li>
+                        <li><i class="fas fa-code"></i> C++ <span class="skill-level intermediate">Intermediate</span></li>
+                        <li><i class="fab fa-java"></i> Java <span class="skill-level beginner">Beginner</span></li>
                     </ul>
                 </div>
-                <div class="tech-category">
-                    <h2>Data Science</h2>
+                <div class="skills-category">
+                    <h3>Data Science</h3>
                     <ul>
-                        <li class="highlight int">NumPy</li>
-                        <li class="highlight int">SciPy</li>
-                        <li class="highlight adv">Sklearn</li>
-                        <li class="highlight int">Pandas</li>
-                        <li class="highlight beg">Matplotlib</li>
-                        <li class="highlight beg">Keras</li>
+                        <li><i class="fas fa-chart-line"></i> NumPy <span class="skill-level intermediate">Intermediate</span></li>
+                        <li><i class="fas fa-brain"></i> Sklearn <span class="skill-level advanced">Advanced</span></li>
+                        <li><i class="fas fa-table"></i> Pandas <span class="skill-level beginner">Beginner</span></li>
+                        <li><i class="fas fa-chart-pie"></i> Matplotlib <span class="skill-level beginner">Beginner</span></li>
+                        <li><i class="fas fa-robot"></i> Keras <span class="skill-level beginner">Beginner</span></li>
                     </ul>
                 </div>
             </div>
-            <div class="tech-category tech-legend">
-                <ul>
-                    <li class="highlight beg">Beginner</li>
-                    <li class="highlight int">Intermediate</li>
-                    <li class="highlight adv">Advanced</li>
-                </ul>
+            <div class="skills-chart">
+                <canvas id="skillsChart"></canvas>
             </div>
         </section>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
         <section id="projects">
             <nav class="prj-nav nav-links" id="prj-nav" role="navigation" aria-label="Project navigation">
