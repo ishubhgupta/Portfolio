@@ -9,7 +9,7 @@
 }
 
 body {
-    font-family: Roboto, Helvetica, sans-serif;
+    font-family: Helvetica, sans-serif;
     overflow-x: hidden;
     background-color: #121212;
     color: aliceblue;
@@ -20,17 +20,17 @@ html {
     overflow-x: hidden;
 }
 
-#home, #about-me, #tech-skills{
+#home, #about-me, #tech-skills {
     background-color: #121212;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#home, #about-me{
+#home, #about-me {
     height: 100vh;
 }
-#projects{
+#projects {
     background-color: #121212;
 }
 
@@ -38,20 +38,25 @@ header {
     text-align: center;
     position: fixed;
     width: 100%;
-    padding: 15px 0;
-    z-index: 999;
+    height: 5vh;
+    padding: 20px;
+    z-index: 10;
     background-color: #121212;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 20px;
 }
-
 
 .name-header {
     font-size: 20px;
     color: white;
     display: none;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 1.8em;
+    cursor: pointer;
 }
 
 /* Main Navigation */
@@ -135,7 +140,6 @@ header nav a:hover {
     object-fit: cover;
 }
 
-
 /* About Me Section */
 .about-me {
     display: flex;
@@ -179,24 +183,8 @@ header nav a:hover {
     line-height: 1.6; /* Improve readability */
 }
 
-@media (max-width: 768px) {
-    .content-wrapper {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .left-about, .right-about {
-        padding: 10px;
-    }
-
-    .left-about h2 {
-        font-size: 1.5em;
-    }
-}
-
-
 /* Tech skills section */
-#tech-skills{
+#tech-skills {
     font-family: Arial, sans-serif;
     color: white;
     display: flex;
@@ -372,15 +360,7 @@ h2 {
     line-height: 1.6; 
 }
 
-/* Media Query for smaller screens */
-@media (max-width: 768px) {
-    .prj {
-        width: 100%; 
-    }
-}
-
 /* Research section */
-
 #research {
     position: relative;
     padding: 20px;
@@ -450,6 +430,7 @@ h2 {
     text-align: justify; 
     line-height: 1.6; 
 }
+
 /* Connect Me Section */
 .connect-me {
     display: flex;
@@ -524,17 +505,21 @@ h2 {
 .social-link:hover {
     color: #6c63ff;
 }
-.menu-icons {
-    display: none;
-}
 
+/* Media Query for screens smaller than 768px */
 @media (max-width: 768px) {
-    /* General */
-    .connect-me {
-        padding: 40px 20px;
+    .content-wrapper {
+        flex-direction: column;
+        text-align: center;
     }
 
+    .left-about, .right-about {
+        padding: 10px;
+    }
 
+    .left-about h2 {
+        font-size: 1.5em;
+    }
 
     .contact-form {
         width: 90%;
@@ -545,7 +530,6 @@ h2 {
         gap: 10px;
     }
 
-    /* Header */
     header {
         text-align: center;
         position: fixed;
@@ -564,15 +548,6 @@ h2 {
         top: 15px;
         left: 15px;
         display: inline-block;
-    }
-
-    .menu-icon {
-        display: none;
-        color: white;
-        position: fixed;
-        top: 15px;
-        right: 15px;
-        z-index: 1000;  
     }
 
     .nav-links {
@@ -620,42 +595,15 @@ h2 {
         display: block;
     }
 
-    /* Mobile */
-    .name-header {
-        font-size: 16px;
-    }
-
     .menu-icon {
-        font-size: 30px;
-    }
-
-    .nav-links a {
-        font-size: 16px;
-        margin: 0 5px;
-    }
-
-    .profile-image {
-        max-width: 10em;
-    }
-
-    .name {
-        font-size: 2.5em;
-    }
-
-    .profession {
-        font-size: 1em;
-        text-align: center;
+        display: block;
     }
 }
 
+/* Media Query for screens smaller than 480px */
 @media (max-width: 480px) {
-    /* Mobile */
     .name-header {
         font-size: 16px;
-    }
-
-    .menu-icon {
-        font-size: 30px;
     }
 
     .nav-links a {
@@ -675,9 +623,8 @@ h2 {
         font-size: 1em;
         text-align: center;
     }
+    
+    .name-header {
+        font-size: 16px;
+    }
 }
-
-.nav-links.open{
-    display: flex;
-}
-
