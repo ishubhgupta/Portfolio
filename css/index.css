@@ -397,7 +397,7 @@ h2 {
     padding: 20px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     font-family: Arial, sans-serif; 
-    width: calc(100% - 40px); 
+    width: calc(100% - 10px); 
     margin-bottom: 20px; 
 }
 /* Paper header */
@@ -508,34 +508,13 @@ h2 {
 
 /* Media Query for screens smaller than 768px */
 @media (max-width: 768px) {
-    .content-wrapper {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .left-about, .right-about {
-        padding: 10px;
-    }
-
-    .left-about h2 {
-        font-size: 1.5em;
-    }
-
-    .contact-form {
-        width: 90%;
-    }
-
-    .social-links {
-        flex-direction: column;
-        gap: 10px;
-    }
 
     header {
         text-align: center;
         position: fixed;
         width: 100%;
-        padding: 15px 0;
-        z-index: 999;
+        padding: 20px;
+        z-index: 9;
         background-color: #121212;
         display: flex;
         justify-content: center;
@@ -567,64 +546,77 @@ h2 {
         font-size: 1.5em;
     }
 
-    .profile-image {
-        height: 20em;
-        width: 20em;
-        max-width: 25em;
-    }
-
-    .name {
-        font-size: 3em;
-    }
-
-    .profession {
-        font-size: 1.5em;
-        text-align: center;
-    }
-
-    .content-wrapper {
-        flex-direction: column-reverse;
-    }
-
-    .home-name {
-        position: relative;
-        top: 20px;
-    }
-
-    .prj-nav {
-        display: block;
-    }
-
     .menu-icon {
         display: block;
-    }
-}
-
-/* Media Query for screens smaller than 480px */
-@media (max-width: 480px) {
-    .name-header {
-        font-size: 16px;
+        position: fixed;
+        right: 15px;
+        top: 15px;
     }
 
-    .nav-links a {
-        font-size: 16px;
-        margin: 0 5px;
+    .home .content-wrapper{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        align-content: center;
     }
 
-    .profile-image {
-        max-width: 10em;
+    .home-name{
+        font-size: 0.5em;
+
     }
 
-    .name {
-        font-size: 2.5em;
+    .profile-image{
+        position: relative;
+        left: -50px;
+        margin-bottom: 20px;
+    }
+    #about-me{
+        align-items: baseline;
+    }
+    .left-about{
+        display: flex;
+        align-items: center;
+        position: relative;
+        
     }
 
-    .profession {
-        font-size: 1em;
-        text-align: center;
+    .about-me .content-wrapper{
+        display: flex;
+        align-items: center;
+    }
+
+    .prj-nav{
+        display: flex;
+        flex-direction: row;
+    }   
+
+    .prj{
+        width: 100%;
+    }
+    .projs{
+        position: relative;
+        top: 5vh;
     }
     
-    .name-header {
-        font-size: 16px;
+    .prj-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    
+
+}
+
+@media (max-width: 480px) {
+    .prj-nav{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top: 10vh;
+    }  
+
+    .research-container{
+        width: 100%;
     }
 }
