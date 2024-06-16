@@ -2,30 +2,47 @@ document.addEventListener("DOMContentLoaded", function() {
     // Profession typing effect
     var professionSpan = document.getElementById("profession");
     var professions = ["Data Scientist", "Web Developer", "Researcher"];
-    
+    var lastIndex = -1;  
+    var typingInterval;
+    var updateInterval;
+
+    function clearIntervals() {
+        clearTimeout(typingInterval);
+        clearTimeout(updateInterval);
+    }
+
     function updateProfession() {
-        var randomIndex = Math.floor(Math.random() * professions.length); 
+        clearIntervals();
+        
+        var randomIndex;
+        do {
+            randomIndex = Math.floor(Math.random() * professions.length);
+        } while (randomIndex === lastIndex);
+        
+        lastIndex = randomIndex;  
         var randomProfession = professions[randomIndex];
         var i = 0;
-        
+
         function typeWriter() {
             if (i < randomProfession.length) {
                 professionSpan.textContent += randomProfession.charAt(i);
                 i++;
-                setTimeout(typeWriter, 100);
+                typingInterval = setTimeout(typeWriter, 100);
+            } else {
+                updateInterval = setTimeout(updateProfession, 2000);
             }
         }
-        
-        professionSpan.textContent = '';
-        typeWriter();
+
+        professionSpan.textContent = ''; 
+        typeWriter(); 
     }
-    
+
     updateProfession();
-    setInterval(updateProfession, 2000);
 
     // Menu toggle
     const menuIcon = document.getElementById('menu-icon');
     const navLinks = document.getElementById('nav-links');
+    const navLinksItems = document.querySelectorAll('.nav-links a');
     
     menuIcon.addEventListener('click', function (e) {
         e.stopPropagation();
@@ -42,6 +59,12 @@ document.addEventListener("DOMContentLoaded", function() {
         if (window.innerWidth >= 768) {
             navLinks.classList.remove('open');
         }
+    });
+
+    navLinksItems.forEach(link => {
+        link.addEventListener('click', function () {
+            navLinks.classList.remove('open');
+        });
     });
 
     // Navigation link color change on scroll
@@ -111,6 +134,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
     });
 
+    // Radar chart
     var ctx = document.getElementById('skillsChart').getContext('2d');
     var skillsChart = new Chart(ctx, {
         type: 'radar',
