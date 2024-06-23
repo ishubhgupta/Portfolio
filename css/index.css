@@ -15,6 +15,7 @@ body {
     color: aliceblue;
 }
 
+
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -60,6 +61,10 @@ header {
 }
 
 /* Main Navigation */
+header nav {
+    display: flex;
+}
+
 header nav a {
     text-decoration: none;
     color: white;
@@ -68,16 +73,32 @@ header nav a {
     font-size: 20px;
     margin-top: 10px;
     padding-bottom: 10px;
+    position: relative;
+}
+
+header nav a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #50C878;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+header nav a:hover::before {
+    width: 100%;
+    left: 0;
 }
 
 header nav a.active {
-    color: orange;
+    color: #50C878;
 }
 
 header nav a:hover {
-    color: orange;
+    color: #50C878;
 }
-
 .content-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -124,7 +145,7 @@ header nav a:hover {
     font-size: 20px;
     white-space: nowrap;
     overflow: hidden;
-    border-right: .15em solid orange;
+    border-right: .15em solid #50C878;
     animation: typing 3s steps(20, end);
 }
 
@@ -155,13 +176,13 @@ header nav a:hover {
     display: flex;
     flex-direction: row;
     align-items: center;
-    max-width: 1000px; /* Limit the width */
+    max-width: 1000px; 
     width: 100%;
     padding: 20px;
 }
 
 .left-about, .right-about {
-    flex: 1; /* Equal width */
+    flex: 1;
     padding: 20px;
 }
 
@@ -169,7 +190,7 @@ header nav a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start; /* Align text to the left */
+    align-items: flex-start; 
 }
 
 .left-about h2 {
@@ -179,8 +200,8 @@ header nav a:hover {
 }
 
 .right-about {
-    text-align: justify; /* Justify text for a clean look */
-    line-height: 1.6; /* Improve readability */
+    text-align: justify; 
+    line-height: 1.6; 
 }
 
 /* Tech skills section */
@@ -286,7 +307,7 @@ h2 {
 }
 
 .prj-nav a.active {
-    color: orange;
+    color: #50C878;
 }
 
 /* Rest of your CSS */
@@ -438,7 +459,7 @@ h2 {
     justify-content: center;
     align-items: center;
     padding: 60px 20px;
-    color: #f1f1f1; /* Light text color */
+    color: #f1f1f1; 
     font-family: Arial, sans-serif;
     text-align: center;
     height: 100vh;
@@ -479,7 +500,7 @@ h2 {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #6c63ff;
+    background-color: #50C878;
     color: #fff;
     font-size: 1em;
     cursor: pointer;
@@ -487,7 +508,7 @@ h2 {
 }
 
 .contact-form button:hover {
-    background-color: #5752d3;
+    background-color: #41d472;
 }
 
 .social-links {
@@ -503,7 +524,7 @@ h2 {
 }
 
 .social-link:hover {
-    color: #6c63ff;
+    color: #50C878;
 }
 
 /* Media Query for screens smaller than 768px */

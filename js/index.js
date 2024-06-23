@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
         while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
 
         navLinksArray.forEach((link) => link.style.color = '');
-        navLinksArray[index].style.color = 'orange';
+        navLinksArray[index].style.color = '#50C878';
     }
 
     changeNavColor();
