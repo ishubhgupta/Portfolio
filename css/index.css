@@ -167,8 +167,8 @@ header nav a:hover {
     justify-content: center;
     align-items: center;
     padding: 60px 20px;
-    background-color: #1e1e1e; /* Dark background */
-    color: #f1f1f1; /* Light text color */
+    background-color: #1e1e1e;
+    color: #f1f1f1; 
     font-family: Arial, sans-serif;
 }
 
