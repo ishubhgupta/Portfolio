@@ -117,21 +117,19 @@ document.addEventListener("DOMContentLoaded", function() {
         var email = event.target.email.value;
         var message = event.target.message.value;
 
-        var templateParams = {
-            to_name: 'Shubh Gupta',
+        emailjs.send("service_74i8s4e", "template_gbg1ljn", {
             from_name: name,
-            reply_to: email,
-            message: message
-        };
-
-        emailjs.send('service_74i8s4e', 'template_gbg1ljn', templateParams)
-            .then(function(response) {
-                alert('Message sent successfully!');
-                event.target.reset();
-            }, function(error) {
-                alert('Failed to send message. Please try again later.');
-                console.log('Failed to send message:', error);
-            });
+            message: message,
+            email_id: email,
+        }).then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            document.getElementById("acknowledgment").innerText = "Message sent successfully!";
+            event.target.reset();
+        }, function(error) {
+            console.log('FAILED...', error);
+            document.getElementById("acknowledgment").innerText = "Failed to send message. Please try again later.";
+        });
+        
     });
 
     // Radar chart
