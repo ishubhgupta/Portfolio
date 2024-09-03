@@ -22,6 +22,16 @@
             emailjs.init("ryhAzoTHNpjQ_kZ1K9DHh");
         })();
     </script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+    emailjs.init({
+        publicKey: "s-OvIBc4Ih83AeH2u",
+    });
+    })();
+</script>
     <title>Shubh Gupta</title>
 </head>
 <body>
@@ -216,16 +226,19 @@
                 <h2>Get Connected</h2>
             </div>
             <form class="contact-form" id="contact-form">
-                <label for="name"></label>
+                <label for="name" class="visually-hidden">Name</label>
                 <input type="text" id="name" name="name" placeholder="Name" required>
                 
-                <label for="email"></label>
+                <label for="email" class="visually-hidden">Email</label>
                 <input type="email" id="email" name="email" placeholder="Email" required>
                 
-                <label for="message"></label>
+                <label for="message" class="visually-hidden">Message</label>
                 <textarea id="message" name="message" placeholder="Message" required></textarea>
                 
                 <button type="submit">Send Message</button>
+        
+                <!-- Acknowledgment message will be displayed here -->
+                <div id="acknowledgment" class="acknowledgment"></div>
             </form>
             <div class="social-links">
                 <a href="https://instagram.com" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -234,6 +247,7 @@
                 <a href="https://codecademy.com" class="social-link" aria-label="Codecademy"><i class="fab fa-code"></i></a>
             </div>
         </section>
+                
     </main>
 </body>
 </html>
