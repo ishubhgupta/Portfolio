@@ -139,6 +139,11 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("contact-form")
     .addEventListener("submit", function (event) {
       event.preventDefault();
+      const button = event.target.querySelector('button');
+      
+      // Add click animation
+      button.classList.add('clicked');
+      setTimeout(() => button.classList.remove('clicked'), 300);
 
       var name = event.target.name.value;
       var email = event.target.email.value;
@@ -153,17 +158,30 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(
           function (response) {
             console.log("SUCCESS!", response.status, response.text);
-            document.getElementById("acknowledgment").innerText =
-              "Message sent successfully!";
+            showAcknowledgment("Message sent successfully!", true);
             event.target.reset();
           },
           function (error) {
             console.log("FAILED...", error);
-            document.getElementById("acknowledgment").innerText =
-              "Failed to send message. Please try again later.";
+            showAcknowledgment("Failed to send message. Please try again later.", false);
           }
         );
     });
+
+  // Add animation to acknowledgment message
+  function showAcknowledgment(message, isSuccess = true) {
+    const ack = document.getElementById('acknowledgment');
+    ack.innerText = message;
+    ack.classList.add('show');
+    ack.classList.add(isSuccess ? 'success' : 'error');
+    
+    setTimeout(() => {
+        ack.classList.remove('show');
+        setTimeout(() => {
+            ack.classList.remove('success', 'error');
+        }, 500);
+    }, 5000);
+  }
 
   // Radar chart
   var ctx = document.getElementById("skillsChart").getContext("2d");
