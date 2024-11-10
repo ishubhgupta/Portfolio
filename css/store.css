@@ -1,0 +1,108 @@
+/* <div class="about-card">
+                <p class="about-text">
+                    I am a passionate software developer with a deep fascination for artificial intelligence and its applications. With over 3 years of hands-on experience in Python development, I've successfully delivered multiple projects that showcase my technical expertise and problem-solving abilities.
+                </p>
+                <p class="about-text">
+                    My journey in tech has been driven by curiosity and a desire to create impactful solutions. I specialize in machine learning applications and have published research papers in prestigious journals. When I'm not coding, I contribute to open-source projects and mentor aspiring developers.
+                </p>
+                <div class="interests">
+                    <h3>Interests</h3>
+                    <div class="interest-tags">
+                        <span>Machine Learning</span>
+                        <span>Computer Vision</span>
+                        <span>Deep Learning</span>
+                        <span>Web Development</span>
+                    </div>
+                </div>
+            </div> */
+
+            .highlight-card i {
+                font-size: 2em;
+                color: #50C878;
+                margin-bottom: 1rem;
+            }
+            
+            .highlight-card h3 {
+                color: #f1f1f1;
+                margin-bottom: 0.5rem;
+            }
+            
+            .highlight-card p {
+                color: #888;
+                font-size: 0.9em;
+            }
+            
+            .resume-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 1rem 2rem;
+                background: linear-gradient(45deg, #50C878, #41d472);
+                color: white;
+                border: none;
+                border-radius: 50px;
+                font-size: 1.1em;
+                text-decoration: none;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                box-shadow: 0 4px 15px rgba(80, 200, 120, 0.2);
+            }
+            
+            .resume-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(80, 200, 120, 0.3);
+            }
+            
+            .about-card {
+                background: rgba(20, 19, 26, 0.8);
+                padding: 2rem;
+                border-radius: 15px;
+                border: 1px solid rgba(80, 200, 120, 0.1);
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            }
+            
+            .about-text {
+                color: #f1f1f1;
+                line-height: 1.8;
+                margin-bottom: 1.5rem;
+                font-size: 1.1em;
+            }
+            
+            .interests {
+                margin-top: 2rem;
+                border-top: 1px solid rgba(80, 200, 120, 0.1);
+                padding-top: 1.5rem;
+            }
+            
+            .interests h3 {
+                color: #50C878;
+                margin-bottom: 1rem;
+            }
+            
+            .interest-tags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.8rem;
+            }
+            
+            .interest-tags span {
+                background: rgba(80, 200, 120, 0.1);
+                color: #50C878;
+                padding: 0.5rem 1rem;
+                border-radius: 20px;
+                font-size: 0.9em;
+                border: 1px solid rgba(80, 200, 120, 0.2);
+                transition: all 0.3s ease;
+            }
+            
+            .interest-tags span:hover {
+                background: rgba(80, 200, 120, 0.2);
+                transform: translateY(-2px);
+            }
+            .about-title {
+                font-size: 3em;
+                margin-bottom: 2rem;
+                background: linear-gradient(45deg, #50C878, #61dafb);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }            
