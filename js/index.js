@@ -139,11 +139,11 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("contact-form")
     .addEventListener("submit", function (event) {
       event.preventDefault();
-      const button = event.target.querySelector('button');
-      
+      const button = event.target.querySelector("button");
+
       // Add click animation
-      button.classList.add('clicked');
-      setTimeout(() => button.classList.remove('clicked'), 300);
+      button.classList.add("clicked");
+      setTimeout(() => button.classList.remove("clicked"), 300);
 
       var name = event.target.name.value;
       var email = event.target.email.value;
@@ -163,27 +163,30 @@ document.addEventListener("DOMContentLoaded", function () {
           },
           function (error) {
             console.log("FAILED...", error);
-            showAcknowledgment("Failed to send message. Please try again later.", false);
+            showAcknowledgment(
+              "Failed to send message. Please try again later.",
+              false
+            );
           }
         );
     });
 
   // Add animation to acknowledgment message
   function showAcknowledgment(message, isSuccess = true) {
-    const ack = document.getElementById('acknowledgment');
+    const ack = document.getElementById("acknowledgment");
     ack.innerText = message;
-    ack.classList.add('show');
-    ack.classList.add(isSuccess ? 'success' : 'error');
-    
+    ack.classList.add("show");
+    ack.classList.add(isSuccess ? "success" : "error");
+
     setTimeout(() => {
-        ack.classList.remove('show');
-        setTimeout(() => {
-            ack.classList.remove('success', 'error');
-        }, 500);
+      ack.classList.remove("show");
+      setTimeout(() => {
+        ack.classList.remove("success", "error");
+      }, 500);
     }, 5000);
   }
 
-  // Radar chart
+  // Enhanced Radar chart
   var ctx = document.getElementById("skillsChart").getContext("2d");
   var skillsChart = new Chart(ctx, {
     type: "radar",
@@ -202,25 +205,77 @@ document.addEventListener("DOMContentLoaded", function () {
         "Pandas",
         "Matplotlib",
         "Keras",
-        "HTML5",
-      ], // Duplicate HTML5 at the end
+      ],
       datasets: [
         {
           label: "Skill Level",
-          data: [10, 8, 5, 5, 6, 3, 10, 10, 8, 10, 8, 7, 9, 10], // Duplicate the first skill level at the end
-          backgroundColor: "rgba(54, 162, 235, 0.2)",
-          borderColor: "rgba(54, 162, 235, 1)",
-          borderWidth: 1,
+          data: [90, 80, 50, 50, 60, 30, 70, 90, 80, 90, 80, 70, 90],
+          backgroundColor: "rgba(80, 200, 120, 0.2)",
+          borderColor: "#50c878",
+          borderWidth: 2,
+          pointBackgroundColor: "#61dafb",
+          pointBorderColor: "#fff",
+          pointHoverBackgroundColor: "#fff",
+          pointHoverBorderColor: "#50c878",
         },
       ],
     },
     options: {
-      scale: {
-        ticks: {
-          beginAtZero: true,
-          max: 10, // Changed to match the provided skill levels
+      scales: {
+        r: {
+          angleLines: {
+            color: "rgba(255, 255, 255, 0.1)",
+          },
+          grid: {
+            color: "rgba(255, 255, 255, 0.1)",
+          },
+          pointLabels: {
+            color: "#fff",
+            font: {
+              size: 12,
+            },
+          },
+          ticks: {
+            beginAtZero: true,
+            max: 100,
+            stepSize: 20,
+            color: "#888",
+            backdropColor: "transparent",
+          },
         },
+      },
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+      animation: {
+        duration: 2000,
+        easing: "easeInOutQuart",
       },
     },
   });
+
+  // Add animation to skill bars
+  function animateSkillBars() {
+    const skillBars = document.querySelectorAll(".progress-bar");
+    skillBars.forEach((bar) => {
+      bar.style.width = "0%";
+      setTimeout(() => {
+        bar.style.width = bar.dataset.progress;
+      }, 300);
+    });
+  }
+
+  // Call animation when section is in view
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateSkillBars();
+        observer.unobserve(entry.target);
+      }
+    });
+  });
+
+  observer.observe(document.querySelector("#tech-skills"));
 });

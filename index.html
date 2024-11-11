@@ -142,78 +142,174 @@
       </section>
 
       <section id="tech-skills">
-        <h2>Technical Skills</h2>
-        <div class="skills-container">
-          <div class="skills-category">
-            <h3>Web Development</h3>
-            <ul>
-              <li>
-                <i class="fab fa-html5"></i> HTML5
-                <span class="skill-level advanced">Advanced</span>
-              </li>
-              <li>
-                <i class="fab fa-css3-alt"></i> CSS3
-                <span class="skill-level intermediate">Intermediate</span>
-              </li>
-              <li>
-                <i class="fab fa-js-square"></i> JavaScript
-                <span class="skill-level beginner">Beginner</span>
-              </li>
-              <li>
-                <i class="fab fa-php"></i> PHP
-                <span class="skill-level beginner">Beginner</span>
-              </li>
-              <li>
-                <i class="fas fa-database"></i> MySQL
-                <span class="skill-level intermediate">Intermediate</span>
-              </li>
-            </ul>
-          </div>
-          <div class="skills-category">
-            <h3>Programming Languages</h3>
-            <ul>
-              <li>
-                <i class="fab fa-python"></i> Python
-                <span class="skill-level advanced">Advanced</span>
-              </li>
-              <li>
-                <i class="fas fa-code"></i> C++
-                <span class="skill-level intermediate">Intermediate</span>
-              </li>
-              <li>
-                <i class="fab fa-java"></i> Java
-                <span class="skill-level beginner">Beginner</span>
-              </li>
-            </ul>
-          </div>
-          <div class="skills-category">
-            <h3>Data Science</h3>
-            <ul>
-              <li>
-                <i class="fas fa-chart-line"></i> NumPy
-                <span class="skill-level intermediate">Intermediate</span>
-              </li>
-              <li>
-                <i class="fas fa-brain"></i> Sklearn
-                <span class="skill-level advanced">Advanced</span>
-              </li>
-              <li>
-                <i class="fas fa-table"></i> Pandas
-                <span class="skill-level beginner">Beginner</span>
-              </li>
-              <li>
-                <i class="fas fa-chart-pie"></i> Matplotlib
-                <span class="skill-level beginner">Beginner</span>
-              </li>
-              <li>
-                <i class="fas fa-robot"></i> Keras
-                <span class="skill-level beginner">Beginner</span>
-              </li>
-            </ul>
-          </div>
+        <div class="skills-header">
+          <h2>Technical Skills</h2>
+          <p class="skills-subtitle">A comprehensive overview of my technical expertise</p>
         </div>
-        <div class="skills-chart">
-          <canvas id="skillsChart"></canvas>
+        
+        <div class="skills-wrapper">
+          <div class="skills-container">
+            <div class="skills-category" data-aos="fade-up">
+              <div class="category-header">
+                <i class="fas fa-globe category-icon"></i>
+                <h3>Web Development</h3>
+              </div>
+              <ul>
+                <li class="skill-item">
+                  <div class="skill-info">
+                    <i class="fab fa-html5"></i>
+                    <span>HTML5</span>
+                  </div>
+                  <div class="skill-progress">
+                    <div class="progress-bar advanced" data-progress="90%"></div>
+                  </div>
+                  <span class="skill-level advanced">Advanced</span>
+                </li>
+                <li class="skill-item">
+                  <div class="skill-info">
+                    <i class="fab fa-css3-alt"></i>
+                    <span>CSS3</span>
+                  </div>
+                  <div class="skill-progress">
+                    <div class="progress-bar intermediate" data-progress="70%"></div>
+                  </div>
+                  <span class="skill-level intermediate">Intermediate</span>
+                </li>
+                <li class="skill-item">
+                  <div class="skill-info">
+                    <i class="fab fa-js-square"></i>
+                    <span>JavaScript</span>
+                  </div>
+                  <div class="skill-progress">
+                    <div class="progress-bar beginner" data-progress="40%"></div>
+                  </div>
+                  <span class="skill-level beginner">Beginner</span>
+                </li>
+                <li class="skill-item">
+                  <div class="skill-info">
+                    <i class="fab fa-php"></i>
+                    <span>PHP</span>
+                  </div>
+                  <div class="skill-progress">
+                    <div class="progress-bar beginner" data-progress="40%"></div>
+                  </div>
+                  <span class="skill-level beginner">Beginner</span>
+                </li>
+                <li class="skill-item">
+                  <div class="skill-info">
+                    <i class="fas fa-database"></i>
+                    <span>MySQL</span>
+                  </div>
+                  <div class="skill-progress">
+                    <div class="progress-bar intermediate" data-progress="70%"></div>
+                  </div>
+                  <span class="skill-level intermediate">Intermediate</span>
+                </li>
+              </ul>
+            </div>
+      
+            <div class="skills-category" data-aos="fade-up" data-aos-delay="100">
+              <div class="category-header">
+                <i class="fas fa-code category-icon"></i>
+                <h3>Programming Languages</h3>
+              </div>
+              <ul>
+                <li class="skill-item">
+                  <div class="skill-info">
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                  </div>
+                  <div class="skill-progress">
+                    <div class="progress-bar advanced" data-progress="90%"></div>
+                  </div>
+                  <span class="skill-level advanced">Advanced</span>
+                </li>
+                <li class="skill-item">
+                  <div class="skill-info">
+                    <i class="fas fa-code"></i>
+                    <span>C++</span>
+                  </div>
+                  <div class="skill-progress">
+                    <div class="progress-bar intermediate" data-progress="70%"></div>
+                  </div>
+                  <span class="skill-level intermediate">Intermediate</span>
+                </li>
+                <li class="skill-item">
+                  <div class="skill-info">
+                    <i class="fab fa-java"></i>
+                    <span>Java</span>
+                  </div>
+                  <div class="skill-progress">
+                    <div class="progress-bar beginner" data-progress="40%"></div>
+                  </div>
+                  <span class="skill-level beginner">Beginner</span>
+                </li>
+              </ul>
+            </div>
+      
+            <div class="skills-category" data-aos="fade-up" data-aos-delay="200">
+              <div class="category-header">
+                <i class="fas fa-brain category-icon"></i>
+                <h3>Data Science</h3>
+              </div>
+              <ul>
+                <li class="skill-item">
+                  <div class="skill-info">
+                    <i class="fas fa-chart-line"></i>
+                    <span>NumPy</span>
+                  </div>
+                  <div class="skill-progress">
+                    <div class="progress-bar intermediate" data-progress="70%"></div>
+                  </div>
+                  <span class="skill-level intermediate">Intermediate</span>
+                </li>
+                <li class="skill-item">
+                  <div class="skill-info">
+                    <i class="fas fa-brain"></i>
+                    <span>Sklearn</span>
+                  </div>
+                  <div class="skill-progress">
+                    <div class="progress-bar advanced" data-progress="90%"></div>
+                  </div>
+                  <span class="skill-level advanced">Advanced</span>
+                </li>
+                <li class="skill-item">
+                  <div class="skill-info">
+                    <i class="fas fa-table"></i>
+                    <span>Pandas</span>
+                  </div>
+                  <div class="skill-progress">
+                    <div class="progress-bar beginner" data-progress="40%"></div>
+                  </div>
+                  <span class="skill-level beginner">Beginner</span>
+                </li>
+                <li class="skill-item">
+                  <div class="skill-info">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Matplotlib</span>
+                  </div>
+                  <div class="skill-progress">
+                    <div class="progress-bar beginner" data-progress="40%"></div>
+                  </div>
+                  <span class="skill-level beginner">Beginner</span>
+                </li>
+                <li class="skill-item">
+                  <div class="skill-info">
+                    <i class="fas fa-robot"></i>
+                    <span>Keras</span>
+                  </div>
+                  <div class="skill-progress">
+                    <div class="progress-bar beginner" data-progress="40%"></div>
+                  </div>
+                  <span class="skill-level beginner">Beginner</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="skills-chart-container" data-aos="fade-up" data-aos-delay="300">
+            <canvas id="skillsChart"></canvas>
+          </div>
         </div>
       </section>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
