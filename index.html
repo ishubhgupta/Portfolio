@@ -38,6 +38,9 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/7.18.0/simple-icons.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="js/index.js" defer></script>
     <script
       type="text/javascript"
@@ -74,7 +77,11 @@
           <a href="#research" id="nav-research">Research</a>
           <a href="#connect-me" id="nav-connect">Connect</a>
         </div>
-        <a href="assets/resume/general_resume_shubh.pdf" class="header-resume-btn" download>
+        <a
+          href="assets/resume/general_resume_shubh.pdf"
+          class="header-resume-btn"
+          download
+        >
           <i class="fas fa-file-download"></i>
           Resume
         </a>
@@ -83,20 +90,58 @@
 
     <main>
       <section id="home" class="home">
+        <div class="floating-shapes">
+          <div class="shape"></div>
+          <div class="shape"></div>
+          <div class="shape"></div>
+        </div>
+
         <div class="content-wrapper">
           <div class="left left-home">
-            <div class="home-name">
-              <span id="profession" class="profession"></span><br />
-              <span class="name">Shubh Gupta</span>
+            <div class="social-links-vertical">
+              <a
+                href="https://github.com/ishubhgupta"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="GitHub Profile"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a href="https://linkedin.com/in/ishubhgupta" target="_blank" rel="noopener noreferrer" title="LinkedIn Profile"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://twitter.com/ishubhguptaa" target="_blank" rel="noopener noreferrer" title="Twitter Profile"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <div class="social-line"></div>
+            </div>
+
+            <div class="home-text">
+              <span class="greeting">Hi there! I'm</span>
+              <h1 class="name">Shubh Gupta</h1>
+              <span id="profession" class="profession"></span>
+              <p class="brief-intro" id="brief-intro"></p>
+
+              <div class="cta-buttons">
+                <a href="#connect-me" class="primary-btn">Get In Touch</a>
+                <a href="#projects" class="secondary-btn">View Work</a>
+              </div>
             </div>
           </div>
+
           <div class="right right-home">
-            <img
-              class="profile-image"
-              src="assets/images/shubhImage6.png"
-              alt="Profile Image of Shubh Gupta"
-            />
+            <div class="profile-frame">
+              <img
+                class="profile-image"
+                src="assets/images/shubhImage6.png"
+                alt="Profile Image of Shubh Gupta"
+              />
+            </div>
           </div>
+        </div>
+
+        <div class="scroll-indicator">
+          <span>Scroll Down</span>
+          <i class="fas fa-chevron-down"></i>
         </div>
       </section>
       <section id="about-me" class="about-me">
@@ -116,7 +161,11 @@
             journals. When I'm not coding, I contribute to open-source projects
             and mentor aspiring developers.
           </p>
-          <a href="assets/resume/general_resume_shubh.pdf" class="resume-btn" download>
+          <a
+            href="assets/resume/general_resume_shubh.pdf"
+            class="resume-btn"
+            download
+          >
             <i class="fas fa-file-download"></i>
             Resume
           </a>
@@ -134,78 +183,227 @@
       </section>
 
       <section id="tech-skills">
-        <h2>Technical Skills</h2>
-        <div class="skills-container">
-          <div class="skills-category">
-            <h3>Web Development</h3>
-            <ul>
-              <li>
-                <i class="fab fa-html5"></i> HTML5
-                <span class="skill-level advanced">Advanced</span>
-              </li>
-              <li>
-                <i class="fab fa-css3-alt"></i> CSS3
-                <span class="skill-level intermediate">Intermediate</span>
-              </li>
-              <li>
-                <i class="fab fa-js-square"></i> JavaScript
-                <span class="skill-level beginner">Beginner</span>
-              </li>
-              <li>
-                <i class="fab fa-php"></i> PHP
-                <span class="skill-level beginner">Beginner</span>
-              </li>
-              <li>
-                <i class="fas fa-database"></i> MySQL
-                <span class="skill-level intermediate">Intermediate</span>
-              </li>
-            </ul>
-          </div>
-          <div class="skills-category">
-            <h3>Programming Languages</h3>
-            <ul>
-              <li>
-                <i class="fab fa-python"></i> Python
-                <span class="skill-level advanced">Advanced</span>
-              </li>
-              <li>
-                <i class="fas fa-code"></i> C++
-                <span class="skill-level intermediate">Intermediate</span>
-              </li>
-              <li>
-                <i class="fab fa-java"></i> Java
-                <span class="skill-level beginner">Beginner</span>
-              </li>
-            </ul>
-          </div>
-          <div class="skills-category">
-            <h3>Data Science</h3>
-            <ul>
-              <li>
-                <i class="fas fa-chart-line"></i> NumPy
-                <span class="skill-level intermediate">Intermediate</span>
-              </li>
-              <li>
-                <i class="fas fa-brain"></i> Sklearn
-                <span class="skill-level advanced">Advanced</span>
-              </li>
-              <li>
-                <i class="fas fa-table"></i> Pandas
-                <span class="skill-level beginner">Beginner</span>
-              </li>
-              <li>
-                <i class="fas fa-chart-pie"></i> Matplotlib
-                <span class="skill-level beginner">Beginner</span>
-              </li>
-              <li>
-                <i class="fas fa-robot"></i> Keras
-                <span class="skill-level beginner">Beginner</span>
-              </li>
-            </ul>
-          </div>
+        <div class="skills-header">
+          <h2>Technical Skills</h2>
+          <p class="skills-subtitle">
+            A comprehensive overview of my technical expertise
+          </p>
         </div>
-        <div class="skills-chart">
-          <canvas id="skillsChart"></canvas>
+
+        <div class="skills-wrapper">
+          <div class="skills-container">
+            <div class="skills-category" data-aos="fade-up">
+              <div class="category-header">
+                <i class="fas fa-globe category-icon"></i>
+                <h3>Web Development</h3>
+              </div>
+              <ul>
+                <li class="skill-item">
+                  <div class="skill-info">
+                    <i class="fab fa-html5"></i>
+                    <span>HTML5</span>
+                  </div>
+                  <div class="skill-progress">
+                    <div
+                      class="progress-bar advanced"
+                      data-progress="90%"
+                    ></div>
+                  </div>
+                  <span class="skill-level advanced">Advanced</span>
+                </li>
+                <li class="skill-item">
+                  <div class="skill-info">
+                    <i class="fab fa-css3-alt"></i>
+                    <span>CSS3</span>
+                  </div>
+                  <div class="skill-progress">
+                    <div
+                      class="progress-bar intermediate"
+                      data-progress="70%"
+                    ></div>
+                  </div>
+                  <span class="skill-level intermediate">Intermediate</span>
+                </li>
+                <li class="skill-item">
+                  <div class="skill-info">
+                    <i class="fab fa-js-square"></i>
+                    <span>JavaScript</span>
+                  </div>
+                  <div class="skill-progress">
+                    <div
+                      class="progress-bar beginner"
+                      data-progress="40%"
+                    ></div>
+                  </div>
+                  <span class="skill-level beginner">Beginner</span>
+                </li>
+                <li class="skill-item">
+                  <div class="skill-info">
+                    <i class="fab fa-php"></i>
+                    <span>PHP</span>
+                  </div>
+                  <div class="skill-progress">
+                    <div
+                      class="progress-bar beginner"
+                      data-progress="40%"
+                    ></div>
+                  </div>
+                  <span class="skill-level beginner">Beginner</span>
+                </li>
+                <li class="skill-item">
+                  <div class="skill-info">
+                    <i class="fas fa-database"></i>
+                    <span>MySQL</span>
+                  </div>
+                  <div class="skill-progress">
+                    <div
+                      class="progress-bar intermediate"
+                      data-progress="70%"
+                    ></div>
+                  </div>
+                  <span class="skill-level intermediate">Intermediate</span>
+                </li>
+              </ul>
+            </div>
+
+            <div
+              class="skills-category"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="category-header">
+                <i class="fas fa-code category-icon"></i>
+                <h3>Programming Languages</h3>
+              </div>
+              <ul>
+                <li class="skill-item">
+                  <div class="skill-info">
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                  </div>
+                  <div class="skill-progress">
+                    <div
+                      class="progress-bar advanced"
+                      data-progress="90%"
+                    ></div>
+                  </div>
+                  <span class="skill-level advanced">Advanced</span>
+                </li>
+                <li class="skill-item">
+                  <div class="skill-info">
+                    <i class="fas fa-code"></i>
+                    <span>C++</span>
+                  </div>
+                  <div class="skill-progress">
+                    <div
+                      class="progress-bar intermediate"
+                      data-progress="70%"
+                    ></div>
+                  </div>
+                  <span class="skill-level intermediate">Intermediate</span>
+                </li>
+                <li class="skill-item">
+                  <div class="skill-info">
+                    <i class="fab fa-java"></i>
+                    <span>Java</span>
+                  </div>
+                  <div class="skill-progress">
+                    <div
+                      class="progress-bar beginner"
+                      data-progress="40%"
+                    ></div>
+                  </div>
+                  <span class="skill-level beginner">Beginner</span>
+                </li>
+              </ul>
+            </div>
+
+            <div
+              class="skills-category"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="category-header">
+                <i class="fas fa-brain category-icon"></i>
+                <h3>Data Science</h3>
+              </div>
+              <ul>
+                <li class="skill-item">
+                  <div class="skill-info">
+                    <i class="fas fa-chart-line"></i>
+                    <span>NumPy</span>
+                  </div>
+                  <div class="skill-progress">
+                    <div
+                      class="progress-bar intermediate"
+                      data-progress="70%"
+                    ></div>
+                  </div>
+                  <span class="skill-level intermediate">Intermediate</span>
+                </li>
+                <li class="skill-item">
+                  <div class="skill-info">
+                    <i class="fas fa-brain"></i>
+                    <span>Sklearn</span>
+                  </div>
+                  <div class="skill-progress">
+                    <div
+                      class="progress-bar advanced"
+                      data-progress="90%"
+                    ></div>
+                  </div>
+                  <span class="skill-level advanced">Advanced</span>
+                </li>
+                <li class="skill-item">
+                  <div class="skill-info">
+                    <i class="fas fa-table"></i>
+                    <span>Pandas</span>
+                  </div>
+                  <div class="skill-progress">
+                    <div
+                      class="progress-bar beginner"
+                      data-progress="40%"
+                    ></div>
+                  </div>
+                  <span class="skill-level beginner">Beginner</span>
+                </li>
+                <li class="skill-item">
+                  <div class="skill-info">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Matplotlib</span>
+                  </div>
+                  <div class="skill-progress">
+                    <div
+                      class="progress-bar beginner"
+                      data-progress="40%"
+                    ></div>
+                  </div>
+                  <span class="skill-level beginner">Beginner</span>
+                </li>
+                <li class="skill-item">
+                  <div class="skill-info">
+                    <i class="fas fa-robot"></i>
+                    <span>Keras</span>
+                  </div>
+                  <div class="skill-progress">
+                    <div
+                      class="progress-bar beginner"
+                      data-progress="40%"
+                    ></div>
+                  </div>
+                  <span class="skill-level beginner">Beginner</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="skills-chart-container"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <canvas id="skillsChart"></canvas>
+          </div>
         </div>
       </section>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -323,57 +521,88 @@
 
       <section id="research">
         <div class="research-header">
-          <h2>Research Papers</h2>
+          <h2>Research Publications</h2>
+          <p class="research-subtitle">
+            Exploring the frontiers of technology through academic research
+          </p>
         </div>
         <div class="research-container">
-          <article class="research-paper">
-            <div class="paper-head">
-              <span class="heading"
-                >Exploring EEG Characteristics with Machine Learning Classifiers
-                for Accurate Detection of Eye Blink Mistakes</span
-              >
-              <a
-                href="https://www.taylorfrancis.com/chapters/edit/10.1201/9781003457176-6/exploring-eeg-characteristics-machine-learning-classifiers-accurate-detection-eye-blink-mistakes-shubh-gupta-divya-thakur-akshat-rastogi-rupal-mishra-sandeep-balabantaray-meet-bikhani?context=ubx&refId=636decb3-a35c-49bd-8abb-a8acc5ad92a6"
-                class="paper-link"
-                aria-label="Read more about Exploring EEG Characteristics"
-                >Read more</a
-              >
+          <article class="research-paper" data-aos="fade-up">
+            <div class="paper-content">
+              <div class="paper-head">
+                <h3 class="paper-title">
+                  Exploring EEG Characteristics with Machine Learning
+                  Classifiers for Accurate Detection of Eye Blink Mistakes
+                </h3>
+                <div class="paper-meta">
+                  <span class="paper-date">Published: 2024</span>
+                  <span class="paper-publisher">Taylor & Francis</span>
+                </div>
+                <a
+                  href="https://www.taylorfrancis.com/chapters/edit/10.1201/9781003457176-6/exploring-eeg-characteristics-machine-learning-classifiers-accurate-detection-eye-blink-mistakes-shubh-gupta-divya-thakur-akshat-rastogi-rupal-mishra-sandeep-balabantaray-meet-bikhani"
+                  class="paper-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Read Paper</span>
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+              <p class="paper-description">
+                This paper presents a framework for accurately predicting eye
+                movements using EEG data and machine learning classifiers. We
+                tested various algorithms including Decision Tree, AdaBoost, and
+                Random Forest, achieving up to 96% accuracy with Random Forest.
+                I, Shubh Gupta, as the main author, contributed to the machine
+                learning implementation and the writing of the paper, with
+                support from my co-authors. The findings offer significant
+                insights for improving models in bioinformatics and enhancing
+                our understanding of visual perception and attention.
+              </p>
+              <div class="paper-tags">
+                <span>Machine Learning</span>
+                <span>EEG Analysis</span>
+                <span>Bioinformatics</span>
+              </div>
             </div>
-            <p class="paper-description">
-              This paper presents a framework for accurately predicting eye
-              movements using EEG data and machine learning classifiers. We
-              tested various algorithms including Decision Tree, AdaBoost, and
-              Random Forest, achieving up to 96% accuracy with Random Forest. I,
-              Shubh Gupta, as the main author, contributed to the machine
-              learning implementation and the writing of the paper, with support
-              from my co-authors. The findings offer significant insights for
-              improving models in bioinformatics and enhancing our understanding
-              of visual perception and attention.
-            </p>
           </article>
-          <article class="research-paper">
-            <div class="paper-head">
-              <span class="heading"
-                >Machine Learning Advancements in Polymer Material
-                Creation</span
-              >
-              <a
-                href="https://www.taylorfrancis.com/chapters/edit/10.1201/9781003457176-7/machine-learning-advancements-polymer-material-creation-akshat-rastogi-divya-thakur-shubh-gupta-rupal-mishra-sandeep-balabantaray-meet-bikhani?context=ubx&refId=f4e28ca5-a35d-4d3f-90ab-d47d1e2d9691"
-                class="paper-link"
-                aria-label="Read more about Machine Learning Advancements in Polymer Material Creation"
-                >Read more</a
-              >
+
+          <article class="research-paper" data-aos="fade-up">
+            <div class="paper-content">
+              <div class="paper-head">
+                <h3 class="paper-title">
+                  Machine Learning Advancements in Polymer Material Creation
+                </h3>
+                <div class="paper-meta">
+                  <span class="paper-date">Published: 2024</span>
+                  <span class="paper-publisher">Taylor & Francis</span>
+                </div>
+                <a
+                  href="https://www.taylorfrancis.com/chapters/edit/10.1201/9781003457176-7/machine-learning-advancements-polymer-material-creation-akshat-rastogi-divya-thakur-shubh-gupta-rupal-mishra-sandeep-balabantaray-meet-bikhani"
+                  class="paper-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Read Paper</span>
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+              <p class="paper-description">
+                This research explores how machine learning can enhance polymer
+                material design by predicting and optimizing properties. We used
+                models like MultinomialNB, GaussianNB, MLPClassifier, and
+                DecisionTreeClassifier, achieving up to 95% accuracy. My
+                contribution focused on data preprocessing, model training, and
+                result analysis. The study highlights machine learning's
+                potential to uncover patterns in polymer behavior, facilitating
+                advancements in material science.
+              </p>
+              <div class="paper-tags">
+                <span>Machine Learning</span>
+                <span>Material Science</span>
+                <span>Polymer Design</span>
+              </div>
             </div>
-            <p class="paper-description">
-              This research explores how machine learning can enhance polymer
-              material design by predicting and optimizing properties. We used
-              models like MultinomialNB, GaussianNB, MLPClassifier, and
-              DecisionTreeClassifier, achieving up to 95% accuracy. My
-              contribution focused on data preprocessing, model training, and
-              result analysis. The study highlights machine learning's potential
-              to uncover patterns in polymer behavior, facilitating advancements
-              in material science.
-            </p>
           </article>
         </div>
       </section>
@@ -414,7 +643,7 @@
           <!-- Acknowledgment message will be displayed here -->
           <div id="acknowledgment" class="acknowledgment"></div>
         </form>
-        <div class="social-links">
+        <!-- <div class="social-links">
           <a
             href="https://instagram.com"
             class="social-link"
@@ -436,7 +665,7 @@
             aria-label="Codecademy"
             ><i class="fab fa-code"></i
           ></a>
-        </div>
+        </div> -->
       </section>
     </main>
   </body>
