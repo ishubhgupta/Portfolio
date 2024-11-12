@@ -9,7 +9,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   overflow-x: hidden;
   background-color: #121212;
   color: aliceblue;
@@ -54,7 +54,7 @@ header {
 }
 
 .name-header {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 20px;
   color: white;
@@ -182,14 +182,14 @@ header nav a:hover {
 }
 
 .name {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 4.5em;
   letter-spacing: -2px;
 }
 
 .profession {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 600;
   font-size: 20px;
   white-space: nowrap;
@@ -265,7 +265,7 @@ header nav a:hover {
 }
 
 .about-text {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   color: #f1f1f1;
   line-height: 1.8;
@@ -1395,7 +1395,7 @@ h2 {
 }
 
 .greeting {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 500;
   font-size: 1.5em;
   color: #50c878;
@@ -1404,7 +1404,7 @@ h2 {
 }
 
 .name {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 4.5em;
   letter-spacing: -2px;
@@ -1418,14 +1418,14 @@ h2 {
 }
 
 .profession {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 600;
   font-size: 2em;
   color: #61dafb;
 }
 
 .brief-intro {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 1.2em;
   color: #888;
@@ -1507,7 +1507,7 @@ h2 {
 }
 
 .scroll-indicator span {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 500;
   font-size: 0.9em;
   letter-spacing: 1px;
@@ -1548,5 +1548,244 @@ h2 {
   }
   60% {
     transform: translateY(-5px) translateX(-50%);
+  }
+}
+
+/* Certificates Section */
+#certificates {
+  padding: 80px 20px;
+  background: linear-gradient(180deg, #1a1a1a 0%, #121212 100%);
+  min-height: 100vh;
+}
+
+.certificates-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.certificates-header h2 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  background: linear-gradient(45deg, #50c878, #61dafb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  top: -5vh;
+}
+
+.certificates-subtitle {
+  color: #888;
+  font-size: 1.1em;
+  font-family: "Raleway", sans-serif;
+  position: relative;
+  top: -5vh;
+}
+
+.certificates-grid {
+  max-width: 1100px; /* Reduced from 1200px */
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Reduced from 300px */
+  gap: 25px; /* Reduced from 30px */
+  padding: 20px;
+  position: relative;
+  top: -10vh;
+}
+
+.certificate-card {
+  background: rgba(20, 19, 26, 0.8);
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(80, 200, 120, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(80, 200, 120, 0.1);
+}
+
+/* Update certificate image styling */
+.certificate-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: #14131a; /* Added background color */
+}
+
+.certificate-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Changed from contain to cover */
+  transition: transform 0.3s ease;
+  display: block; /* Added display block */
+  opacity: 1; /* Added opacity */
+}
+
+.certificate-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Made overlay less dark */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.certificate-card:hover .certificate-overlay {
+  opacity: 1;
+}
+
+.certificate-card:hover .certificate-image img {
+  transform: scale(1.05);
+} 
+
+.view-certificate {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background: rgba(80, 200, 120, 0.3);
+  border: 1px solid #50c878;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.view-certificate:hover {
+  background: rgba(80, 200, 120, 0.5);
+  transform: translateY(-2px);
+}
+
+.certificate-info {
+  padding: 20px;
+}
+
+.certificate-info h3 {
+  font-size: 1.2em;
+  margin-bottom: 8px;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+.issuer {
+  color: #50c878;
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+
+.issue-date {
+  color: #888;
+  font-size: 0.85em;
+  margin-bottom: 15px;
+}
+
+.certificate-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.certificate-tags span {
+  background: rgba(80, 200, 120, 0.1);
+  color: #50c878;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.8em;
+  border: 1px solid rgba(80, 200, 120, 0.2);
+}
+
+.certificates-loader {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.load-more {
+  background: none;
+  border: none;
+  color: #50c878;
+  font-size: 1em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto;
+  padding: 12px 30px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  background: rgba(80, 200, 120, 0.1);
+  border-radius: 25px;
+  border: 1px solid rgba(80, 200, 120, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  top: -10vh;
+}
+
+.load-more i {
+  transition: transform 0.3s ease;
+}
+
+.load-more:hover i {
+  transform: translateY(3px);
+}
+
+.load-more:hover {
+  background: rgba(80, 200, 120, 0.1);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .certificates-grid {
+    max-width: 900px;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .certificates-grid {
+    max-width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  
+  .certificate-image {
+    height: 180px;
+  }
+  
+  .certificate-image img {
+    object-fit: contain; /* Changed to contain for mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .certificates-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .certificate-info h3 {
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .certificates-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certificates-header h2 {
+    font-size: 2em;
   }
 }

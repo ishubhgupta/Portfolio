@@ -304,4 +304,62 @@ document.addEventListener("DOMContentLoaded", function () {
       block: 'start'
     });
   });
+
+  // Lazy loading for certificate images
+  if ('IntersectionObserver' in window) {
+    const certificateImages = document.querySelectorAll('.certificate-image img');
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src;
+          img.classList.add('loaded');
+          observer.unobserve(img);
+        }
+      });
+    });
+
+    certificateImages.forEach(img => imageObserver.observe(img));
+  }
+
+  // Optional: Load More functionality
+  const loadMore = document.querySelector('.load-more');
+  if (loadMore) {
+    loadMore.addEventListener('click', function() {
+      // Add logic to load more certificates
+      // This could involve showing hidden certificates or fetching more from an API
+    });
+  }
+
+  // Certificate load more functionality
+  const certificateCards = document.querySelectorAll('.certificate-card');
+  const cardsPerRow = 3;
+  let visibleRows = 1;
+
+  function updateVisibleCertificates() {
+    certificateCards.forEach((card, index) => {
+      if (index < visibleRows * cardsPerRow) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    // Hide load more button if all certificates are visible
+    const loadMoreBtn = document.querySelector('.load-more');
+    if (visibleRows * cardsPerRow >= certificateCards.length) {
+      loadMoreBtn.style.display = 'none';
+    }
+  }
+
+  const loadMoreBtn = document.querySelector('.load-more');
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', function() {
+      visibleRows++;
+      updateVisibleCertificates();
+    });
+  }
+
+  // Initialize visible certificates
+  updateVisibleCertificates();
 });
