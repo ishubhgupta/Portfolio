@@ -278,4 +278,30 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   observer.observe(document.querySelector("#tech-skills"));
+
+  // Brief intro typing effect
+  const briefIntro = document.getElementById("brief-intro");
+  const introText = "I turn complex problems into elegant solutions through code. Passionate about AI and creating impactful applications.";
+  let introIndex = 0;
+  
+  function typeIntro() {
+    if (introIndex < introText.length) {
+      briefIntro.textContent += introText.charAt(introIndex);
+      introIndex++;
+      setTimeout(typeIntro, 50);
+    }
+  }
+  
+  setTimeout(typeIntro, 1000); // Start after profession typing
+
+  // Scroll indicator functionality
+  const scrollIndicator = document.querySelector('.scroll-indicator');
+  const aboutSection = document.getElementById('about-me');
+
+  scrollIndicator.addEventListener('click', function() {
+    aboutSection.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+  });
 });

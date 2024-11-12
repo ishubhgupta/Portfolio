@@ -38,6 +38,9 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/7.18.0/simple-icons.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="js/index.js" defer></script>
     <script
       type="text/javascript"
@@ -87,20 +90,58 @@
 
     <main>
       <section id="home" class="home">
+        <div class="floating-shapes">
+          <div class="shape"></div>
+          <div class="shape"></div>
+          <div class="shape"></div>
+        </div>
+
         <div class="content-wrapper">
           <div class="left left-home">
-            <div class="home-name">
-              <span id="profession" class="profession"></span><br />
-              <span class="name">Shubh Gupta</span>
+            <div class="social-links-vertical">
+              <a
+                href="https://github.com/ishubhgupta"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="GitHub Profile"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a href="https://linkedin.com/in/ishubhgupta" target="_blank" rel="noopener noreferrer" title="LinkedIn Profile"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://twitter.com/ishubhguptaa" target="_blank" rel="noopener noreferrer" title="Twitter Profile"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <div class="social-line"></div>
+            </div>
+
+            <div class="home-text">
+              <span class="greeting">Hi there! I'm</span>
+              <h1 class="name">Shubh Gupta</h1>
+              <span id="profession" class="profession"></span>
+              <p class="brief-intro" id="brief-intro"></p>
+
+              <div class="cta-buttons">
+                <a href="#connect-me" class="primary-btn">Get In Touch</a>
+                <a href="#projects" class="secondary-btn">View Work</a>
+              </div>
             </div>
           </div>
+
           <div class="right right-home">
-            <img
-              class="profile-image"
-              src="assets/images/shubhImage6.png"
-              alt="Profile Image of Shubh Gupta"
-            />
+            <div class="profile-frame">
+              <img
+                class="profile-image"
+                src="assets/images/shubhImage6.png"
+                alt="Profile Image of Shubh Gupta"
+              />
+            </div>
           </div>
+        </div>
+
+        <div class="scroll-indicator">
+          <span>Scroll Down</span>
+          <i class="fas fa-chevron-down"></i>
         </div>
       </section>
       <section id="about-me" class="about-me">
@@ -144,9 +185,11 @@
       <section id="tech-skills">
         <div class="skills-header">
           <h2>Technical Skills</h2>
-          <p class="skills-subtitle">A comprehensive overview of my technical expertise</p>
+          <p class="skills-subtitle">
+            A comprehensive overview of my technical expertise
+          </p>
         </div>
-        
+
         <div class="skills-wrapper">
           <div class="skills-container">
             <div class="skills-category" data-aos="fade-up">
@@ -161,7 +204,10 @@
                     <span>HTML5</span>
                   </div>
                   <div class="skill-progress">
-                    <div class="progress-bar advanced" data-progress="90%"></div>
+                    <div
+                      class="progress-bar advanced"
+                      data-progress="90%"
+                    ></div>
                   </div>
                   <span class="skill-level advanced">Advanced</span>
                 </li>
@@ -171,7 +217,10 @@
                     <span>CSS3</span>
                   </div>
                   <div class="skill-progress">
-                    <div class="progress-bar intermediate" data-progress="70%"></div>
+                    <div
+                      class="progress-bar intermediate"
+                      data-progress="70%"
+                    ></div>
                   </div>
                   <span class="skill-level intermediate">Intermediate</span>
                 </li>
@@ -181,7 +230,10 @@
                     <span>JavaScript</span>
                   </div>
                   <div class="skill-progress">
-                    <div class="progress-bar beginner" data-progress="40%"></div>
+                    <div
+                      class="progress-bar beginner"
+                      data-progress="40%"
+                    ></div>
                   </div>
                   <span class="skill-level beginner">Beginner</span>
                 </li>
@@ -191,7 +243,10 @@
                     <span>PHP</span>
                   </div>
                   <div class="skill-progress">
-                    <div class="progress-bar beginner" data-progress="40%"></div>
+                    <div
+                      class="progress-bar beginner"
+                      data-progress="40%"
+                    ></div>
                   </div>
                   <span class="skill-level beginner">Beginner</span>
                 </li>
@@ -201,14 +256,21 @@
                     <span>MySQL</span>
                   </div>
                   <div class="skill-progress">
-                    <div class="progress-bar intermediate" data-progress="70%"></div>
+                    <div
+                      class="progress-bar intermediate"
+                      data-progress="70%"
+                    ></div>
                   </div>
                   <span class="skill-level intermediate">Intermediate</span>
                 </li>
               </ul>
             </div>
-      
-            <div class="skills-category" data-aos="fade-up" data-aos-delay="100">
+
+            <div
+              class="skills-category"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
               <div class="category-header">
                 <i class="fas fa-code category-icon"></i>
                 <h3>Programming Languages</h3>
@@ -220,7 +282,10 @@
                     <span>Python</span>
                   </div>
                   <div class="skill-progress">
-                    <div class="progress-bar advanced" data-progress="90%"></div>
+                    <div
+                      class="progress-bar advanced"
+                      data-progress="90%"
+                    ></div>
                   </div>
                   <span class="skill-level advanced">Advanced</span>
                 </li>
@@ -230,7 +295,10 @@
                     <span>C++</span>
                   </div>
                   <div class="skill-progress">
-                    <div class="progress-bar intermediate" data-progress="70%"></div>
+                    <div
+                      class="progress-bar intermediate"
+                      data-progress="70%"
+                    ></div>
                   </div>
                   <span class="skill-level intermediate">Intermediate</span>
                 </li>
@@ -240,14 +308,21 @@
                     <span>Java</span>
                   </div>
                   <div class="skill-progress">
-                    <div class="progress-bar beginner" data-progress="40%"></div>
+                    <div
+                      class="progress-bar beginner"
+                      data-progress="40%"
+                    ></div>
                   </div>
                   <span class="skill-level beginner">Beginner</span>
                 </li>
               </ul>
             </div>
-      
-            <div class="skills-category" data-aos="fade-up" data-aos-delay="200">
+
+            <div
+              class="skills-category"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               <div class="category-header">
                 <i class="fas fa-brain category-icon"></i>
                 <h3>Data Science</h3>
@@ -259,7 +334,10 @@
                     <span>NumPy</span>
                   </div>
                   <div class="skill-progress">
-                    <div class="progress-bar intermediate" data-progress="70%"></div>
+                    <div
+                      class="progress-bar intermediate"
+                      data-progress="70%"
+                    ></div>
                   </div>
                   <span class="skill-level intermediate">Intermediate</span>
                 </li>
@@ -269,7 +347,10 @@
                     <span>Sklearn</span>
                   </div>
                   <div class="skill-progress">
-                    <div class="progress-bar advanced" data-progress="90%"></div>
+                    <div
+                      class="progress-bar advanced"
+                      data-progress="90%"
+                    ></div>
                   </div>
                   <span class="skill-level advanced">Advanced</span>
                 </li>
@@ -279,7 +360,10 @@
                     <span>Pandas</span>
                   </div>
                   <div class="skill-progress">
-                    <div class="progress-bar beginner" data-progress="40%"></div>
+                    <div
+                      class="progress-bar beginner"
+                      data-progress="40%"
+                    ></div>
                   </div>
                   <span class="skill-level beginner">Beginner</span>
                 </li>
@@ -289,7 +373,10 @@
                     <span>Matplotlib</span>
                   </div>
                   <div class="skill-progress">
-                    <div class="progress-bar beginner" data-progress="40%"></div>
+                    <div
+                      class="progress-bar beginner"
+                      data-progress="40%"
+                    ></div>
                   </div>
                   <span class="skill-level beginner">Beginner</span>
                 </li>
@@ -299,15 +386,22 @@
                     <span>Keras</span>
                   </div>
                   <div class="skill-progress">
-                    <div class="progress-bar beginner" data-progress="40%"></div>
+                    <div
+                      class="progress-bar beginner"
+                      data-progress="40%"
+                    ></div>
                   </div>
                   <span class="skill-level beginner">Beginner</span>
                 </li>
               </ul>
             </div>
           </div>
-          
-          <div class="skills-chart-container" data-aos="fade-up" data-aos-delay="300">
+
+          <div
+            class="skills-chart-container"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
             <canvas id="skillsChart"></canvas>
           </div>
         </div>
@@ -549,7 +643,7 @@
           <!-- Acknowledgment message will be displayed here -->
           <div id="acknowledgment" class="acknowledgment"></div>
         </form>
-        <div class="social-links">
+        <!-- <div class="social-links">
           <a
             href="https://instagram.com"
             class="social-link"
@@ -571,7 +665,7 @@
             aria-label="Codecademy"
             ><i class="fab fa-code"></i
           ></a>
-        </div>
+        </div> -->
       </section>
     </main>
   </body>
