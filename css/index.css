@@ -490,7 +490,7 @@ h2 {
   text-align: center;
   margin-top: 20px;
   position: relative;
-  top: 5vh;
+  /* top: 5vh; */
 }
 
 .skills-container {
@@ -671,7 +671,6 @@ h2 {
   text-align: center;
   margin-bottom: 20px;
 }
-
 .research-header h2 {
   font-size: 2em;
   font-weight: bold;
@@ -747,7 +746,7 @@ h2 {
   position: relative;
 }
 
-.connect-header h2 {
+.about-me h2, .connect-header h2 {
   font-size: 2.5em;
   margin-bottom: 2.5rem;
   background: linear-gradient(45deg, #50c878, #61dafb);
@@ -1325,12 +1324,6 @@ h2 {
 
   .home-name {
     font-size: 0.5em;
-  }
-
-  .profile-image {
-    position: relative;
-    left: -50px;
-    margin-bottom: 20px;
   }
 
   #about-me {
@@ -1952,5 +1945,264 @@ h2 {
 
   .certificates-header h2 {
     font-size: 2em;
+  }
+}
+
+/* Hide brief-intro on mobile devices */
+@media (max-width: 768px) {
+  .brief-intro {
+    display: none;
+  }
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 768px) {
+  /* Home section: Place image above other elements and center */
+  .home .content-wrapper {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .profile-frame {
+    /* margin-bottom: 20px; */
+    /* Center the profile image */
+    align-self: center;
+  }
+
+  .home-text {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /* About Me section: Center content and adjust spacing */
+  #about-me .content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px; /* Push content slightly below */
+  }
+
+  .about-card {
+    width: 90%; /* Increase width */
+    margin-bottom: 20px;
+  }
+
+  /* Research section: Reduce font size and increase card width */
+  #research {
+    font-size: 0.95em; /* Reduce font size slightly */
+  }
+
+  .research-container {
+    width: 95%; /* Increase container width */
+  }
+
+  .research-paper {
+    width: 100%; /* Make research cards full width */
+  }
+
+  /* Additional improvements */
+  /* Center the "Connect Me" section */
+  .connect-me {
+    align-items: center;
+    padding-top: 60px;
+  }
+
+  /* Increase card width in certificates section */
+  .certificates-grid {
+    grid-template-columns: 1fr; /* Single column layout */
+    width: 95%;
+  }
+
+  /* Adjust font sizes for better readability */
+  .about-me h2,
+  .research-header h2,
+  .certificates-header h2 {
+    font-size: 1.8em;
+  }
+
+  .about-text,
+  .paper-description,
+  .certificate-info h3 {
+    font-size: 1em;
+  }
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 768px) {
+  /* Adjust home section layout */
+  .home .content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .home-text {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .name {
+    font-size: 2.5em;
+  }
+
+  .profession {
+    font-size: 1.5em;
+  }
+
+  .profile-frame {
+    width: 70%;
+    max-width: 250px;
+    margin-bottom: 20px;
+  }
+
+  /* Adjust navigation menu */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: rgba(18, 18, 18, 0.95);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(80, 200, 120, 0.1);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 15px;
+    font-size: 1.2em;
+    border-bottom: 1px solid rgba(80, 200, 120, 0.1);
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .header-resume-btn {
+    display: none;
+  }
+
+  /* Adjust other sections */
+  .content-wrapper {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .about-card {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  .about-title {
+    font-size: 1.8em;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-text {
+    font-size: 1em;
+  }
+
+  .resume-btn {
+    width: 80%;
+    font-size: 1em;
+    padding: 0.8rem 1.5rem;
+    margin: 1.5rem auto;
+  }
+
+  .interest-tags span {
+    font-size: 0.85em;
+    padding: 0.4rem 0.8rem;
+  }
+
+  /* Adjust project section */
+  .prj {
+    width: 100%;
+  }
+
+  .prj-container {
+    flex-direction: column;
+  }
+
+  /* Adjust skills section */
+  .skills-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .skills-category {
+    padding: 20px;
+  }
+
+  /* Adjust certificates section */
+  .certificates-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Adjust footer */
+  .connect-me {
+    padding: 40px 20px;
+  }
+
+  .contact-form {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .social-links {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .name {
+    font-size: 2em;
+  }
+
+  .profession {
+    font-size: 1.2em;
+  }
+
+  .nav-links a {
+    font-size: 1em;
+    padding: 12px;
+  }
+
+  .about-title {
+    font-size: 1.5em;
+  }
+
+  .about-text {
+    font-size: 0.9em;
+  }
+
+  .resume-btn {
+    width: 90%;
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9em;
+  }
+
+  .interest-tags span {
+    font-size: 0.75em;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .skills-category {
+    padding: 15px;
+  }
+
+  .certificate-info h3 {
+    font-size: 1em;
+  }
+
+  .contact-form {
+    width: 95%;
+    padding: 1rem;
   }
 }
