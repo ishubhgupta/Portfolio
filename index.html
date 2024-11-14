@@ -423,113 +423,59 @@
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
       <section id="projects">
-        <nav
-          class="prj-nav nav-links"
-          id="prj-nav"
-          role="navigation"
-          aria-label="Project navigation"
-        >
-          <a href="#ml" id="nav-ml">Machine Learning</a>
-          <a href="#web-dev" id="nav-web-dev">Web Development</a>
-        </nav>
+        <div class="projects-header">
+          <h2>Featured Projects</h2>
+          <p class="projects-subtitle">Explore my latest work and innovations</p>
+          <nav class="project-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="ml">Machine Learning</button>
+            <button class="filter-btn" data-filter="web">Web Development</button>
+            <button class="filter-btn" data-filter="other">Other</button>
+          </nav>
+        </div>
 
-        <div id="projs" class="projs">
-          <article id="ml" class="prj-type active">
-            <div class="prj-container">
-              <div class="prj">
-                <div class="prj-head">
-                  <span class="heading">EvolkAI</span>
-                  <a href="#" class="prj-link" aria-label="EvolkAI Project Link"
-                    >Project link</a
-                  >
-                </div>
-                <p class="project-description">
-                  I built EvolkAI to share technical insights on machine
-                  learning, deep learning, and computer vision. The site offers
-                  articles, tutorials, and resources to enhance understanding
-                  and application in these fields. Tech stack used: HTML, CSS,
-                  JavaScript.
-                </p>
-              </div>
-
-              <div class="prj">
-                <div class="prj-head">
-                  <span class="heading">Cancer</span>
-                </div>
-                <p class="project-description">
-                  This project focuses on using AI to detect cancer at an early
-                  stage, improving the chances of successful treatment and
-                  patient recovery. The system analyzes medical images and data
-                  to identify potential cancerous growths with high accuracy.
-                </p>
-              </div>
-
-              <div class="prj">
-                <div class="prj-head">
-                  <span class="heading">Energy Insight</span>
-                </div>
-                <p class="project-description">
-                  Energy Insight uses machine learning to predict the energy
-                  needed to keep rooms at the desired temperature. By analyzing
-                  factors like room size, insulation, weather, and occupancy,
-                  our model helps building managers save energy and cut costs
-                  efficiently. This makes buildings more sustainable and
-                  cost-effective.
-                </p>
+        <div class="projects-grid">
+          <!-- ML Project -->
+          <div class="project-card" data-category="ml">
+            <div class="project-image">
+              <img src="assets/projects/ml-project.jpg" alt="ML Project">
+              <div class="project-links">
+                <a href="#" class="project-link" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i></a>
               </div>
             </div>
-          </article>
-          <article id="web-dev" class="prj-type">
-            <div class="prj-container">
-              <div class="prj">
-                <div class="prj-head">
-                  <span class="heading">Vrides</span>
-                </div>
-                <p class="project-description">
-                  Vrides is a web-based platform designed to connect carpoolers,
-                  offering an efficient and eco-friendly transportation
-                  solution. It helps users find ride-sharing options easily and
-                  promotes sustainable travel practices.
-                </p>
-              </div>
-              <div class="prj">
-                <div class="prj-head">
-                  <span class="heading">Portfolio</span>
-                </div>
-                <p class="project-description">
-                  This portfolio website showcases my projects, skills, and
-                  experience in web development. It is designed with a
-                  responsive layout and modern UI/UX principles to provide a
-                  seamless user experience across all devices.
-                </p>
-              </div>
-              <div class="prj">
-                <div class="prj-head">
-                  <span class="heading">EvolkAI</span>
-                </div>
-                <p class="project-description">
-                  EvolkAI is a platform to share technical insights on machine
-                  learning, deep learning, and computer vision. The site offers
-                  articles, tutorials, and resources to enhance understanding
-                  and application in these fields. Tech stack used: HTML, CSS,
-                  JavaScript.
-                </p>
-              </div>
-              <div class="prj">
-                <div class="prj-head">
-                  <span class="heading">Energy Insight</span>
-                </div>
-                <p class="project-description">
-                  Energy Insight uses machine learning to predict the energy
-                  needed to keep rooms at the desired temperature. By analyzing
-                  factors like room size, insulation, weather, and occupancy,
-                  our model helps building managers save energy and cut costs
-                  efficiently. This makes buildings more sustainable and
-                  cost-effective.
-                </p>
+            <div class="project-content">
+              <h3>Machine Learning Project</h3>
+              <p>A sophisticated machine learning model for predictive analytics using Python and TensorFlow.</p>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>TensorFlow</span>
+                <span>Scikit-learn</span>
               </div>
             </div>
-          </article>
+          </div>
+
+          <!-- Web Project -->
+          <div class="project-card" data-category="web">
+            <div class="project-image">
+              <img src="assets/projects/web-project.jpg" alt="Web Project">
+              <div class="project-links">
+                <a href="#" class="project-link" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Web Development Project</h3>
+              <p>A responsive web application built with modern technologies and best practices.</p>
+              <div class="project-tech">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>MongoDB</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Add more project cards as needed -->
         </div>
       </section>
 
