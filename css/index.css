@@ -1,6 +1,19 @@
 /* Font Awesome inclusion */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
 
+/* CSS Variables */
+:root {
+  --primary-color: #50c878;
+  --secondary-color: #61dafb;
+  --background-color: #121212;
+  --text-color: aliceblue;
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Montserrat', sans-serif;
+  --font-tertiary: 'Raleway', sans-serif;
+  --transition: all 0.3s ease;
+  --header-height: 50px;
+}
+
 /* General styling */
 * {
   padding: 0;
@@ -9,10 +22,10 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-primary);
   overflow-x: hidden;
-  background-color: #121212;
-  color: aliceblue;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 html {
@@ -22,8 +35,9 @@ html {
 
 #home,
 #about-me,
-#tech-skills {
-  background-color: #121212;
+#tech-skills,
+#projects {
+  background-color: var(--background-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,20 +47,18 @@ html {
 #about-me {
   height: 100vh;
 }
-#projects {
-  background-color: #121212;
-}
 
+/* Header */
 header {
   position: fixed;
   width: 100%;
-  height: 50px;
+  height: var(--header-height);
   z-index: 1000;
   background: rgba(18, 18, 18, 0.8);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(80, 200, 120, 0.1);
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 header:hover {
@@ -59,114 +71,195 @@ header nav {
   margin: 0 auto;
   height: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
+  justify-content: center;
 }
 
 .name-header {
+  font-family: var(--font-secondary);
   font-size: 1.5rem;
   font-weight: 600;
-  background: linear-gradient(45deg, #50c878, #61dafb);
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: transparent;
   transition: transform 0.3s ease;
+  display: none;
 }
 
 .name-header:hover {
   transform: translateY(-2px);
 }
 
+.menu-icon {
+  display: none;
+  font-size: 1.8em;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.menu-icon:hover {
+  color: var(--primary-color);
+  transform: rotate(90deg);
+}
+
 .nav-links {
   display: flex;
   gap: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-links a {
   position: relative;
   font-size: 1rem;
   font-weight: 500;
-  color: #fff;
+  color: var(--text-color);
   text-decoration: none;
   padding: 0.5rem 0;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .nav-links a::before {
   content: "";
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
   width: 0;
   height: 2px;
-  background: linear-gradient(45deg, #50c878, #61dafb);
-  transition: width 0.3s ease;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  transition: width 0.3s ease, left 0.3s ease;
 }
 
 .nav-links a:hover::before {
   width: 100%;
+  left: 0;
 }
 
 .nav-links a:hover {
-  color: #50c878;
+  color: var(--primary-color);
   transform: translateY(-2px);
 }
 
-.header-resume-btn {
-  background: linear-gradient(
-    45deg,
-    rgba(80, 200, 120, 0.1),
-    rgba(97, 218, 251, 0.1)
-  );
-  color: #50c878;
+.nav-links a.active {
+  color: var(--primary-color);
+}
+
+/* Buttons */
+.header-resume-btn,
+.resume-btn,
+.contact-form button,
+.load-more,
+.view-certificate {
+  background: linear-gradient(45deg, rgba(80, 200, 120, 0.1), rgba(97, 218, 251, 0.1));
+  color: var(--primary-color);
   padding: 0.8rem 1.5rem;
   border-radius: 25px;
   font-weight: 500;
   border: 1px solid rgba(80, 200, 120, 0.2);
-  transition: all 0.3s ease;
+  transition: var(--transition);
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.header-resume-btn i {
+.header-resume-btn i,
+.contact-form button i,
+.load-more i {
   font-size: 0.9rem;
   transition: transform 0.3s ease;
 }
 
-.header-resume-btn:hover {
-  background: linear-gradient(
-    45deg,
-    rgba(80, 200, 120, 0.2),
-    rgba(97, 218, 251, 0.2)
-  );
+.header-resume-btn:hover,
+.resume-btn:hover,
+.contact-form button:hover,
+.load-more:hover,
+.view-certificate:hover {
+  background: linear-gradient(45deg, rgba(80, 200, 120, 0.2), rgba(97, 218, 251, 0.2));
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(80, 200, 120, 0.15);
 }
 
-.header-resume-btn:hover i {
+.header-resume-btn:hover i,
+.contact-form button:hover i,
+.load-more:hover i {
   transform: translateY(-1px);
 }
 
+/* Common Card Styling */
+.about-card,
+.skills-category,
+.research-paper,
+.contact-form,
+.certificate-card {
+  background: rgba(20, 19, 26, 0.8);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(80, 200, 120, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
   header {
     height: 60px;
+    padding: 0 1rem;
+    text-align: center;
+    justify-content: center;
   }
 
-  header nav {
-    padding: 0 1rem;
+  .name-header {
+    display: inline-block;
+    font-size: 1.5em;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgba(18, 18, 18, 0.95);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 15px;
+    font-size: 1.2em;
+    border-bottom: 1px solid rgba(80, 200, 120, 0.1);
+  }
+
+  .menu-icon {
+    display: block;
+    position: fixed;
+    right: 15px;
+    top: 15px;
+  }
+
+  .header-resume-btn {
+    display: none;
+  }
+
+  .content-wrapper {
+    flex-direction: column;
+    padding: 20px;
   }
 
   .name-header {
     display: block;
     font-size: 1.2rem;
-  }
-
-  .menu-icon {
-    display: block;
-    font-size: 1.5rem;
-    color: #50c878;
   }
 
   .nav-links {
@@ -205,26 +298,138 @@ header nav {
   .header-resume-btn {
     display: none;
   }
+
+  .menu-icon {
+    display: block;
+    font-size: 1.5rem;
+    color: #50c878;
+  }
+
+  .home .content-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    align-content: center;
+  }
+
+  .home-name {
+    font-size: 0.5em;
+  }
+
+  .left-about {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .prj-nav {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .prj {
+    width: 100%;
+  }
+
+  .projs {
+    position: relative;
+    top: 5vh;
+  }
+
+  .prj-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-card {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  .about-text {
+    font-size: 1em;
+  }
+
+  .resume-btn {
+    font-size: 1em;
+    padding: 0.8rem 1.5rem;
+    width: 80%;
+    max-width: 250px;
+    justify-content: center;
+    margin: 1.5rem auto;
+  }
+
+  .interests {
+    margin-top: 1.5rem;
+  }
+
+  .interest-tags {
+    justify-content: center;
+  }
+
+  .interest-tags span {
+    font-size: 0.8em;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .header-resume-btn {
+    display: none; /* Hide resume button on mobile */
+  }
+
+  .nav-links {
+    justify-content: flex-start; /* Align links to left on mobile */
+  }
+
+  .connect-header h2 {
+    font-size: 2em;
+  }
+
+  .contact-form {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .social-links {
+    gap: 1.5rem;
+  }
+
+  .social-link {
+    font-size: 1.5em;
+  }
 }
 
-.name-header {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  font-size: 20px;
-  color: white;
-  display: none;
-}
+@media (max-width: 480px) {
+  .prj-nav {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 10vh;
+  }
 
-.menu-icon {
-  display: none;
-  font-size: 1.8em;
-  cursor: pointer;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
+  .research-container {
+    width: 100%;
+  }
 
-.menu-icon:hover {
-  color: #50c878;
-  transform: rotate(90deg);
+  .about-card {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .resume-btn {
+    width: 90%;
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9em;
+  }
+
+  .interest-tags span {
+    font-size: 0.75em;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .about-text {
+    font-size: 0.9em;
+    line-height: 1.6;
+  }
 }
 
 /* Main Navigation */
@@ -1323,14 +1528,11 @@ h2 {
     font-size: 0.5em;
   }
 
-
   .left-about {
     display: flex;
     align-items: center;
     position: relative;
   }
-
-
 
   .prj-nav {
     display: flex;
@@ -1381,7 +1583,6 @@ h2 {
     font-size: 0.8em;
     padding: 0.4rem 0.8rem;
   }
-
 
   .header-resume-btn {
     display: none; /* Hide resume button on mobile */
@@ -1441,7 +1642,6 @@ h2 {
     font-size: 0.9em;
     line-height: 1.6;
   }
-
 }
 
 /* Home section styling */
@@ -2082,7 +2282,6 @@ h2 {
     width: 95%;
     padding: 1.5rem;
   }
-
 
   .about-text {
     font-size: 1em;
