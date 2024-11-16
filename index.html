@@ -423,103 +423,198 @@
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
       <section id="projects">
-        <div class="projects-header">
-          <h2>Featured Projects</h2>
-          <p class="projects-subtitle">Explore my latest work and innovations</p>
-          <nav class="project-filter">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="ml">Machine Learning</button>
-            <button class="filter-btn" data-filter="web">Web Development</button>
-            <button class="filter-btn" data-filter="other">Other</button>
-          </nav>
-        </div>
+  <div class="projects-header">
+    <h2>Featured Projects</h2>
+    <p class="projects-subtitle">Crafting Digital Solutions</p>
+    <nav class="project-filter">
+      <button class="filter-btn active" data-filter="all">
+        <i class="fas fa-th-large"></i> All
+      </button>
+      <button class="filter-btn" data-filter="ml">
+        <i class="fas fa-brain"></i> Machine Learning
+      </button>
+      <button class="filter-btn" data-filter="web">
+        <i class="fas fa-code"></i> Web Development
+      </button>
+      <button class="filter-btn" data-filter="other">
+        <i class="fas fa-cube"></i> Other
+      </button>
+    </nav>
+  </div>
 
-        <div class="projects-container">
-          <button class="scroll-arrow scroll-left" title="Scroll Left">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          <div class="projects-grid">
-            <!-- ML Project -->
-            <div class="project-card" data-category="ml">
-              <div class="project-image">
-                <img src="assets/projects/ml-project.jpg" alt="ML Project">
-                <div class="project-links">
-                  <a href="#" class="project-link" target="_blank" title="GitHub Repository"><i class="fab fa-github"></i></a>
-                  <a href="#" class="project-link" target="_blank" title="External Link"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3>Machine Learning Project</h3>
-                <p>A sophisticated machine learning model for predictive analytics using Python and TensorFlow.</p>
-                <div class="project-tech">
-                  <span>Python</span>
-                  <span>TensorFlow</span>
-                  <span>Scikit-learn</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Web Project -->
-            <div class="project-card" data-category="web">
-              <div class="project-image">
-                <img src="assets/projects/web-project.jpg" alt="Web Project">
-                <div class="project-links">
-                  <a href="#" class="project-link" target="_blank" title="GitHub Repository"><i class="fab fa-github"></i></a>
-                  <a href="#" class="project-link" target="_blank" title="External Link"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3>Web Development Project</h3>
-                <p>A responsive web application built with modern technologies and best practices.</p>
-                <div class="project-tech">
-                  <span>React</span>
-                  <span>Node.js</span>
-                  <span>MongoDB</span>
-                </div>
-              </div>
-            </div>
-            <div class="project-card" data-category="web">
-              <div class="project-image">
-                <img src="assets/projects/web-project.jpg" alt="Web Project">
-                <div class="project-links">
-                  <a href="#" class="project-link" target="_blank" title="GitHub Repository"><i class="fab fa-github"></i></a>
-                  <a href="#" class="project-link" target="_blank" title="External Link"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3>Web Development Project</h3>
-                <p>A responsive web application built with modern technologies and best practices.</p>
-                <div class="project-tech">
-                  <span>React</span>
-                  <span>Node.js</span>
-                  <span>MongoDB</span>
-                </div>
-              </div>
-            </div>
-            <div class="project-card" data-category="web">
-              <div class="project-image">
-                <img src="assets/projects/web-project.jpg" alt="Web Project">
-                <div class="project-links">
-                  <a href="#" class="project-link" target="_blank" title="GitHub Repository"><i class="fab fa-github"></i></a>
-                  <a href="#" class="project-link" target="_blank" title="External Link"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-              </div>
-              <div class="project-content">
-                <h3>Web Development Project</h3>
-                <p>A responsive web application built with modern technologies and best practices.</p>
-                <div class="project-tech">
-                  <span>React</span>
-                  <span>Node.js</span>
-                  <span>MongoDB</span>
-                </div>
-              </div>
-            </div>
+  <div class="projects-container">
+  <button class="scroll-arrow scroll-left" aria-label="Scroll Left">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+  
+  <div class="projects-grid">
+    <div class="project-card" data-category="ml">
+      <div class="project-image">
+        <img src="assets/projects/ai-project.jpg" alt="AI Project" loading="lazy">
+        <div class="project-overlay">
+          <div class="project-quick-info">
+            <span class="project-status active">Active</span>
+            <h4>Machine Learning</h4>
           </div>
-          <button class="scroll-arrow scroll-right" title="Scroll Right">
-            <i class="fas fa-chevron-right"></i>
-          </button>
         </div>
-      </section>
+      </div>
+      <div class="project-content">
+        <h3>AI Image Recognition</h3>
+        <p>Advanced image recognition system using deep learning for real-time object detection and classification.</p>
+        <div class="project-tech-stack">
+          <span>Python</span>
+          <span>TensorFlow</span>
+          <span>OpenCV</span>
+          <span>Keras</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/username/project" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i>
+            <span>Source Code</span>
+          </a>
+          <a href="https://demo.project.com" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-external-link-alt"></i>
+            <span>Live Demo</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card" data-category="ml">
+      <div class="project-image">
+        <img src="assets/projects/ai-project.jpg" alt="AI Project" loading="lazy">
+        <div class="project-overlay">
+          <div class="project-quick-info">
+            <span class="project-status active">Active</span>
+            <h4>Machine Learning</h4>
+          </div>
+        </div>
+      </div>
+      <div class="project-content">
+        <h3>AI Image Recognition</h3>
+        <p>Advanced image recognition system using deep learning for real-time object detection and classification.</p>
+        <div class="project-tech-stack">
+          <span>Python</span>
+          <span>TensorFlow</span>
+          <span>OpenCV</span>
+          <span>Keras</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/username/project" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i>
+            <span>Source Code</span>
+          </a>
+          <a href="https://demo.project.com" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-external-link-alt"></i>
+            <span>Live Demo</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card" data-category="ml">
+      <div class="project-image">
+        <img src="assets/projects/ai-project.jpg" alt="AI Project" loading="lazy">
+        <div class="project-overlay">
+          <div class="project-quick-info">
+            <span class="project-status active">Active</span>
+            <h4>Machine Learning</h4>
+          </div>
+        </div>
+      </div>
+      <div class="project-content">
+        <h3>AI Image Recognition</h3>
+        <p>Advanced image recognition system using deep learning for real-time object detection and classification.</p>
+        <div class="project-tech-stack">
+          <span>Python</span>
+          <span>TensorFlow</span>
+          <span>OpenCV</span>
+          <span>Keras</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/username/project" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i>
+            <span>Source Code</span>
+          </a>
+          <a href="https://demo.project.com" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-external-link-alt"></i>
+            <span>Live Demo</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card" data-category="ml">
+      <div class="project-image">
+        <img src="assets/projects/ai-project.jpg" alt="AI Project" loading="lazy">
+        <div class="project-overlay">
+          <div class="project-quick-info">
+            <span class="project-status active">Active</span>
+            <h4>Machine Learning</h4>
+          </div>
+        </div>
+      </div>
+      <div class="project-content">
+        <h3>AI Image Recognition</h3>
+        <p>Advanced image recognition system using deep learning for real-time object detection and classification.</p>
+        <div class="project-tech-stack">
+          <span>Python</span>
+          <span>TensorFlow</span>
+          <span>OpenCV</span>
+          <span>Keras</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/username/project" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i>
+            <span>Source Code</span>
+          </a>
+          <a href="https://demo.project.com" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-external-link-alt"></i>
+            <span>Live Demo</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card" data-category="web">
+      <div class="project-image">
+        <img src="assets/projects/web-project.jpg" alt="Web Project" loading="lazy">
+        <div class="project-overlay">
+          <div class="project-quick-info">
+            <span class="project-status completed">Completed</span>
+            <h4>Web Development</h4>
+          </div>
+        </div>
+      </div>
+      <div class="project-content">
+        <h3>E-Commerce Platform</h3>
+        <p>Full-stack e-commerce solution with real-time inventory management and payment processing.</p>
+        <div class="project-tech-stack">
+          <span>React</span>
+          <span>Node.js</span>
+          <span>MongoDB</span>
+          <span>Stripe</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/username/project" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i>
+            <span>Source Code</span>
+          </a>
+          <a href="https://demo.project.com" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-external-link-alt"></i>
+            <span>Live Demo</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <button class="scroll-arrow scroll-right" aria-label="Scroll Right">
+    <i class="fas fa-chevron-right"></i>
+  </button>
+</div>
+
+</section>
 
       <section id="research">
         <div class="research-header">

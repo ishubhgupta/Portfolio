@@ -117,28 +117,108 @@ document.addEventListener("DOMContentLoaded", function () {
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
+      // Remove active class from all buttons
       filterBtns.forEach(b => b.classList.remove('active'));
+      // Add active class to clicked button
       btn.classList.add('active');
       
-      const filter = btn.dataset.filter;
+      const filter = btn.getAttribute('data-filter');
       
       projectCards.forEach(card => {
-        const show = filter === 'all' || card.dataset.category === filter;
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        
-        setTimeout(() => {
-          card.style.display = show ? 'block' : 'none';
-          if (show) {
-            setTimeout(() => {
-              card.style.opacity = '1';
-              card.style.transform = 'translateY(0)';
-            }, 10);
-          }
-        }, show ? 0 : 300);
+        const category = card.getAttribute('data-category');
+        if (filter === 'all' || filter === category) {
+          card.style.display = 'block';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 300);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(20px)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 300);
+        }
       });
     });
   });
+
+  // Projects section enhancements
+  const projectsGrid = document.querySelector('.projects-grid');
+  const paginationDots = document.querySelectorAll('.pagination-dot');
+  let currentPage = 0;
+
+  // Update pagination dots
+  function updatePagination() {
+    paginationDots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentPage);
+    });
+  }
+
+  // Handle pagination click
+  paginationDots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      currentPage = index;
+      const scrollPosition = index * projectsGrid.offsetWidth;
+      projectsGrid.scrollTo({
+        left: scrollPosition,
+        behavior: 'smooth'
+      });
+      updatePagination();
+    });
+  });
+
+  // Handle scroll in projects grid
+  projectsGrid.addEventListener('scroll', () => {
+    const newPage = Math.round(projectsGrid.scrollLeft / projectsGrid.offsetWidth);
+    if (newPage !== currentPage) {
+      currentPage = newPage;
+      updatePagination();
+    }
+  });
+
+  // Projects scroll buttons functionality
+  const scrollLeftBtn = document.querySelector('.scroll-left');
+  const scrollRightBtn = document.querySelector('.scroll-right');
+
+  function updateScrollButtons() {
+    if (projectsGrid) {
+      // Hide left button if at start
+      scrollLeftBtn.style.opacity = projectsGrid.scrollLeft <= 0 ? "0" : "1";
+      scrollLeftBtn.style.pointerEvents = projectsGrid.scrollLeft <= 0 ? "none" : "all";
+
+      // Hide right button if at end
+      const maxScroll = projectsGrid.scrollWidth - projectsGrid.clientWidth;
+      scrollRightBtn.style.opacity = Math.ceil(projectsGrid.scrollLeft) >= maxScroll ? "0" : "1";
+      scrollRightBtn.style.pointerEvents = Math.ceil(projectsGrid.scrollLeft) >= maxScroll ? "none" : "all";
+    }
+  }
+
+  if (scrollLeftBtn && scrollRightBtn && projectsGrid) {
+    // Initial check
+    updateScrollButtons();
+
+    // Update on scroll
+    projectsGrid.addEventListener('scroll', updateScrollButtons);
+
+    // Scroll buttons click handlers
+    scrollLeftBtn.addEventListener('click', () => {
+      projectsGrid.scrollBy({
+        left: -projectsGrid.offsetWidth / 2,
+        behavior: 'smooth'
+      });
+    });
+
+    scrollRightBtn.addEventListener('click', () => {
+      projectsGrid.scrollBy({
+        left: projectsGrid.offsetWidth / 2,
+        behavior: 'smooth'
+      });
+    });
+
+    // Update on window resize
+    window.addEventListener('resize', updateScrollButtons);
+  }
 
   // Certificate lazy loading and load more
   const certificateCards = document.querySelectorAll('.certificate-card');
