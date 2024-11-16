@@ -7,9 +7,9 @@
   --secondary-color: #61dafb;
   --background-color: #121212;
   --text-color: aliceblue;
-  --font-primary: 'Poppins', sans-serif;
-  --font-secondary: 'Montserrat', sans-serif;
-  --font-tertiary: 'Raleway', sans-serif;
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Montserrat", sans-serif;
+  --font-tertiary: "Raleway", sans-serif;
   --transition: all 0.3s ease;
   --header-height: 50px;
 }
@@ -80,7 +80,11 @@ header nav {
   font-family: var(--font-secondary);
   font-size: 1.5rem;
   font-weight: 600;
-  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -128,7 +132,11 @@ header nav {
   left: 50%;
   width: 0;
   height: 2px;
-  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   transition: width 0.3s ease, left 0.3s ease;
 }
 
@@ -152,7 +160,11 @@ header nav {
 .contact-form button,
 .load-more,
 .view-certificate {
-  background: linear-gradient(45deg, rgba(80, 200, 120, 0.1), rgba(97, 218, 251, 0.1));
+  background: linear-gradient(
+    45deg,
+    rgba(80, 200, 120, 0.1),
+    rgba(97, 218, 251, 0.1)
+  );
   color: var(--primary-color);
   padding: 0.8rem 1.5rem;
   border-radius: 25px;
@@ -176,7 +188,11 @@ header nav {
 .contact-form button:hover,
 .load-more:hover,
 .view-certificate:hover {
-  background: linear-gradient(45deg, rgba(80, 200, 120, 0.2), rgba(97, 218, 251, 0.2));
+  background: linear-gradient(
+    45deg,
+    rgba(80, 200, 120, 0.2),
+    rgba(97, 218, 251, 0.2)
+  );
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(80, 200, 120, 0.15);
 }
@@ -561,8 +577,23 @@ header nav a:hover {
   font-size: 20px;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 0.15em solid #50c878;
-  animation: typing 3s steps(20, end);
+  position: relative;
+  display: inline-block;
+}
+
+.blink {
+  animation: blink 0.7s infinite;
+  color: #50c878;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 /* keyframes */
@@ -678,7 +709,7 @@ header nav a:hover {
   text-align: center;
   position: relative;
   top: 5vh;
-} 
+}
 
 /* Tech skills section */
 #tech-skills {
@@ -948,7 +979,8 @@ h2 {
   position: relative;
 }
 
-.about-me h2, .connect-header h2 {
+.about-me h2,
+.connect-header h2 {
   font-size: 2.5em;
   margin-bottom: 2.5rem;
   background: linear-gradient(45deg, #50c878, #61dafb);
@@ -2425,21 +2457,39 @@ h2 {
   transition: all 0.3s ease;
 }
 
-.filter-btn:hover, .filter-btn.active {
+.filter-btn:hover,
+.filter-btn.active {
   background: rgba(80, 200, 120, 0.2);
   transform: translateY(-2px);
 }
 
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
   gap: 30px;
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  ::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+  -ms-overflow-style: none; /* IE/Edge */
+  ::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Opera */
+  }
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.projects-grid::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Opera */
 }
 
 .project-card {
+  min-width: 300px;
+  scroll-snap-align: start;
   background: rgba(20, 19, 26, 0.8);
   border-radius: 15px;
   overflow: hidden;
@@ -2532,11 +2582,47 @@ h2 {
   border: 1px solid rgba(80, 200, 120, 0.2);
 }
 
+.projects-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(80, 200, 120, 0.2);
+  color: #50c878;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.scroll-arrow:hover {
+  background: rgba(80, 200, 120, 0.3);
+}
+
+.scroll-left {
+  left: -20px;
+}
+
+.scroll-right {
+  right: -20px;
+}
+
 @media (max-width: 768px) {
   .project-filter {
     flex-wrap: wrap;
   }
-  
+
   .projects-grid {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }

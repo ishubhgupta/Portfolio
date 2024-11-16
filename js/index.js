@@ -39,154 +39,141 @@ document.addEventListener("DOMContentLoaded", function () {
 
   updateProfession();
 
-  // Menu toggle
+  // Brief intro typing effect
+  const briefIntro = document.getElementById("brief-intro");
+  const introText = "I turn complex problems into elegant solutions through code. Passionate about AI and creating impactful applications.";
+  let introIndex = 0;
+  
+  function typeIntro() {
+    if (introIndex < introText.length) {
+      briefIntro.textContent += introText.charAt(introIndex);
+      introIndex++;
+      setTimeout(typeIntro, 50);
+    }
+  }
+  
+  setTimeout(typeIntro, 1000);
+
+  // Navigation functionality
   const menuIcon = document.getElementById("menu-icon");
   const navLinks = document.getElementById("nav-links");
   const navLinksItems = document.querySelectorAll(".nav-links a");
+  const sections = document.querySelectorAll("section");
 
-  menuIcon.addEventListener("click", function (e) {
+  // Menu toggle
+  menuIcon?.addEventListener("click", (e) => {
     e.stopPropagation();
     navLinks.classList.toggle("open");
   });
 
-  document.addEventListener("click", function (e) {
+  document.addEventListener("click", (e) => {
     if (!navLinks.contains(e.target) && !menuIcon.contains(e.target)) {
       navLinks.classList.remove("open");
     }
   });
 
-  window.addEventListener("resize", function () {
+  // Update navigation on scroll
+  function updateNavigation() {
+    const scrollPosition = window.scrollY + 100;
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionBottom = sectionTop + section.offsetHeight;
+      
+      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+        const currentId = section.getAttribute("id");
+        navLinksItems.forEach(link => {
+          link.classList.toggle("active", link.getAttribute("href") === `#${currentId}`);
+        });
+      }
+    });
+
+    // Handle resume button visibility
+    const headerResumeBtn = document.querySelector(".header-resume-btn");
+    const homeSec = document.getElementById("home");
+    const aboutSec = document.getElementById("about-me");
+    
+    if (headerResumeBtn) {
+      const homeBottom = homeSec.offsetTop + homeSec.offsetHeight;
+      const aboutBottom = aboutSec.offsetTop + aboutSec.offsetHeight;
+      
+      headerResumeBtn.classList.toggle("hidden", 
+        !(scrollPosition >= homeBottom && scrollPosition <= aboutSec.offsetTop) &&
+        !(scrollPosition >= aboutBottom)
+      );
+    }
+  }
+
+  window.addEventListener("scroll", updateNavigation);
+  window.addEventListener("resize", () => {
     if (window.innerWidth >= 768) {
       navLinks.classList.remove("open");
     }
   });
 
-  navLinksItems.forEach((link) => {
-    link.addEventListener("click", function () {
-      navLinks.classList.remove("open");
+  // Projects filtering
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      const filter = btn.dataset.filter;
+      
+      projectCards.forEach(card => {
+        const show = filter === 'all' || card.dataset.category === filter;
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+          card.style.display = show ? 'block' : 'none';
+          if (show) {
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            }, 10);
+          }
+        }, show ? 0 : 300);
+      });
     });
   });
 
-  // Navigation link color change on scroll
-  const sections = document.querySelectorAll("section");
-  const navLinksArray = document.querySelectorAll("nav a");
+  // Certificate lazy loading and load more
+  const certificateCards = document.querySelectorAll('.certificate-card');
+  const loadMoreBtn = document.querySelector('.load-more');
+  const cardsPerLoad = 6;
+  let currentlyShown = cardsPerLoad;
 
-  function changeNavColor() {
-    let index = sections.length;
-
-    while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
-
-    navLinksArray.forEach((link) => (link.style.color = ""));
-    navLinksArray[index].style.color = "#50C878";
-  }
-
-  changeNavColor();
-  window.addEventListener("scroll", changeNavColor);
-
-  // Handle header resume button visibility
-  const headerResumeBtn = document.querySelector(".header-resume-btn");
-  const homeSec = document.getElementById("home");
-  const aboutSec = document.getElementById("about-me");
-
-  function toggleResumeButtonVisibility() {
-    const scrollPosition = window.scrollY + 50; // Add offset for header
-    const homeBottom = homeSec.offsetTop + homeSec.offsetHeight;
-    const aboutBottom = aboutSec.offsetTop + aboutSec.offsetHeight;
-
-    if (
-      (scrollPosition >= homeBottom && scrollPosition <= aboutSec.offsetTop) ||
-      scrollPosition >= aboutBottom
-    ) {
-      headerResumeBtn.classList.remove("hidden");
-    } else {
-      headerResumeBtn.classList.add("hidden");
-    }
-  }
-
-  window.addEventListener("scroll", toggleResumeButtonVisibility);
-  toggleResumeButtonVisibility(); // Call initially to set correct state
-
-  // Project navigation
-  const prjNavLinks = document.querySelectorAll(".prj-nav a");
-  const mlSection = document.getElementById("ml");
-  const webDevSection = document.getElementById("web-dev");
-
-  function toggleProjectSection(event) {
-    event.preventDefault();
-    const targetId = event.target.getAttribute("href").substring(1);
-
-    if (targetId === "ml") {
-      mlSection.classList.add("active");
-      webDevSection.classList.remove("active");
-    } else if (targetId === "web-dev") {
-      webDevSection.classList.add("active");
-      mlSection.classList.remove("active");
-    }
-
-    prjNavLinks.forEach((link) => link.classList.remove("active"));
-    event.target.classList.add("active");
-  }
-
-  prjNavLinks.forEach((link) =>
-    link.addEventListener("click", toggleProjectSection)
-  );
-
-  prjNavLinks[0].classList.add("active");
-  mlSection.classList.add("active");
-
-  // EmailJS form submission
-  document
-    .getElementById("contact-form")
-    .addEventListener("submit", function (event) {
-      event.preventDefault();
-      const button = event.target.querySelector("button");
-
-      // Add click animation
-      button.classList.add("clicked");
-      setTimeout(() => button.classList.remove("clicked"), 300);
-
-      var name = event.target.name.value;
-      var email = event.target.email.value;
-      var message = event.target.message.value;
-
-      emailjs
-        .send("service_74i8s4e", "template_gbg1ljn", {
-          from_name: name,
-          message: message,
-          email_id: email,
-        })
-        .then(
-          function (response) {
-            console.log("SUCCESS!", response.status, response.text);
-            showAcknowledgment("Message sent successfully!", true);
-            event.target.reset();
-          },
-          function (error) {
-            console.log("FAILED...", error);
-            showAcknowledgment(
-              "Failed to send message. Please try again later.",
-              false
-            );
-          }
-        );
+  function updateCertificateVisibility() {
+    certificateCards.forEach((card, index) => {
+      const show = index < currentlyShown;
+      card.style.display = show ? 'block' : 'none';
+      if (show) {
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, index * 100);
+      }
     });
 
-  // Add animation to acknowledgment message
-  function showAcknowledgment(message, isSuccess = true) {
-    const ack = document.getElementById("acknowledgment");
-    ack.innerText = message;
-    ack.classList.add("show");
-    ack.classList.add(isSuccess ? "success" : "error");
-
-    setTimeout(() => {
-      ack.classList.remove("show");
-      setTimeout(() => {
-        ack.classList.remove("success", "error");
-      }, 500);
-    }, 5000);
+    if (loadMoreBtn && currentlyShown >= certificateCards.length) {
+      loadMoreBtn.style.display = 'none';
+    }
   }
 
-  // Enhanced Radar chart
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', () => {
+      currentlyShown += cardsPerLoad;
+      updateCertificateVisibility();
+    });
+  }
+
+  // Initialize certificates
+  updateCertificateVisibility();
+
+  // Skills chart
   var ctx = document.getElementById("skillsChart").getContext("2d");
   var skillsChart = new Chart(ctx, {
     type: "radar",
@@ -256,141 +243,46 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  // Add animation to skill bars
-  function animateSkillBars() {
-    const skillBars = document.querySelectorAll(".progress-bar");
-    skillBars.forEach((bar) => {
-      bar.style.width = "0%";
+  // Contact form
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const button = e.target.querySelector('button');
+      button.classList.add('clicked');
+      
+      try {
+        const response = await emailjs.send("service_74i8s4e", "template_gbg1ljn", {
+          from_name: e.target.name.value,
+          message: e.target.message.value,
+          email_id: e.target.email.value
+        });
+        
+        showAcknowledgment("Message sent successfully!", true);
+        e.target.reset();
+      } catch (error) {
+        console.error(error);
+        showAcknowledgment("Failed to send message. Please try again later.", false);
+      } finally {
+        setTimeout(() => button.classList.remove('clicked'), 300);
+      }
+    });
+  }
+
+  // Acknowledgment message
+  function showAcknowledgment(message, isSuccess) {
+    const ack = document.getElementById('acknowledgment');
+    if (ack) {
+      ack.innerText = message;
+      ack.className = `acknowledgment show ${isSuccess ? 'success' : 'error'}`;
+      
       setTimeout(() => {
-        bar.style.width = bar.dataset.progress;
-      }, 300);
-    });
-  }
-
-  // Call animation when section is in view
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        animateSkillBars();
-        observer.unobserve(entry.target);
-      }
-    });
-  });
-
-  observer.observe(document.querySelector("#tech-skills"));
-
-  // Brief intro typing effect
-  const briefIntro = document.getElementById("brief-intro");
-  const introText = "I turn complex problems into elegant solutions through code. Passionate about AI and creating impactful applications.";
-  let introIndex = 0;
-  
-  function typeIntro() {
-    if (introIndex < introText.length) {
-      briefIntro.textContent += introText.charAt(introIndex);
-      introIndex++;
-      setTimeout(typeIntro, 50);
-    }
-  }
-  
-  setTimeout(typeIntro, 1000); // Start after profession typing
-
-  // Scroll indicator functionality
-  const scrollIndicator = document.querySelector('.scroll-indicator');
-  const aboutSection = document.getElementById('about-me');
-
-  scrollIndicator.addEventListener('click', function() {
-    aboutSection.scrollIntoView({ 
-      behavior: 'smooth',
-      block: 'start'
-    });
-  });
-
-  // Lazy loading for certificate images
-  if ('IntersectionObserver' in window) {
-    const certificateImages = document.querySelectorAll('.certificate-image img');
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          img.src = img.dataset.src;
-          img.classList.add('loaded');
-          observer.unobserve(img);
-        }
-      });
-    });
-
-    certificateImages.forEach(img => imageObserver.observe(img));
-  }
-
-  // Optional: Load More functionality
-  const loadMore = document.querySelector('.load-more');
-  if (loadMore) {
-    loadMore.addEventListener('click', function() {
-      // Add logic to load more certificates
-      // This could involve showing hidden certificates or fetching more from an API
-    });
-  }
-
-  // Certificate load more functionality
-  const certificateCards = document.querySelectorAll('.certificate-card');
-  const cardsPerRow = 3;
-  let visibleRows = 1;
-
-  function updateVisibleCertificates() {
-    certificateCards.forEach((card, index) => {
-      if (index < visibleRows * cardsPerRow) {
-        card.style.display = 'block';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-
-    // Hide load more button if all certificates are visible
-    const loadMoreBtn = document.querySelector('.load-more');
-    if (visibleRows * cardsPerRow >= certificateCards.length) {
-      loadMoreBtn.style.display = 'none';
+        ack.classList.remove('show');
+        setTimeout(() => ack.className = 'acknowledgment', 500);
+      }, 5000);
     }
   }
 
-  const loadMoreBtn = document.querySelector('.load-more');
-  if (loadMoreBtn) {
-    loadMoreBtn.addEventListener('click', function() {
-      visibleRows++;
-      updateVisibleCertificates();
-    });
-  }
-
-  // Initialize visible certificates
-  updateVisibleCertificates();
-  
-  // Project filtering functionality
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.project-card');
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // Remove active class from all buttons
-      filterBtns.forEach(b => b.classList.remove('active'));
-      // Add active class to clicked button
-      btn.classList.add('active');
-      
-      const filter = btn.dataset.filter;
-      
-      projectCards.forEach(card => {
-        if (filter === 'all' || card.dataset.category === filter) {
-          card.style.display = 'block';
-          setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-          }, 10);
-        } else {
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(20px)';
-          setTimeout(() => {
-            card.style.display = 'none';
-          }, 300);
-        }
-      });
-    });
-  });
+  // Initialize everything
+  updateNavigation();
 });
