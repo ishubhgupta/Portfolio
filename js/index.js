@@ -376,3 +376,64 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize everything
   updateNavigation();
 });
+
+  // Scroll indicator functionality
+  const scrollIndicator = document.querySelector('.scroll-indicator');
+  const aboutSection = document.getElementById('about-me');
+
+  scrollIndicator.addEventListener('click', function() {
+    aboutSection.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+  });
+
+// Add mobile navigation functionality
+function initMobileNav() {
+    const mobileLinks = document.querySelectorAll('.mobile-nav a');
+    const sections = document.querySelectorAll('section');
+
+    // Update active state on scroll
+    function updateActiveSection() {
+        const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.offsetHeight;
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                const currentId = section.getAttribute('id');
+                mobileLinks.forEach(link => {
+                    link.classList.toggle('active', 
+                        link.getAttribute('href') === `#${currentId}`);
+                });
+            }
+        });
+    }
+
+    // Smooth scroll for mobile navigation
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            targetSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+
+            // Update active state
+            mobileLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+        });
+    });
+
+    window.addEventListener('scroll', updateActiveSection);
+    updateActiveSection(); // Initial check
+}
+
+// Initialize mobile features if on mobile device
+if (window.innerWidth <= 768) {
+    initMobileNav();
+}
