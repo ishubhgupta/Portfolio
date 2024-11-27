@@ -433,6 +433,80 @@ function initMobileNav() {
     updateActiveSection(); // Initial check
 }
 
+// Mobile Project Modal functionality
+if (window.innerWidth <= 768) {
+  const modal = document.querySelector('.mobile-project-modal');
+  const closeModal = document.querySelector('.close-modal');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  projectCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const title = card.querySelector('h3').textContent;
+      const description = card.querySelector('p').textContent;
+      const link = card.querySelector('.project-links a').href;
+      const techStack = Array.from(card.querySelectorAll('.project-tech-stack span'))
+        .map(span => span.textContent);
+      
+      // Update modal content
+      modal.querySelector('.modal-title').textContent = title;
+      modal.querySelector('.project-link a').href = link;
+      modal.querySelector('.modal-description').textContent = description;
+      
+      const techStackContainer = modal.querySelector('.modal-tech-stack');
+      techStackContainer.innerHTML = '';
+      techStack.forEach(tech => {
+        const span = document.createElement('span');
+        span.textContent = tech;
+        techStackContainer.appendChild(span);
+      });
+
+      // Add project images to carousel (example)
+      const carouselContainer = modal.querySelector('.carousel-container');
+      carouselContainer.innerHTML = '';
+      // Add your project images here
+      const images = [
+        card.querySelector('.project-image img').src,
+        // Add more image URLs as needed
+      ];
+      
+      images.forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.loading = 'lazy';
+        carouselContainer.appendChild(img);
+      });
+
+      // Show modal
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  closeModal.addEventListener('click', () => {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+
+  // Handle carousel navigation
+  const carouselPrev = modal.querySelector('.carousel-prev');
+  const carouselNext = modal.querySelector('.carousel-next');
+  const carouselContainer = modal.querySelector('.carousel-container');
+
+  carouselPrev.addEventListener('click', () => {
+    carouselContainer.scrollBy({
+      left: -290,
+      behavior: 'smooth'
+    });
+  });
+
+  carouselNext.addEventListener('click', () => {
+    carouselContainer.scrollBy({
+      left: 290,
+      behavior: 'smooth'
+    });
+  });
+}
+
 // Initialize mobile features if on mobile device
 if (window.innerWidth <= 768) {
     initMobileNav();
