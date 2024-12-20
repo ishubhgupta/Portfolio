@@ -112,6 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Projects filtering
+  /*
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
 
@@ -252,6 +253,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initialize certificates
   updateCertificateVisibility();
+  */
 
   // Skills chart
   var ctx = document.getElementById("skillsChart").getContext("2d");
@@ -393,7 +395,7 @@ function initMobileNav() {
     const mobileLinks = document.querySelectorAll('.mobile-nav a');
     const sections = document.querySelectorAll('section');
 
-    // Update active state on scroll
+    // Update active section based on scroll position
     function updateActiveSection() {
         const scrollPosition = window.scrollY + window.innerHeight / 2;
 
@@ -404,34 +406,49 @@ function initMobileNav() {
             if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
                 const currentId = section.getAttribute('id');
                 mobileLinks.forEach(link => {
-                    link.classList.toggle('active', 
-                        link.getAttribute('href') === `#${currentId}`);
+                    if (link.getAttribute('href') === `#${currentId}`) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
                 });
             }
         });
     }
 
-    // Smooth scroll for mobile navigation
+    // Add smooth scroll for mobile navigation
     mobileLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const targetId = link.getAttribute('href');
             const targetSection = document.querySelector(targetId);
             
-            targetSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-
-            // Update active state
-            mobileLinks.forEach(l => l.classList.remove('active'));
-            link.classList.add('active');
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         });
     });
 
+    // Update active section on scroll
     window.addEventListener('scroll', updateActiveSection);
-    updateActiveSection(); // Initial check
+    // Initial check for active section
+    updateActiveSection();
 }
+
+// Initialize mobile nav on page load
+document.addEventListener('DOMContentLoaded', function() {
+    initMobileNav();
+});
+
+// Handle resize events
+window.addEventListener('resize', function() {
+    if (window.innerWidth <= 768) {
+        initMobileNav();
+    }
+});
 
 // Mobile Project Modal functionality
 if (window.innerWidth <= 768) {
