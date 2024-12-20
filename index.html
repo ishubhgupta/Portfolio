@@ -94,6 +94,30 @@
       </nav>
     </header>
 
+    <!-- Add bottom navigation for mobile -->
+    <nav class="mobile-nav">
+        <a href="#home" class="active">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="#about-me">
+            <i class="fas fa-user"></i>
+            <span>About</span>
+        </a>
+        <a href="#tech-skills">
+            <i class="fas fa-code"></i>
+            <span>Skills</span>
+        </a>
+        <a href="#projects">
+            <i class="fas fa-project-diagram"></i>
+            <span>Projects</span>
+        </a>
+        <a href="#connect-me">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+    </nav>
+
     <main>
       <section id="home" class="home">
         <div class="floating-shapes">
@@ -159,7 +183,7 @@
         </div>
       </section>
       <section id="about-me" class="about-me">
-        <h2 class="about-title">About Me</h2>
+        <h2>About Me</h2>
         <div class="about-card">
           <p class="about-text">
             I am a passionate software developer with a deep fascination for
@@ -423,115 +447,197 @@
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
       <section id="projects">
-        <nav
-          class="prj-nav nav-links"
-          id="prj-nav"
-          role="navigation"
-          aria-label="Project navigation"
-        >
-          <a href="#ml" id="nav-ml">Machine Learning</a>
-          <a href="#web-dev" id="nav-web-dev">Web Development</a>
-        </nav>
+  <div class="projects-header">
+    <h2>Featured Projects</h2>
+    <nav class="project-filter">
+      <button class="filter-btn active" data-filter="all">
+        <i class="fas fa-th-large"></i> All
+      </button>
+      <button class="filter-btn" data-filter="ml">
+        <i class="fas fa-brain"></i> Machine Learning
+      </button>
+      <button class="filter-btn" data-filter="web">
+        <i class="fas fa-code"></i> Web Development
+      </button>
+      <button class="filter-btn" data-filter="other">
+        <i class="fas fa-cube"></i> Other
+      </button>
+    </nav>
+  </div>
 
-        <div id="projs" class="projs">
-          <article id="ml" class="prj-type active">
-            <div class="prj-container">
-              <div class="prj">
-                <div class="prj-head">
-                  <span class="heading">EvolkAI</span>
-                  <a href="#" class="prj-link" aria-label="EvolkAI Project Link"
-                    >Project link</a
-                  >
-                </div>
-                <p class="project-description">
-                  I built EvolkAI to share technical insights on machine
-                  learning, deep learning, and computer vision. The site offers
-                  articles, tutorials, and resources to enhance understanding
-                  and application in these fields. Tech stack used: HTML, CSS,
-                  JavaScript.
-                </p>
-              </div>
-
-              <div class="prj">
-                <div class="prj-head">
-                  <span class="heading">Cancer</span>
-                </div>
-                <p class="project-description">
-                  This project focuses on using AI to detect cancer at an early
-                  stage, improving the chances of successful treatment and
-                  patient recovery. The system analyzes medical images and data
-                  to identify potential cancerous growths with high accuracy.
-                </p>
-              </div>
-
-              <div class="prj">
-                <div class="prj-head">
-                  <span class="heading">Energy Insight</span>
-                </div>
-                <p class="project-description">
-                  Energy Insight uses machine learning to predict the energy
-                  needed to keep rooms at the desired temperature. By analyzing
-                  factors like room size, insulation, weather, and occupancy,
-                  our model helps building managers save energy and cut costs
-                  efficiently. This makes buildings more sustainable and
-                  cost-effective.
-                </p>
-              </div>
-            </div>
-          </article>
-          <article id="web-dev" class="prj-type">
-            <div class="prj-container">
-              <div class="prj">
-                <div class="prj-head">
-                  <span class="heading">Vrides</span>
-                </div>
-                <p class="project-description">
-                  Vrides is a web-based platform designed to connect carpoolers,
-                  offering an efficient and eco-friendly transportation
-                  solution. It helps users find ride-sharing options easily and
-                  promotes sustainable travel practices.
-                </p>
-              </div>
-              <div class="prj">
-                <div class="prj-head">
-                  <span class="heading">Portfolio</span>
-                </div>
-                <p class="project-description">
-                  This portfolio website showcases my projects, skills, and
-                  experience in web development. It is designed with a
-                  responsive layout and modern UI/UX principles to provide a
-                  seamless user experience across all devices.
-                </p>
-              </div>
-              <div class="prj">
-                <div class="prj-head">
-                  <span class="heading">EvolkAI</span>
-                </div>
-                <p class="project-description">
-                  EvolkAI is a platform to share technical insights on machine
-                  learning, deep learning, and computer vision. The site offers
-                  articles, tutorials, and resources to enhance understanding
-                  and application in these fields. Tech stack used: HTML, CSS,
-                  JavaScript.
-                </p>
-              </div>
-              <div class="prj">
-                <div class="prj-head">
-                  <span class="heading">Energy Insight</span>
-                </div>
-                <p class="project-description">
-                  Energy Insight uses machine learning to predict the energy
-                  needed to keep rooms at the desired temperature. By analyzing
-                  factors like room size, insulation, weather, and occupancy,
-                  our model helps building managers save energy and cut costs
-                  efficiently. This makes buildings more sustainable and
-                  cost-effective.
-                </p>
-              </div>
-            </div>
-          </article>
+  <div class="projects-container">
+  <button class="scroll-arrow scroll-left" aria-label="Scroll Left">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+  
+  <div class="projects-grid">
+    <div class="project-card" data-category="ml">
+      <div class="project-image">
+        <img src="assets/projects/ai-project.jpg" alt="AI Project" loading="lazy">
+        <div class="project-overlay">
+          <div class="project-quick-info">
+            <span class="project-status active">Active</span>
+            <h4>Machine Learning</h4>
+          </div>
         </div>
-      </section>
+      </div>
+      <div class="project-content">
+        <h3>AI Image Recognition</h3>
+        <p>Advanced image recognition system using deep learning for real-time object detection and classification.</p>
+        <div class="project-tech-stack">
+          <span>Python</span>
+          <span>TensorFlow</span>
+          <span>OpenCV</span>
+          <span>Keras</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/username/project" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i>
+            <span>Source Code</span>
+          </a>
+          <a href="https://demo.project.com" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-external-link-alt"></i>
+            <span>Live Demo</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card" data-category="ml">
+      <div class="project-image">
+        <img src="assets/projects/ai-project.jpg" alt="AI Project" loading="lazy">
+        <div class="project-overlay">
+          <div class="project-quick-info">
+            <span class="project-status active">Active</span>
+            <h4>Machine Learning</h4>
+          </div>
+        </div>
+      </div>
+      <div class="project-content">
+        <h3>AI Image Recognition</h3>
+        <p>Advanced image recognition system using deep learning for real-time object detection and classification.</p>
+        <div class="project-tech-stack">
+          <span>Python</span>
+          <span>TensorFlow</span>
+          <span>OpenCV</span>
+          <span>Keras</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/username/project" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i>
+            <span>Source Code</span>
+          </a>
+          <a href="https://demo.project.com" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-external-link-alt"></i>
+            <span>Live Demo</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card" data-category="ml">
+      <div class="project-image">
+        <img src="assets/projects/ai-project.jpg" alt="AI Project" loading="lazy">
+        <div class="project-overlay">
+          <div class="project-quick-info">
+            <span class="project-status active">Active</span>
+            <h4>Machine Learning</h4>
+          </div>
+        </div>
+      </div>
+      <div class="project-content">
+        <h3>AI Image Recognition</h3>
+        <p>Advanced image recognition system using deep learning for real-time object detection and classification.</p>
+        <div class="project-tech-stack">
+          <span>Python</span>
+          <span>TensorFlow</span>
+          <span>OpenCV</span>
+          <span>Keras</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/username/project" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i>
+            <span>Source Code</span>
+          </a>
+          <a href="https://demo.project.com" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-external-link-alt"></i>
+            <span>Live Demo</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card" data-category="ml">
+      <div class="project-image">
+        <img src="assets/projects/ai-project.jpg" alt="AI Project" loading="lazy">
+        <div class="project-overlay">
+          <div class="project-quick-info">
+            <span class="project-status active">Active</span>
+            <h4>Machine Learning</h4>
+          </div>
+        </div>
+      </div>
+      <div class="project-content">
+        <h3>AI Image Recognition</h3>
+        <p>Advanced image recognition system using deep learning for real-time object detection and classification.</p>
+        <div class="project-tech-stack">
+          <span>Python</span>
+          <span>TensorFlow</span>
+          <span>OpenCV</span>
+          <span>Keras</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/username/project" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i>
+            <span>Source Code</span>
+          </a>
+          <a href="https://demo.project.com" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-external-link-alt"></i>
+            <span>Live Demo</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card" data-category="web">
+      <div class="project-image">
+        <img src="assets/projects/web-project.jpg" alt="Web Project" loading="lazy">
+        <div class="project-overlay">
+          <div class="project-quick-info">
+            <span class="project-status completed">Completed</span>
+            <h4>Web Development</h4>
+          </div>
+        </div>
+      </div>
+      <div class="project-content">
+        <h3>E-Commerce Platform</h3>
+        <p>Full-stack e-commerce solution with real-time inventory management and payment processing.</p>
+        <div class="project-tech-stack">
+          <span>React</span>
+          <span>Node.js</span>
+          <span>MongoDB</span>
+          <span>Stripe</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/username/project" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i>
+            <span>Source Code</span>
+          </a>
+          <a href="https://demo.project.com" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-external-link-alt"></i>
+            <span>Live Demo</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <button class="scroll-arrow scroll-right" aria-label="Scroll Right">
+    <i class="fas fa-chevron-right"></i>
+  </button>
+</div>
+
+</section>
 
       <section id="research">
         <div class="research-header">
@@ -882,5 +988,6 @@
         </div> -->
       </section>
     </main>
+
   </body>
 </html>
