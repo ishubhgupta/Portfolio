@@ -74,7 +74,7 @@
         header nav {
           padding: 10px 15px;
         }
-        
+
         .nav-links {
           position: fixed;
           top: 60px;
@@ -88,12 +88,12 @@
           transition: height 0.3s ease-in-out;
           z-index: 100;
         }
-        
+
         .nav-links.active {
           height: 100vh;
           padding: 20px 0;
         }
-        
+
         .nav-links a {
           margin: 10px 0;
           font-size: 18px;
@@ -101,52 +101,53 @@
           transform: translateY(-10px);
           transition: opacity 0.3s ease, transform 0.3s ease;
         }
-        
+
         .nav-links.active a {
           opacity: 1;
           transform: translateY(0);
         }
-        
+
         .menu-icon {
           display: block;
           cursor: pointer;
           font-size: 24px;
         }
-        
+
         .header-resume-btn {
           display: none;
         }
-        
+
         /* Home section mobile styles - improved centering */
         .content-wrapper {
           flex-direction: column-reverse;
           padding: 30px 15px;
         }
-        
-        .left-home, .right-home {
+
+        .left-home,
+        .right-home {
           width: 100%;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
         }
-        
+
         .profile-frame {
           max-width: 200px;
           margin: 0 auto 20px;
           display: flex;
           justify-content: center;
         }
-        
+
         .profile-image {
           display: block;
           margin: 0 auto;
         }
-        
+
         .social-links-vertical {
           display: none !important;
         }
-        
+
         .home-text {
           text-align: center;
           margin-top: 20px;
@@ -155,22 +156,23 @@
           flex-direction: column;
           align-items: center;
         }
-        
+
         .cta-buttons {
           display: flex;
           justify-content: center;
           width: 100%;
           margin-top: 20px;
         }
-        
+
         .name {
           font-size: 2.5rem;
         }
-        
-        .greeting, .profession {
+
+        .greeting,
+        .profession {
           font-size: 1rem;
         }
-        
+
         /* Skills section mobile styles - improved centering */
         .skills-wrapper {
           width: 100%;
@@ -178,57 +180,58 @@
           flex-direction: column;
           align-items: center;
         }
-        
+
         .skills-container {
           flex-direction: column;
           width: 100%;
           align-items: center;
         }
-        
+
         .skills-category {
           width: 100%;
           margin-bottom: 20px;
           max-width: 400px;
         }
-        
+
         .skills-chart-container {
           width: 100%;
           margin-top: 20px;
           max-width: 400px;
         }
-        
+
         /* Research and certificates mobile styles */
-        .research-paper, .certificate-card {
+        .research-paper,
+        .certificate-card {
           width: 100%;
         }
-        
+
         .certificates-grid {
           grid-template-columns: 1fr;
         }
-        
+
         /* Contact form mobile styles */
         .contact-form {
           width: 100%;
           padding: 15px;
         }
-        
+
         .floating-shapes {
           display: none;
         }
-        
+
         /* Add mobile social links at the bottom */
         .mobile-social-links {
           display: flex;
           justify-content: center;
           margin: 20px 0;
         }
-        
+
         .mobile-social-links a {
           font-size: 1.5rem;
           margin: 0 10px;
           color: #4a6cfa;
         }
-        
+
         .desktop-only {
           display: none;
         }
@@ -261,7 +264,6 @@
         </a>
       </nav>
     </header>
-
 
     <main>
       <section id="home" class="home">
@@ -882,8 +884,8 @@
             Load More
             <i class="fas fa-chevron-down"></i>
           </button>
-        </div>
-      </section> -->
+        </div> -->
+      </section>
 
       <section id="connect-me" class="connect-me">
         <div class="connect-header">
@@ -945,80 +947,8 @@
           ></a>
         </div> -->
       </section>
-
-      <!-- Add mobile social links at the end of the main content -->
-      <!-- <div class="mobile-social-links">
-        <a
-          href="https://github.com/ishubhgupta"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="GitHub Profile"
-          ><i class="fab fa-github"></i
-        ></a>
-        <a
-          href="https://linkedin.com/in/ishubhgupta"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="LinkedIn Profile"
-          ><i class="fab fa-linkedin"></i
-        ></a>
-        <a
-          href="https://twitter.com/ishubhguptaa"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Twitter Profile"
-          ><i class="fab fa-twitter"></i
-        ></a>
-      </div> -->
     </main>
 
-    <!-- Add JavaScript for mobile menu toggle -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const menuIcon = document.getElementById('menu-icon');
-        const navLinks = document.getElementById('nav-links');
-        const navLinksItems = document.querySelectorAll('.nav-links a');
-        
-        // Toggle menu on click
-        menuIcon.addEventListener('click', function() {
-          navLinks.classList.toggle('active');
-          
-          // Change icon based on menu state
-          const icon = menuIcon.querySelector('i');
-          if (navLinks.classList.contains('active')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-          } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-          }
-        });
-        
-        // Close menu when clicking on a link
-        navLinksItems.forEach(item => {
-          item.addEventListener('click', function() {
-            navLinks.classList.remove('active');
-            const icon = menuIcon.querySelector('i');
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-          });
-        });
-        
-        // Add delay to each nav item for animation
-        navLinksItems.forEach((link, index) => {
-          link.style.transitionDelay = (index * 0.1) + 's';
-        });
-        
-        // Handle resize events
-        window.addEventListener('resize', function() {
-          if (window.innerWidth > 768) {
-            navLinks.classList.remove('active');
-            const icon = menuIcon.querySelector('i');
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-          }
-        });
-      });
-    </script>
+    <!-- JavaScript is now consolidated in the index.js file -->
   </body>
 </html>

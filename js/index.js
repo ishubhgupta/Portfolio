@@ -568,3 +568,59 @@ if (window.innerWidth <= 768) {
 if (window.innerWidth <= 768) {
   initMobileNav();
 }
+
+// Mobile menu toggle functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const menuIcon = document.getElementById("menu-icon");
+  const navLinks = document.getElementById("nav-links");
+  const navLinksItems = document.querySelectorAll(".nav-links a");
+
+  // Toggle menu on click
+  if (menuIcon) {
+    menuIcon.addEventListener("click", function () {
+      navLinks.classList.toggle("active");
+
+      // Change icon based on menu state
+      const icon = menuIcon.querySelector("i");
+      if (navLinks.classList.contains("active")) {
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-times");
+      } else {
+        icon.classList.remove("fa-times");
+        icon.classList.add("fa-bars");
+      }
+    });
+  }
+
+  // Close menu when clicking on a link
+  navLinksItems.forEach((item) => {
+    item.addEventListener("click", function () {
+      navLinks.classList.remove("active");
+      const icon = menuIcon.querySelector("i");
+      icon.classList.remove("fa-times");
+      icon.classList.add("fa-bars");
+    });
+  });
+
+  // Add delay to each nav item for animation
+  navLinksItems.forEach((link, index) => {
+    link.style.transitionDelay = index * 0.1 + "s";
+  });
+});
+
+// Add resize event handler to the existing window resize event listener
+// This should already be in your existing code, but ensure it includes this functionality
+window.addEventListener("resize", function () {
+  if (window.innerWidth > 768) {
+    const navLinks = document.getElementById("nav-links");
+    const menuIcon = document.getElementById("menu-icon");
+    if (navLinks && menuIcon) {
+      navLinks.classList.remove("active");
+      const icon = menuIcon.querySelector("i");
+      if (icon) {
+        icon.classList.remove("fa-times");
+        icon.classList.add("fa-bars");
+      }
+    }
+  }
+});
