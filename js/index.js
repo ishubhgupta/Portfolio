@@ -117,149 +117,53 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Projects filtering
-  /*
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.project-card');
+  // Project filtering functionality
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  const projectCards = document.querySelectorAll(".project-card");
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // Remove active class from all buttons
-      filterBtns.forEach(b => b.classList.remove('active'));
-      // Add active class to clicked button
-      btn.classList.add('active');
-      
-      const filter = btn.getAttribute('data-filter');
-      
-      projectCards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        if (filter === 'all' || filter === category) {
-          card.style.display = 'block';
-          setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-          }, 300);
-        } else {
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(20px)';
-          setTimeout(() => {
-            card.style.display = 'none';
-          }, 300);
-        }
+  if (filterBtns.length > 0 && projectCards.length > 0) {
+    // Set all projects visible initially
+    projectCards.forEach((card) => {
+      card.style.display = "flex";
+      card.style.opacity = "1";
+      card.style.transform = "translateY(0)";
+    });
+
+    // Add click event to each filter button
+    filterBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        // Remove active class from all buttons
+        filterBtns.forEach((b) => b.classList.remove("active"));
+        // Add active class to clicked button
+        btn.classList.add("active");
+
+        const filter = btn.getAttribute("data-filter");
+
+        // Filter projects
+        projectCards.forEach((card) => {
+          if (
+            filter === "all" ||
+            card.getAttribute("data-category") === filter
+          ) {
+            card.style.display = "flex";
+            setTimeout(() => {
+              card.style.opacity = "1";
+              card.style.transform = "translateY(0)";
+            }, 100);
+          } else {
+            card.style.opacity = "0";
+            card.style.transform = "translateY(20px)";
+            setTimeout(() => {
+              card.style.display = "none";
+            }, 300);
+          }
+        });
       });
     });
-  });
-
-  // Projects section enhancements
-  const projectsGrid = document.querySelector('.projects-grid');
-  const paginationDots = document.querySelectorAll('.pagination-dot');
-  let currentPage = 0;
-
-  // Update pagination dots
-  function updatePagination() {
-    paginationDots.forEach((dot, index) => {
-      dot.classList.toggle('active', index === currentPage);
-    });
   }
 
-  // Handle pagination click
-  paginationDots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-      currentPage = index;
-      const scrollPosition = index * projectsGrid.offsetWidth;
-      projectsGrid.scrollTo({
-        left: scrollPosition,
-        behavior: 'smooth'
-      });
-      updatePagination();
-    });
-  });
-
-  // Handle scroll in projects grid
-  projectsGrid.addEventListener('scroll', () => {
-    const newPage = Math.round(projectsGrid.scrollLeft / projectsGrid.offsetWidth);
-    if (newPage !== currentPage) {
-      currentPage = newPage;
-      updatePagination();
-    }
-  });
-
-  // Projects scroll buttons functionality
-  const scrollLeftBtn = document.querySelector('.scroll-left');
-  const scrollRightBtn = document.querySelector('.scroll-right');
-
-  function updateScrollButtons() {
-    if (projectsGrid) {
-      // Hide left button if at start
-      scrollLeftBtn.style.opacity = projectsGrid.scrollLeft <= 0 ? "0" : "1";
-      scrollLeftBtn.style.pointerEvents = projectsGrid.scrollLeft <= 0 ? "none" : "all";
-
-      // Hide right button if at end
-      const maxScroll = projectsGrid.scrollWidth - projectsGrid.clientWidth;
-      scrollRightBtn.style.opacity = Math.ceil(projectsGrid.scrollLeft) >= maxScroll ? "0" : "1";
-      scrollRightBtn.style.pointerEvents = Math.ceil(projectsGrid.scrollLeft) >= maxScroll ? "none" : "all";
-    }
-  }
-
-  if (scrollLeftBtn && scrollRightBtn && projectsGrid) {
-    // Initial check
-    updateScrollButtons();
-
-    // Update on scroll
-    projectsGrid.addEventListener('scroll', updateScrollButtons);
-
-    // Scroll buttons click handlers
-    scrollLeftBtn.addEventListener('click', () => {
-      projectsGrid.scrollBy({
-        left: -projectsGrid.offsetWidth / 2,
-        behavior: 'smooth'
-      });
-    });
-
-    scrollRightBtn.addEventListener('click', () => {
-      projectsGrid.scrollBy({
-        left: projectsGrid.offsetWidth / 2,
-        behavior: 'smooth'
-      });
-    });
-
-    // Update on window resize
-    window.addEventListener('resize', updateScrollButtons);
-  }
-
-  // Certificate lazy loading and load more
-  const certificateCards = document.querySelectorAll('.certificate-card');
-  const loadMoreBtn = document.querySelector('.load-more');
-  const cardsPerLoad = 6;
-  let currentlyShown = cardsPerLoad;
-
-  function updateCertificateVisibility() {
-    certificateCards.forEach((card, index) => {
-      const show = index < currentlyShown;
-      card.style.display = show ? 'block' : 'none';
-      if (show) {
-        setTimeout(() => {
-          card.style.opacity = '1';
-          card.style.transform = 'translateY(0)';
-        }, index * 100);
-      }
-    });
-
-    if (loadMoreBtn && currentlyShown >= certificateCards.length) {
-      loadMoreBtn.style.display = 'none';
-    }
-  }
-
-  if (loadMoreBtn) {
-    loadMoreBtn.addEventListener('click', () => {
-      currentlyShown += cardsPerLoad;
-      updateCertificateVisibility();
-    });
-  }
-
-  // Initialize certificates
-  updateCertificateVisibility();
-  */
+  // Mobile project spotlight functionality
+  initializeSpotlight();
 
   // Skills chart
   var ctx = document.getElementById("skillsChart").getContext("2d");
@@ -624,3 +528,101 @@ window.addEventListener("resize", function () {
     }
   }
 });
+
+// Define initializeSpotlight function outside of the event listener
+// to avoid duplication and ensure it can be called from anywhere
+function initializeSpotlight() {
+  const spotlightCarousel = document.querySelector(".spotlight-carousel");
+  if (!spotlightCarousel) return;
+
+  // Get project data from regular project cards
+  const projectCards = document.querySelectorAll(".project-card");
+  const spotlightCards = Array.from(projectCards).map((card) => {
+    const image = card.querySelector(".project-img img");
+    const title = card.querySelector(".project-info h3");
+    const description = card.querySelector(".project-info p");
+    const link = card.querySelector(".project-links a:last-child");
+
+    return {
+      image: image ? image.src : "assets/images/projects/placeholder.jpg",
+      title: title ? title.textContent : "Project Title",
+      description: description
+        ? description.textContent
+        : "Project description",
+      link: link ? link.href : "#",
+    };
+  });
+
+  // If no project cards found or spotlight carousel doesn't exist, exit
+  if (spotlightCards.length === 0) return;
+
+  const indicators = document.querySelectorAll(".spotlight-indicators span");
+  const prevBtn = document.querySelector(".spotlight-prev");
+  const nextBtn = document.querySelector(".spotlight-next");
+  let currentIndex = 0;
+
+  // Update spotlight content
+  function updateSpotlight() {
+    // Create spotlight card content
+    spotlightCarousel.innerHTML = `
+      <div class="spotlight-card active">
+        <img src="${spotlightCards[currentIndex].image}" alt="Project Spotlight" loading="lazy">
+        <div class="spotlight-info">
+          <h4>${spotlightCards[currentIndex].title}</h4>
+          <p>${spotlightCards[currentIndex].description}</p>
+          <a href="${spotlightCards[currentIndex].link}" class="spotlight-link">View Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    `;
+
+    // Update indicators
+    if (indicators && indicators.length > 0) {
+      indicators.forEach((indicator, index) => {
+        indicator.classList.toggle("active", index === currentIndex);
+      });
+    }
+  }
+
+  // Initialize first spotlight
+  updateSpotlight();
+
+  // Previous button click
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      currentIndex =
+        currentIndex === 0 ? spotlightCards.length - 1 : currentIndex - 1;
+      updateSpotlight();
+    });
+  }
+
+  // Next button click
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      currentIndex =
+        currentIndex === spotlightCards.length - 1 ? 0 : currentIndex + 1;
+      updateSpotlight();
+    });
+  }
+
+  // Indicator clicks
+  if (indicators && indicators.length > 0) {
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener("click", () => {
+        currentIndex = index;
+        updateSpotlight();
+      });
+    });
+  }
+
+  // Auto rotate spotlight every 5 seconds
+  const spotlightInterval = setInterval(() => {
+    currentIndex =
+      currentIndex === spotlightCards.length - 1 ? 0 : currentIndex + 1;
+    updateSpotlight();
+  }, 5000);
+
+  // Clean up interval when page changes
+  window.addEventListener("beforeunload", () => {
+    clearInterval(spotlightInterval);
+  });
+}
