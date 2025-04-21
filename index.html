@@ -593,11 +593,322 @@
       </section>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-      <!-- Commenting out Projects Section for now
-<section id="projects">
-  // ... entire projects section code ...
-</section>
--->
+      <!-- Projects Section -->
+      <section id="projects" class="projects-section">
+        <div class="section-header">
+          <h2>Projects</h2>
+          <p class="section-subtitle">
+            Explore my featured work and contributions
+          </p>
+        </div>
+
+        <div class="projects-filter">
+          <button class="filter-btn active" data-filter="all">
+            All Projects
+          </button>
+          <button class="filter-btn" data-filter="web">Web Dev</button>
+          <button class="filter-btn" data-filter="ml">Machine Learning</button>
+          <button class="filter-btn" data-filter="data">Data Science</button>
+        </div>
+
+        <div class="projects-container">
+          <!-- V-Rides Project -->
+          <div class="project-card" data-category="web">
+            <div class="project-img">
+              <img
+                src="assets/images/v-rides.jpg"
+                alt="V-Rides Project"
+                loading="lazy"
+              />
+              <div class="project-hover">
+                <div class="project-hover-content">
+                  <div class="project-tags">
+                    <span>Java</span>
+                    <span>Spring Boot</span>
+                    <span>React</span>
+                    <span>MySQL</span>
+                  </div>
+                  <div class="project-links">
+                    <a
+                      href="https://github.com/ishubhgupta/v-rides"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="View code"
+                      ><i class="fab fa-github"></i
+                    ></a>
+                    <a
+                      href="https://github.com/ishubhgupta/v-rides"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="View live demo"
+                      ><i class="fas fa-external-link-alt"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>V-Rides</h3>
+              <p>
+                A ridesharing platform built with Spring Boot and React.
+                Features user authentication, ride booking, real-time tracking,
+                and payment processing integration.
+              </p>
+            </div>
+          </div>
+
+          <!-- Energy Insights Project -->
+          <div class="project-card" data-category="data">
+            <div class="project-img">
+              <img
+                src="assets/images/energy-insight.png"
+                alt="Energy Insights Project"
+                loading="lazy"
+              />
+              <div class="project-hover">
+                <div class="project-hover-content">
+                  <div class="project-tags">
+                    <span>Python</span>
+                    <span>Pandas</span>
+                    <span>Scikit-learn</span>
+                    <span>Data Visualization</span>
+                  </div>
+                  <div class="project-links">
+                    <a
+                      href="https://github.com/ishubhgupta/energy-insights"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="View code"
+                      ><i class="fab fa-github"></i
+                    ></a>
+                    <a
+                      href="https://github.com/ishubhgupta/energy-insights"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="View live demo"
+                      ><i class="fas fa-external-link-alt"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Energy Insights</h3>
+              <p>
+                Analysis of energy consumption patterns using Python.
+                Implemented predictive models to forecast future energy usage
+                and provide optimization recommendations.
+              </p>
+            </div>
+          </div>
+
+          <!-- Review Insights Project -->
+          <div class="project-card" data-category="ml">
+            <div class="project-img">
+              <img
+                src="assets/images/review-insights.png"
+                alt="Review Insights Project"
+                loading="lazy"
+              />
+              <div class="project-hover">
+                <div class="project-hover-content">
+                  <div class="project-tags">
+                    <span>Python</span>
+                    <span>NLP</span>
+                    <span>NLTK</span>
+                    <span>Sentiment Analysis</span>
+                  </div>
+                  <div class="project-links">
+                    <a
+                      href="https://github.com/ishubhgupta/review-insight"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="View code"
+                      ><i class="fab fa-github"></i
+                    ></a>
+                    <a
+                      href="https://review-insight.streamlit.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="View live demo"
+                      ><i class="fas fa-external-link-alt"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Review Insights</h3>
+              <p>
+                NLP-based application for analyzing customer reviews. Uses
+                sentiment analysis and topic modeling to extract actionable
+                insights from large volumes of feedback.
+              </p>
+            </div>
+          </div>
+
+          <!-- Sahej-DSN Project -->
+          <div class="project-card" data-category="web">
+            <div class="project-img">
+              <img
+                src="assets/images/sahej-dsn.png"
+                alt="Sahej DSN Project"
+                loading="lazy"
+              />
+              <div class="project-hover">
+                <div class="project-hover-content">
+                  <div class="project-tags">
+                    <span>JavaScript</span>
+                    <span>Node.js</span>
+                    <span>Express</span>
+                    <span>MongoDB</span>
+                  </div>
+                  <div class="project-links">
+                    <a
+                      href="https://github.com/ishubhgupta/sahej-dsn"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="View code"
+                      ><i class="fab fa-github"></i
+                    ></a>
+                    <a
+                      href="https://github.com/ishubhgupta/sahej-dsn"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="View live demo"
+                      ><i class="fas fa-external-link-alt"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Sahej DSN</h3>
+              <p>
+                A distributed social networking platform built with Node.js and
+                Express. Features decentralized user connections, content
+                sharing, and robust privacy controls.
+              </p>
+            </div>
+          </div>
+
+          <!-- Sort and Filter Project -->
+          <div class="project-card" data-category="web">
+            <div class="project-img">
+              <img
+                src="assets/images/sort-and-filter.png"
+                alt="Sort and Filter Project"
+                loading="lazy"
+              />
+              <div class="project-hover">
+                <div class="project-hover-content">
+                  <div class="project-tags">
+                    <span>JavaScript</span>
+                    <span>React</span>
+                    <span>CSS</span>
+                    <span>Responsive Design</span>
+                  </div>
+                  <div class="project-links">
+                    <a
+                      href="https://github.com/ishubhgupta/sortandfilter"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="View code"
+                      ><i class="fab fa-github"></i
+                    ></a>
+                    <a
+                      href="https://sort-and-filter.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="View live demo"
+                      ><i class="fas fa-external-link-alt"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Sort and Filter</h3>
+              <p>
+                A React component library for implementing advanced data sorting
+                and filtering. Features customizable UI, multiple filter types,
+                and high performance even with large datasets.
+              </p>
+            </div>
+          </div>
+
+          <!-- Portfolio Project -->
+          <div class="project-card" data-category="web">
+            <div class="project-img">
+              <img
+                src="assets/images/portfolio.png"
+                alt="Portfolio Project"
+                loading="lazy"
+              />
+              <div class="project-hover">
+                <div class="project-hover-content">
+                  <div class="project-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Responsive Design</span>
+                  </div>
+                  <div class="project-links">
+                    <a
+                      href="https://github.com/ishubhgupta/portfolio"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="View code"
+                      ><i class="fab fa-github"></i
+                    ></a>
+                    <a
+                      href="https://ishubhgupta.github.io/Portfolio/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="View live demo"
+                      ><i class="fas fa-external-link-alt"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Personal Portfolio</h3>
+              <p>
+                This portfolio website showcasing my projects and skills.
+                Features responsive design, interactive elements, and smooth
+                animations to create an engaging user experience.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Project Spotlight -->
+        <div class="mobile-project-spotlight">
+          <div class="spotlight-container">
+            <h3>Project Spotlight</h3>
+            <div class="spotlight-carousel">
+              <!-- Content will be dynamically generated by JavaScript -->
+            </div>
+            <div class="spotlight-controls">
+              <button class="spotlight-prev" title="Previous Spotlight">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <div class="spotlight-indicators">
+                <span class="active"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <button class="spotlight-next" title="Next Spotlight">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section id="research">
         <div class="research-header">
