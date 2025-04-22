@@ -109,7 +109,10 @@ const Home = () => {
               Get In Touch
             </a>
             <a
-              href="/assets/resume/Shubh_Gupta_SDE_Resume.pdf"
+              href={
+                import.meta.env.BASE_URL +
+                "assets/resume/Shubh_Gupta_SDE_Resume.pdf"
+              }
               className="secondary-btn"
               download
             >
@@ -135,7 +138,10 @@ const Home = () => {
         </div>
         <div className="home-image">
           <div className="image-container">
-            <img src="/assets/images/shubhImage6.png" alt="Shubh Gupta" />
+            <img
+              src={import.meta.env.BASE_URL + "assets/images/shubhImage6.png"}
+              alt="Shubh Gupta"
+            />
           </div>
         </div>
       </div>

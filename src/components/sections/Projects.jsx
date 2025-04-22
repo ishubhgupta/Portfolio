@@ -13,7 +13,7 @@ const Projects = () => {
       title: "Review Insights",
       description:
         "An AI-powered platform that analyzes customer reviews and provides actionable insights for businesses to improve their products and services.",
-      image: "/assets/images/review-insights.png",
+      image: import.meta.env.BASE_URL + "assets/images/review-insights.png",
       category: ["all", "web", "ml"],
       technologies: ["React", "Node.js", "Express", "MongoDB", "NLP"],
       github: "https://github.com/yourusername/review-insights",
@@ -25,7 +25,7 @@ const Projects = () => {
       title: "Energy Insight",
       description:
         "A dashboard for monitoring and analyzing energy consumption patterns to optimize efficiency and reduce costs.",
-      image: "/assets/images/energy-insight.png",
+      image: import.meta.env.BASE_URL + "assets/images/energy-insight.png",
       category: ["all", "web", "ml"],
       technologies: ["React", "D3.js", "Python", "TensorFlow", "AWS"],
       github: "https://github.com/yourusername/energy-insight",
@@ -37,7 +37,7 @@ const Projects = () => {
       title: "V-Rides",
       description:
         "A ride-sharing application that connects travelers going in the same direction, reducing carbon footprint and travel costs.",
-      image: "/assets/images/v-rides.jpg",
+      image: import.meta.env.BASE_URL + "assets/images/v-rides.jpg",
       category: ["all", "mobile"],
       technologies: ["React Native", "Firebase", "Google Maps API", "Node.js"],
       github: "https://github.com/yourusername/v-rides",
@@ -49,7 +49,7 @@ const Projects = () => {
       title: "Sort & Filter",
       description:
         "A customizable sorting and filtering component library for React applications, helping developers create better user experiences.",
-      image: "/assets/images/sort-and-filter.png",
+      image: import.meta.env.BASE_URL + "assets/images/sort-and-filter.png",
       category: ["all", "web"],
       technologies: ["React", "TypeScript", "CSS Modules", "Webpack"],
       github: "https://github.com/yourusername/sort-and-filter",
@@ -61,7 +61,7 @@ const Projects = () => {
       title: "Portfolio Website",
       description:
         "A modern, responsive portfolio website built with React.js and Vite to showcase my skills and projects.",
-      image: "/assets/images/portfolio.png",
+      image: import.meta.env.BASE_URL + "assets/images/portfolio.png",
       category: ["all", "web"],
       technologies: [
         "React",
@@ -79,7 +79,7 @@ const Projects = () => {
       title: "SAHEJ Design System",
       description:
         "A comprehensive design system that provides consistent UI components and design guidelines for building seamless user experiences.",
-      image: "/assets/images/sahej-dsn.png",
+      image: import.meta.env.BASE_URL + "assets/images/sahej-dsn.png",
       category: ["all", "web"],
       technologies: ["React", "Storybook", "SCSS", "Jest", "Figma"],
       github: "https://github.com/yourusername/sahej-design-system",

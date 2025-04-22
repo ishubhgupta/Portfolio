@@ -12,7 +12,10 @@ const About = () => {
         <div className="about-content">
           <div className="about-image">
             <div className="image-wrapper">
-              <img src="/assets/images/shubhImage2.png" alt="Shubh Gupta" />
+              <img
+                src={import.meta.env.BASE_URL + "assets/images/shubhImage2.png"}
+                alt="Shubh Gupta"
+              />
             </div>
           </div>
 
@@ -22,7 +25,7 @@ const About = () => {
             </h3>
             <p>
               I'm a passionate Software Developer and Machine Learning
-              enthusiast based in Bengaluru, India. With a strong foundation in
+              enthusiast based in Bhopal, India. With a strong foundation in
               computer science and a keen interest in solving complex problems,
               I strive to create efficient and innovative solutions.
             </p>
@@ -40,20 +43,23 @@ const About = () => {
               </div>
               <div className="info-item">
                 <h4>Email:</h4>
-                <p>contact@shubhgupta.dev</p>
+                <p>contact@shubhorai12@gmail.com</p>
               </div>
               <div className="info-item">
                 <h4>Location:</h4>
-                <p>Bengaluru, India</p>
+                <p>Bhopal, India</p>
               </div>
               <div className="info-item">
                 <h4>Education:</h4>
-                <p>B.Tech in Computer Science</p>
+                <p>B.Tech in Computer Science (AIML)</p>
               </div>
             </div>
 
             <a
-              href="/assets/resume/Shubh_Gupta_SDE_Resume.pdf"
+              href={
+                import.meta.env.BASE_URL +
+                "assets/resume/Shubh_Gupta_SDE_Resume.pdf"
+              }
               className="btn-download"
               download
             >
