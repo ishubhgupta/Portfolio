@@ -1,0 +1,135 @@
+/* Contact section styles */
+.contact-section {
+  min-height: 90vh; /* Reduced from 100vh */
+  padding: 3rem 0; /* Reduced from 5rem */
+  background-color: rgba(15, 15, 15, 0.5);
+}
+
+.contact-content {
+  max-width: 50vw; /* Increased from 800px */
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 750px; /* Increased from 600px */
+  margin-bottom: 2rem; /* Reduced from 3rem */
+  background: rgba(30, 30, 30, 0.5);
+  border-radius: 12px;
+  padding: 2rem; /* Reduced from 2.5rem */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Simplified shadow */
+  border: 1px solid rgba(80, 200, 120, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1.2rem; /* Reduced from 1.5rem */
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem; /* Reduced from 1rem */
+  border-radius: 6px;
+  background: rgba(20, 20, 20, 0.5);
+  border: 1px solid rgba(80, 200, 120, 0.2);
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.contact-form textarea {
+  min-height: 120px; /* Reduced from 150px */
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.submit-btn {
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: var(--text-color);
+  border: none;
+  padding: 0.8rem 1.5rem; /* Reduced from 1rem 2rem */
+  border-radius: 6px; /* Changed from 30px for simpler look */
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.acknowledgment {
+  margin-top: 1rem; /* Reduced from 1.5rem */
+  padding: 0.8rem; /* Reduced from 1rem */
+  border-radius: 6px;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.acknowledgment.success {
+  background-color: rgba(40, 167, 69, 0.2);
+  border: 1px solid rgba(40, 167, 69, 0.3);
+  color: #28a745;
+}
+
+.acknowledgment.error {
+  background-color: rgba(220, 53, 69, 0.2);
+  border: 1px solid rgba(220, 53, 69, 0.3);
+  color: #dc3545;
+}
+
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+
+  .contact-content {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form {
+    padding: 1.2rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.7rem;
+  }
+
+  .submit-btn {
+    padding: 0.7rem 1rem;
+  }
+}

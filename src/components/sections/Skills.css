@@ -1,0 +1,187 @@
+/* Skills section styles */
+.skills-section {
+  min-height: 100vh;
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(15, 15, 15, 0.5);
+}
+
+.skills-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(30, 30, 30, 0.5);
+  border-radius: 10px;
+  min-width: 150px;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 1px solid rgba(80, 200, 120, 0.1);
+}
+
+.tab:hover {
+  transform: translateY(-5px);
+  background: rgba(40, 40, 40, 0.7);
+  border: 1px solid rgba(80, 200, 120, 0.3);
+}
+
+.tab.active {
+  background: linear-gradient(
+    135deg,
+    rgba(80, 200, 120, 0.2),
+    rgba(97, 218, 251, 0.2)
+  );
+  border: 1px solid rgba(80, 200, 120, 0.5);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.tab svg {
+  font-size: 1.8rem;
+  margin-bottom: 0.7rem;
+  color: var(--primary-color);
+}
+
+.tab span {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.skills-content {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(30, 30, 30, 0.5);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(80, 200, 120, 0.1);
+  animation: fadeIn 0.5s ease;
+}
+
+.skills-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.skill-item {
+  margin-bottom: 1.5rem;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.skill-info h4 {
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.skill-info span {
+  font-size: 0.9rem;
+  color: var(--primary-color);
+}
+
+.skill-bar {
+  height: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border-radius: 5px;
+  width: 0;
+  transition: width 1s ease-in-out;
+  position: relative;
+}
+
+@keyframes skillAnimation {
+  0% {
+    width: 0;
+  }
+}
+
+.skill-progress::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .skills-tabs {
+    gap: 0.7rem;
+  }
+
+  .tab {
+    min-width: 120px;
+    padding: 0.8rem;
+  }
+
+  .tab svg {
+    font-size: 1.5rem;
+  }
+
+  .tab span {
+    font-size: 0.8rem;
+  }
+
+  .skills-content {
+    padding: 1.5rem;
+  }
+
+  .skills-group {
+    grid-template-columns: 1fr;
+  }
+}
