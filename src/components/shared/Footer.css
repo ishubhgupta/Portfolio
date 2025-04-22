@@ -1,0 +1,154 @@
+/* Footer Styles */
+footer {
+  background-color: rgba(12, 12, 12, 0.95);
+  padding: 3rem 2rem 1.5rem;
+  color: var(--text-color);
+  border-top: 1px solid rgba(80, 200, 120, 0.1);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-logo h3 {
+  font-family: var(--font-secondary);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.footer-logo p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.footer-section h4 {
+  font-family: var(--font-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-section h4::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  bottom: -5px;
+  left: 0;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-section ul li a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: var(--transition);
+  position: relative;
+  padding-left: 0.5rem;
+}
+
+.footer-section ul li a::before {
+  content: "→";
+  position: absolute;
+  left: -10px;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.footer-section ul li a:hover {
+  color: var(--primary-color);
+  padding-left: 1rem;
+}
+
+.footer-section ul li a:hover::before {
+  opacity: 1;
+  left: 0;
+}
+
+.footer-bottom {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.7);
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  background: rgba(80, 200, 120, 0.15);
+  color: var(--primary-color);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .footer-links {
+    gap: 2rem;
+  }
+
+  .footer-section {
+    width: 100%;
+  }
+}
