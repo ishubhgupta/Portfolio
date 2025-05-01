@@ -24,8 +24,8 @@ const Contact = () => {
 
   // Initialize EmailJS
   useEffect(() => {
-    // Initialize EmailJS with your user ID (You should move this to environment variables in production)
-    emailjs.init("s-OvIBc4Ih83AeH2u"); // Replace with your actual EmailJS user ID
+    // Initialize EmailJS with your user ID from environment variables for security
+    emailjs.init(import.meta.env.VITE_EMAILJS_USER_ID);
   }, []);
 
   const handleChange = (e) => {
@@ -45,10 +45,10 @@ const Contact = () => {
     button.classList.add("clicked");
 
     try {
-      // Send email using EmailJS
+      // Send email using EmailJS with environment variables
       const response = await emailjs.send(
-        "service_74i8s4e", // Your EmailJS service ID
-        "template_gbg1ljn", // Your EmailJS template ID
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
           from_name: formData.name,
           message: formData.message,
@@ -156,7 +156,6 @@ const Contact = () => {
               </div>
             )}
           </form>
-
         </div>
       </div>
     </section>

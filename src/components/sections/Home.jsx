@@ -13,6 +13,7 @@ const Home = () => {
   const typingIntervalRef = useRef(null);
   const updateIntervalRef = useRef(null);
   const lastIndexRef = useRef(-1);
+  const [activeSection, setActiveSection] = useState("home");
 
   const professions = [
     "Software Developer.",
@@ -39,24 +40,55 @@ const Home = () => {
 
       lastIndexRef.current = randomIndex;
       let randomProfession = professions[randomIndex];
-      let i = 0;
 
-      // Reset text
-      setDisplayText("");
+      // Reset text and immediately set first character
+      const firstChar = randomProfession.charAt(0);
+      setDisplayText(firstChar);
+
+      let charIndex = 1; // Start from the second character
 
       // Inner function for typewriter effect
       function typeWriter() {
-        if (i < randomProfession.length) {
-          setDisplayText((prevText) => prevText + randomProfession.charAt(i));
-          i++;
+        if (charIndex < randomProfession.length) {
+          setDisplayText(randomProfession.substring(0, charIndex + 1));
+          charIndex++;
           typingIntervalRef.current = setTimeout(typeWriter, 100);
         } else {
           updateIntervalRef.current = setTimeout(updateProfession, 2000);
         }
       }
 
-      typeWriter();
+      // Start the typewriter effect after a short delay to ensure first char is rendered
+      typingIntervalRef.current = setTimeout(typeWriter, 100);
     }
+
+    // Add section tracking logic
+    const handleScroll = () => {
+      const sections = ["home", "about"];
+      const currentPosition = window.scrollY;
+
+      // Get heights of sections
+      const homeSection = document.getElementById("home");
+      const aboutSection = document.getElementById("about");
+
+      if (!homeSection || !aboutSection) return;
+
+      // Calculate the end of the about section
+      const aboutSectionBottom =
+        aboutSection.offsetTop + aboutSection.offsetHeight;
+
+      // If we're within home or about section, hide the social links
+      if (currentPosition < aboutSectionBottom) {
+        setActiveSection("hidden");
+      } else {
+        setActiveSection("visible");
+      }
+    };
+
+    // Initial check when component mounts
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
 
     // Start the typing effect when component mounts
     updateProfession();
@@ -64,6 +96,7 @@ const Home = () => {
     // Clean up timeouts when component unmounts
     return () => {
       clearIntervals();
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []); // Empty dependency array to run only on mount
 
@@ -145,7 +178,11 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="social-links-vertical">
+      <div
+        className={`social-links-vertical ${
+          activeSection === "hidden" ? "hidden" : ""
+        }`}
+      >
         <a
           href="https://github.com/ishubhgupta"
           target="_blank"

@@ -40,52 +40,176 @@
 .about-content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: 3rem;
   flex-wrap: wrap;
 }
 
-.about-image {
+/* Timeline styles - updated for alternating sides */
+.about-timeline {
   flex: 1;
   min-width: 300px;
-  max-width: 450px;
+  max-width: 550px;
+  padding: 1rem 0;
 }
 
-.image-wrapper {
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding: 0 20px;
+}
+
+.timeline-header-left,
+.timeline-header-right {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-color);
   position: relative;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  padding: 5px 15px;
+  border-radius: 20px;
 }
 
-.image-wrapper::before {
+.timeline-header-left {
+  background-color: rgba(var(--primary-color-rgb), 0.2);
+  border-left: 3px solid var(--primary-color);
+}
+
+.timeline-header-right {
+  background-color: rgba(var(--secondary-color-rgb), 0.2);
+  border-right: 3px solid var(--secondary-color);
+}
+
+.timeline {
+  position: relative;
+  padding: 1rem 0;
+}
+
+.timeline::before {
   content: "";
   position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: calc(100% - 60px);
   background: linear-gradient(
-    45deg,
-    var(--primary-color),
-    var(--secondary-color)
+    180deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
   );
-  z-index: -1;
-  border-radius: 12px;
+  opacity: 0.7;
+  top: 30px;
 }
 
-.image-wrapper img {
+.timeline-item {
+  position: relative;
   width: 100%;
-  height: auto;
-  display: block;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.timeline-item.education .timeline-dot {
+  background-color: var(--primary-color);
+  box-shadow: 0 0 10px var(--primary-color);
+}
+
+.timeline-item.experience .timeline-dot {
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 10px var(--secondary-color);
+}
+
+.timeline-content {
+  width: 45%;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
-  transition: transform 0.5s ease;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
 }
 
-.image-wrapper:hover img {
-  transform: scale(1.03);
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
+/* Position education on the left and experience on the right */
+.timeline-item.education .timeline-content {
+  margin-right: auto;
+  margin-left: 0;
+  border-left: 3px solid var(--primary-color);
+  text-align: right;
+}
+
+.timeline-item.experience .timeline-content {
+  margin-left: auto;
+  margin-right: 0;
+  border-right: 3px solid var(--secondary-color);
+  text-align: left;
+}
+
+/* Date styling */
+.timeline-date {
+  margin-bottom: 10px;
+}
+
+.timeline-date span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-color);
+  padding: 0.3rem 0.6rem;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.timeline-content h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  color: var(--text-color);
+}
+
+.timeline-content h5 {
+  font-size: 0.95rem;
+  color: var(--primary-color);
+  margin-bottom: 0.3rem;
+}
+
+.timeline-item.experience .timeline-content h5 {
+  color: var(--secondary-color);
+}
+
+.timeline-location {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.timeline-description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* About text styles - existing but moved to right */
 .about-text {
   flex: 1;
   min-width: 300px;
@@ -106,6 +230,7 @@
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: 1.5rem;
+  text-align: justify;
 }
 
 .about-info {
@@ -155,6 +280,117 @@
   box-shadow: 0 6px 20px rgba(80, 200, 120, 0.4);
 }
 
+/* Remove old skills visualization styles */
+
+/* Center the cube in the skills container and increase its size */
+.skills-cube-container {
+  margin-top: 5rem;
+  text-align: center;
+  perspective: 1000px; /* Increased from 800px for better 3D effect */
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 550px; /* Keeping the height at 550px as requested */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Changed from space-between to center for vertical centering */
+  align-items: center;
+}
+
+.skills-cube-container h4 {
+  position: absolute;
+  top: 1.5rem;
+  left: 0;
+  right: 0;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.scene {
+  width: 200px; /* Increased from 200px to make cube larger */
+  height: 200px; /* Increased from 200px to match width */
+  margin: 0 auto;
+  perspective: 1000px;
+  cursor: grab;
+  touch-action: none;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 15vh;
+  transform-style: preserve-3d;
+  transition: transform 0.05s linear;
+  transform: rotateX(0deg) rotateY(0deg);
+}
+
+.cube-face {
+  position: absolute;
+  width: 250px; /* Match the scene width */
+  height: 250px; /* Match the scene height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) inset;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  gap: 15px; /* Increased from 10px for better spacing between skills */
+}
+
+/* Update the cube translations to match the new size */
+.cube-face-front {
+  transform: translateZ(125px);
+} /* Half of the width */
+.cube-face-back {
+  transform: rotateY(180deg) translateZ(125px);
+}
+.cube-face-right {
+  transform: rotateY(90deg) translateZ(125px);
+}
+.cube-face-left {
+  transform: rotateY(-90deg) translateZ(125px);
+}
+.cube-face-top {
+  transform: rotateX(90deg) translateZ(125px);
+}
+.cube-face-bottom {
+  transform: rotateX(-90deg) translateZ(125px);
+}
+
+.skills-hint {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 0;
+  right: 0;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Visibility control for desktop only */
+.desktop-only {
+  display: none;
+}
+
+/* Media queries for responsive design */
+@media (min-width: 992px) {
+  .desktop-only {
+    display: block;
+  }
+}
+
 /* Responsive styles */
 @media (max-width: 992px) {
   .about-content {
@@ -162,8 +398,9 @@
     align-items: center;
   }
 
-  .about-image {
+  .about-timeline {
     margin-bottom: 2rem;
+    max-width: 100%;
   }
 
   .about-text {
@@ -179,6 +416,38 @@
   }
 }
 
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-content {
+    width: calc(100% - 50px);
+  }
+
+  .timeline-dot {
+    left: 20px;
+  }
+
+  .timeline-item.education .timeline-content,
+  .timeline-item.experience .timeline-content {
+    margin-left: 50px;
+    margin-right: 0;
+    text-align: left;
+    border-left: 3px solid var(--primary-color);
+    border-right: none;
+  }
+
+  .timeline-item.experience .timeline-content {
+    border-left: 3px solid var(--secondary-color);
+  }
+
+  .timeline-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
 @media (max-width: 576px) {
   .section-title h2 {
     font-size: 2rem;
@@ -186,5 +455,48 @@
 
   .about-text h3 {
     font-size: 1.5rem;
+  }
+
+  .timeline-content h4 {
+    font-size: 1.1rem;
+  }
+
+  .timeline-content h5 {
+    font-size: 0.9rem;
+  }
+}
+
+/* Make sure cube is responsive *
+
+/* Assuming this file exists - add these styles */
+
+/* For desktop: reorder to have timeline first then about text */
+@media (min-width: 769px) {
+  .about-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .about-timeline {
+    order: 1;
+    width: 60%;
+  }
+
+  .about-text {
+    order: 2;
+    width: 40%;
+  }
+}
+
+/* For mobile: keep the DOM order (about text first, then timeline) */
+@media (max-width: 768px) {
+  .about-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-text {
+    margin-bottom: 2rem;
   }
 }

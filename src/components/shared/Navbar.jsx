@@ -143,7 +143,11 @@ const Navbar = () => {
         </div>
         <a
           href="/assets/resume/Shubh_Gupta_SDE_Resume.pdf"
-          className={`header-resume-btn ${isOpen ? "hidden" : ""}`}
+          className={`header-resume-btn ${isOpen ? "hidden" : ""} ${
+            activeSection === "home" || activeSection === "about"
+              ? "hidden"
+              : ""
+          }`}
           download
         >
           Resume
