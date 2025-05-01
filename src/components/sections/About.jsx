@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { getImagePath } from "../../utils/imagePath";
 import "./About.css";
 
 const About = () => {
@@ -227,10 +228,7 @@ const About = () => {
             </div>
 
             <a
-              href={
-                import.meta.env.BASE_URL +
-                "assets/resume/Shubh_Gupta_SDE_Resume.pdf"
-              }
+              href={getImagePath("assets/resume/Shubh_Gupta_SDE_Resume.pdf")}
               className="btn-download"
               download
             >

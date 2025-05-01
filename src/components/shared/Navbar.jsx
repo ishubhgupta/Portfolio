@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { getImagePath } from "../../utils/imagePath";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -142,13 +143,14 @@ const Navbar = () => {
           </a>
         </div>
         <a
-          href="/assets/resume/Shubh_Gupta_SDE_Resume.pdf"
+          href={getImagePath("assets/resume/Shubh_Gupta_SDE_Resume.pdf")}
           className={`header-resume-btn ${isOpen ? "hidden" : ""} ${
             activeSection === "home" || activeSection === "about"
               ? "hidden"
               : ""
           }`}
           download
+          rel="noopener noreferrer"
         >
           Resume
         </a>

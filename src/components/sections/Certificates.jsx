@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExpand } from "@fortawesome/free-solid-svg-icons";
+import { getImagePath } from "../../utils/imagePath";
 import "./Certificates.css";
 
 const Certificates = () => {
@@ -9,9 +10,9 @@ const Certificates = () => {
       title: "Applied Machine Learning In Python",
       issuer: "Coursera",
       date: "Issued Jan 2024",
-      image:
-        import.meta.env.BASE_URL +
-        "assets/Certificates/certi-1-coursera-applied-ml.jpg",
+      image: getImagePath(
+        "assets/Certificates/certi-1-coursera-applied-ml.jpg"
+      ),
       tags: ["Machine Learning", "Python"],
     },
     {
@@ -19,8 +20,7 @@ const Certificates = () => {
       title: "Buildathon 2024",
       issuer: "Preprod Corp",
       date: "Issued Aug 2024",
-      image:
-        import.meta.env.BASE_URL + "assets/Certificates/certi-2-buildathon.png",
+      image: getImagePath("assets/Certificates/certi-2-buildathon.png"),
       tags: ["Python", "MLops", "Docker"],
     },
     {
@@ -28,8 +28,7 @@ const Certificates = () => {
       title: "Intermediate Machine Learning",
       issuer: "Kaggle",
       date: "Issued Jan 2023",
-      image:
-        import.meta.env.BASE_URL + "assets/Certificates/certi-3-kaggle-1.png",
+      image: getImagePath("assets/Certificates/certi-3-kaggle-1.png"),
       tags: ["Machine Learning", "Python"],
     },
     {
@@ -37,8 +36,7 @@ const Certificates = () => {
       title: "Introduction to Deep Learning",
       issuer: "Kaggle",
       date: "Issued Feb 2023",
-      image:
-        import.meta.env.BASE_URL + "assets/Certificates/certi-4-kaggle-2.png",
+      image: getImagePath("assets/Certificates/certi-4-kaggle-2.png"),
       tags: ["Deep Learning", "Python"],
     },
     {
@@ -46,8 +44,7 @@ const Certificates = () => {
       title: "Introduction to Machine Learning",
       issuer: "Coursera",
       date: "Issued Mar 2024",
-      image:
-        import.meta.env.BASE_URL + "assets/Certificates/certi-5-kaggle-3.png",
+      image: getImagePath("assets/Certificates/certi-5-kaggle-3.png"),
       tags: ["Python", "Machine Learning"],
     },
     {
@@ -55,9 +52,7 @@ const Certificates = () => {
       title: "Matlab onramp",
       issuer: "Mathworks",
       date: "Issued Sept 2022",
-      image:
-        import.meta.env.BASE_URL +
-        "assets/Certificates/certi-6-mathworks-onramp.jpg",
+      image: getImagePath("assets/Certificates/certi-6-mathworks-onramp.jpg"),
       tags: ["MATLAB"],
     },
   ];

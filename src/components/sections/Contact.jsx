@@ -45,15 +45,29 @@ const Contact = () => {
     button.classList.add("clicked");
 
     try {
+      // Add form validation
+      if (!formData.name || !formData.email || !formData.message) {
+        throw new Error("Please fill in all fields");
+      }
+
+      // Basic email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(formData.email)) {
+        throw new Error("Please enter a valid email address");
+      }
+
+      // Sanitize inputs (basic sanitization)
+      const sanitizedData = {
+        from_name: formData.name.trim(),
+        message: formData.message.trim(),
+        email_id: formData.email.trim(),
+      };
+
       // Send email using EmailJS with environment variables
       const response = await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: formData.name,
-          message: formData.message,
-          email_id: formData.email,
-        }
+        sanitizedData
       );
 
       console.log("Email sent successfully:", response);
@@ -76,7 +90,8 @@ const Contact = () => {
 
       // Show error acknowledgment
       setAcknowledgment({
-        message: "Failed to send message. Please try again later.",
+        message:
+          error.message || "Failed to send message. Please try again later.",
         type: "error",
         show: true,
       });
@@ -114,6 +129,7 @@ const Contact = () => {
                 required
                 value={formData.name}
                 onChange={handleChange}
+                maxLength={100}
               />
             </div>
 
@@ -129,6 +145,7 @@ const Contact = () => {
                 required
                 value={formData.email}
                 onChange={handleChange}
+                maxLength={100}
               />
             </div>
 
@@ -143,6 +160,7 @@ const Contact = () => {
                 required
                 value={formData.message}
                 onChange={handleChange}
+                maxLength={1000}
               ></textarea>
             </div>
 

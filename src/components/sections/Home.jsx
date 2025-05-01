@@ -6,6 +6,7 @@ import {
   faLinkedin,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+import { getImagePath } from "../../utils/imagePath";
 import "./Home.css";
 
 const Home = () => {
@@ -142,10 +143,7 @@ const Home = () => {
               Get In Touch
             </a>
             <a
-              href={
-                import.meta.env.BASE_URL +
-                "assets/resume/Shubh_Gupta_SDE_Resume.pdf"
-              }
+              href={getImagePath("assets/resume/Shubh_Gupta_SDE_Resume.pdf")}
               className="secondary-btn"
               download
             >
@@ -172,7 +170,7 @@ const Home = () => {
         <div className="home-image">
           <div className="image-container">
             <img
-              src={import.meta.env.BASE_URL + "assets/images/shubhImage6.png"}
+              src={getImagePath("assets/images/shubhImage6.png")}
               alt="Shubh Gupta"
             />
           </div>
