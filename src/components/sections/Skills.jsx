@@ -13,6 +13,17 @@ const Skills = () => {
   const [activeTab, setActiveTab] = useState("ml");
 
   const skillCategories = {
+    programming: {
+      icon: faCode,
+      title: "Programming",
+      skills: [
+        "Python",
+        "C++",
+        "Java",
+        "React",
+        "Node.js"
+      ],
+    },
     ml: {
       icon: faBrain,
       title: "Machine Learning",
@@ -51,18 +62,7 @@ const Skills = () => {
         "IAM",
       ],
     },
-    programming: {
-      icon: faCode,
-      title: "Programming",
-      skills: [
-        "Python",
-        "JavaScript",
-        "SQL",
-        "React",
-        "Node.js",
-        "FastAPI",
-      ],
-    },
+
     data: {
       icon: faRobot,
       title: "Data & Analytics",

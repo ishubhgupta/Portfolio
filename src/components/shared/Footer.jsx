@@ -5,10 +5,32 @@ import {
   faTwitter,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+import { faCopy, faCheck } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 import "./Footer.css";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [isCopied, setIsCopied] = useState(false);
+
+  const copyEmailToClipboard = async () => {
+    const email = "shubhorai12@gmail.com";
+    try {
+      await navigator.clipboard.writeText(email);
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2000); // Reset after 2 seconds
+    } catch (err) {
+      // Fallback for older browsers
+      const textArea = document.createElement("textarea");
+      textArea.value = email;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textArea);
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2000);
+    }
+  };
 
   return (
     <footer>
@@ -113,8 +135,20 @@ const Footer = () => {
           <div className="footer-section">
             <h4>Contact</h4>
             <ul>
-              <li>Email: shubhorai12@gmail.com</li>
-              <li>Location: Bhopal, India</li>
+              <li>
+                <span 
+                  className="email-copy"
+                  onClick={copyEmailToClipboard}
+                  title={isCopied ? "Copied!" : "Click to copy email"}
+                >
+                  Email: shubhorai12@gmail.com
+                  <FontAwesomeIcon 
+                    icon={isCopied ? faCheck : faCopy} 
+                    className={`copy-icon ${isCopied ? 'copied' : ''}`}
+                  />
+                </span>
+              </li>
+              <li>Bhopal, India</li>
             </ul>
           </div>
         </div>
