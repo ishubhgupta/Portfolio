@@ -143,7 +143,7 @@ const Home = () => {
               Get In Touch
             </a>
             <a
-              href={getImagePath("assets/resume/Shubh_Gupta_SDE_Resume.pdf")}
+              href={getImagePath("assets/resume/resume.pdf")}
               className="secondary-btn"
               download
             >

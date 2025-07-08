@@ -7,6 +7,35 @@ const Certificates = () => {
   const certificates = [
     {
       id: 1,
+      title: "AWS Certified AI Practitioner",
+      issuer: "AWS",
+      date: "Issued June 2025",
+      image: getImagePath(
+        "assets/Certificates/aws_certified_ai_practitioner.jpg"
+      ),
+      tags: ["AWS", "AI", "Machine Learning"],
+    },
+    {
+      id: 2,
+      title: "GitHub Foundations",
+      issuer: "GitHub",
+      date: "Issued June 2025",
+      image: getImagePath(
+        "assets/Certificates/GitHubFoundations.jpg"
+      ),
+      tags: ["GitHub", "Version Control", "Collaboration"],
+    },
+    
+    {
+      id: 3,
+      title: "Buildathon 2024",
+      issuer: "Preprod Corp",
+      date: "Issued Aug 2024",
+      image: getImagePath("assets/Certificates/certi-2-buildathon.png"),
+      tags: ["Python", "MLops", "Docker"],
+    },
+    {
+      id: 4,
       title: "Applied Machine Learning In Python",
       issuer: "Coursera",
       date: "Issued Jan 2024",
@@ -16,37 +45,29 @@ const Certificates = () => {
       tags: ["Machine Learning", "Python"],
     },
     {
-      id: 2,
-      title: "Buildathon 2024",
-      issuer: "Preprod Corp",
-      date: "Issued Aug 2024",
-      image: getImagePath("assets/Certificates/certi-2-buildathon.png"),
-      tags: ["Python", "MLops", "Docker"],
-    },
-    {
-      id: 3,
+      id: 5,
       title: "Intermediate Machine Learning",
       issuer: "Kaggle",
       date: "Issued Jan 2023",
       image: getImagePath("assets/Certificates/certi-3-kaggle-1.png"),
       tags: ["Machine Learning", "Python"],
     },
-    {
-      id: 4,
-      title: "Introduction to Deep Learning",
-      issuer: "Kaggle",
-      date: "Issued Feb 2023",
-      image: getImagePath("assets/Certificates/certi-4-kaggle-2.png"),
-      tags: ["Deep Learning", "Python"],
-    },
-    {
-      id: 5,
-      title: "Introduction to Machine Learning",
-      issuer: "Coursera",
-      date: "Issued Mar 2024",
-      image: getImagePath("assets/Certificates/certi-5-kaggle-3.png"),
-      tags: ["Python", "Machine Learning"],
-    },
+    // {
+    //   id: 8,
+    //   title: "Introduction to Deep Learning",
+    //   issuer: "Kaggle",
+    //   date: "Issued Feb 2023",
+    //   image: getImagePath("assets/Certificates/certi-4-kaggle-2.png"),
+    //   tags: ["Deep Learning", "Python"],
+    // },
+    // {
+    //   id: 7,
+    //   title: "Introduction to Machine Learning",
+    //   issuer: "Coursera",
+    //   date: "Issued Mar 2024",
+    //   image: getImagePath("assets/Certificates/certi-5-kaggle-3.png"),
+    //   tags: ["Python", "Machine Learning"],
+    // },
     {
       id: 6,
       title: "Matlab onramp",

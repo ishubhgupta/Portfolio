@@ -1,116 +1,23 @@
-import { useEffect, useRef, useState } from "react";
 import { getImagePath } from "../../utils/imagePath";
 import "./About.css";
 
 const About = () => {
-  const skillsCubeRef = useRef(null);
-  const sceneRef = useRef(null);
-  const [rotation, setRotation] = useState({ x: 0, y: 0 });
-  const [isDragging, setIsDragging] = useState(false);
-  const [startPosition, setStartPosition] = useState({ x: 0, y: 0 });
-  const [autoRotate, setAutoRotate] = useState(true);
 
-  // Auto-rotation effect
-  useEffect(() => {
-    let animationId;
-    let angle = 0;
-
-    const rotate = () => {
-      if (autoRotate && !isDragging) {
-        angle += 0.3; // Reduced rotation speed for smoother animation
-        setRotation((prev) => ({
-          x: prev.x,
-          y: angle,
-        }));
-      }
-      animationId = requestAnimationFrame(rotate);
-    };
-
-    rotate();
-
-    return () => {
-      cancelAnimationFrame(animationId);
-    };
-  }, [autoRotate, isDragging]);
-
-  // Apply rotation to the cube
-  useEffect(() => {
-    if (!skillsCubeRef.current) return;
-
-    skillsCubeRef.current.style.transform = `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`;
-  }, [rotation]);
-
-  // Mouse and touch event handlers
-  const handleMouseDown = (e) => {
-    setIsDragging(true);
-    setAutoRotate(false);
-    setStartPosition({
-      x: e.clientX,
-      y: e.clientY,
-    });
-  };
-
-  const handleTouchStart = (e) => {
-    if (e.touches.length === 1) {
-      setIsDragging(true);
-      setAutoRotate(false);
-      setStartPosition({
-        x: e.touches[0].clientX,
-        y: e.touches[0].clientY,
-      });
-    }
-  };
-
-  const handleMouseMove = (e) => {
-    if (!isDragging) return;
-
-    const sensitivity = 0.5;
-    const deltaX = (e.clientX - startPosition.x) * sensitivity;
-    const deltaY = (e.clientY - startPosition.y) * sensitivity;
-
-    setRotation((prev) => ({
-      x: prev.x - deltaY,
-      y: prev.y + deltaX,
-    }));
-
-    setStartPosition({
-      x: e.clientX,
-      y: e.clientY,
-    });
-  };
-
-  const handleTouchMove = (e) => {
-    if (!isDragging || e.touches.length !== 1) return;
-
-    const sensitivity = 0.5;
-    const deltaX = (e.touches[0].clientX - startPosition.x) * sensitivity;
-    const deltaY = (e.touches[0].clientY - startPosition.y) * sensitivity;
-
-    setRotation((prev) => ({
-      x: prev.x - deltaY,
-      y: prev.y + deltaX,
-    }));
-
-    setStartPosition({
-      x: e.touches[0].clientX,
-      y: e.touches[0].clientY,
-    });
-
-    // Prevent page scrolling while dragging
-    e.preventDefault();
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
-  const handleMouseLeave = () => {
-    if (isDragging) {
-      setIsDragging(false);
-      // Optional: restart auto-rotation when mouse leaves
-      // setAutoRotate(true);
-    }
-  };
+  // Badges data with placeholder Credly links
+  const badges = [
+    {
+      id: 1,
+      name: "AWS Certified AI Practitioner",
+      image: getImagePath("assets/badges/aws_certified_ai_practioner.png"),
+      credlyUrl: "https://www.credly.com/earner/earned/badge/662058e8-4385-41dd-910b-8142e456c75f", // You can replace this with actual Credly URL later
+    },
+    {
+      id: 2,
+      name: "GitHub Foundations",
+      image: getImagePath("assets/badges/github_foundation_badge.png"),
+      credlyUrl: "https://www.credly.com/earner/earned/badge/35b49368-4758-44e6-8230-bf38b2981427", // You can replace this with actual Credly URL later
+    },
+  ];
 
   // Education and experience data
   const timelineItems = [
@@ -166,16 +73,6 @@ const About = () => {
     },
   ];
 
-  // Skills to display on the cube faces
-  const skillsFaces = [
-    { face: "front", skills: ["JavaScript", "React", "Node.js"] },
-    { face: "back", skills: ["Python", "TensorFlow", "OpenCV"] },
-    { face: "right", skills: ["HTML/CSS", "SASS", "Tailwind"] },
-    { face: "left", skills: ["MongoDB", "SQL", "Firebase"] },
-    { face: "top", skills: ["Git", "Docker", "AWS"] },
-    { face: "bottom", skills: ["TypeScript", "Redux", "Express"] },
-  ];
-
   return (
     <section id="about" className="about-section">
       <div className="section-container">
@@ -228,12 +125,34 @@ const About = () => {
             </div>
 
             <a
-              href={getImagePath("assets/resume/Shubh_Gupta_SDE_Resume.pdf")}
+              href={getImagePath("assets/resume/resume.pdf")}
               className="btn-download"
               download
             >
               Download Resume
             </a>
+
+            <div className="badges-section">
+              {/* <h4>Certifications & Achievements</h4> */}
+              <div className="badges-container">
+                {badges.map((badge) => (
+                  <a
+                    key={badge.id}
+                    href={badge.credlyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="badge-link"
+                    title={badge.name}
+                  >
+                    <img
+                      src={badge.image}
+                      alt={badge.name}
+                      className="badge-image"
+                    />
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
 
           <div className="about-timeline">

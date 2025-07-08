@@ -143,7 +143,7 @@ const Navbar = () => {
           </a>
         </div>
         <a
-          href={getImagePath("assets/resume/Shubh_Gupta_SDE_Resume.pdf")}
+          href={getImagePath("assets/resume/resume.pdf")}
           className={`header-resume-btn ${isOpen ? "hidden" : ""} ${
             activeSection === "home" || activeSection === "about"
               ? "hidden"

@@ -280,118 +280,70 @@
   box-shadow: 0 6px 20px rgba(80, 200, 120, 0.4);
 }
 
-/* Remove old skills visualization styles */
-
-/* Center the cube in the skills container and increase its size */
-.skills-cube-container {
-  margin-top: 5rem;
+/* Badges Section Styles */
+.badges-section {
+  margin-top: 2.5rem;
   text-align: center;
-  perspective: 1000px; /* Increased from 800px for better 3D effect */
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  height: 550px; /* Keeping the height at 550px as requested */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Changed from space-between to center for vertical centering */
-  align-items: center;
 }
 
-.skills-cube-container h4 {
-  position: absolute;
-  top: 1.5rem;
-  left: 0;
-  right: 0;
+.badges-section h4 {
   font-size: 1.2rem;
   color: var(--primary-color);
-  margin-bottom: 0;
-  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
 }
 
-.scene {
-  width: 200px; /* Increased from 200px to make cube larger */
-  height: 200px; /* Increased from 200px to match width */
-  margin: 0 auto;
-  perspective: 1000px;
-  cursor: grab;
-  touch-action: none;
-}
-
-.cube {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  top: 15vh;
-  transform-style: preserve-3d;
-  transition: transform 0.05s linear;
-  transform: rotateX(0deg) rotateY(0deg);
-}
-
-.cube-face {
-  position: absolute;
-  width: 250px; /* Match the scene width */
-  height: 250px; /* Match the scene height */
+.badges-container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.badge-link {
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) inset;
-  font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: blur(5px);
+  padding: 0.5rem;
   backdrop-filter: blur(5px);
-  gap: 15px; /* Increased from 10px for better spacing between skills */
+  -webkit-backdrop-filter: blur(5px);
 }
 
-/* Update the cube translations to match the new size */
-.cube-face-front {
-  transform: translateZ(125px);
-} /* Half of the width */
-.cube-face-back {
-  transform: rotateY(180deg) translateZ(125px);
-}
-.cube-face-right {
-  transform: rotateY(90deg) translateZ(125px);
-}
-.cube-face-left {
-  transform: rotateY(-90deg) translateZ(125px);
-}
-.cube-face-top {
-  transform: rotateX(90deg) translateZ(125px);
-}
-.cube-face-bottom {
-  transform: rotateX(-90deg) translateZ(125px);
+.badge-link:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-.skills-hint {
-  position: absolute;
-  bottom: 1.5rem;
-  left: 0;
-  right: 0;
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.5);
-  text-align: center;
-  font-style: italic;
-  margin: 0;
+.badge-image {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  background: transparent;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
-/* Visibility control for desktop only */
-.desktop-only {
-  display: none;
-}
-
-/* Media queries for responsive design */
-@media (min-width: 992px) {
-  .desktop-only {
-    display: block;
-  }
+.badge-link:hover .badge-image {
+  filter: brightness(1.1) contrast(1.1);
 }
 
 /* Responsive styles */
+@media (min-width: 992px) {
+  .badges-container {
+    gap: 3rem;
+  }
+  
+  .badge-image {
+    width: 140px;
+    height: 140px;
+  }
+}
+
 @media (max-width: 992px) {
   .about-content {
     flex-direction: column;
@@ -413,6 +365,15 @@
 
   .info-item {
     align-items: center;
+  }
+
+  .badges-section {
+    margin-top: 2rem;
+  }
+
+  .badge-image {
+    width: 100px;
+    height: 100px;
   }
 }
 
@@ -446,6 +407,15 @@
     flex-direction: column;
     gap: 10px;
   }
+
+  .badges-container {
+    gap: 1.5rem;
+  }
+
+  .badge-image {
+    width: 90px;
+    height: 90px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -463,6 +433,19 @@
 
   .timeline-content h5 {
     font-size: 0.9rem;
+  }
+
+  .badges-container {
+    gap: 1rem;
+  }
+
+  .badge-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .badges-section h4 {
+    font-size: 1.1rem;
   }
 }
 
