@@ -1,6 +1,5 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,17 +10,21 @@ export default defineConfig({
     // Enhanced security settings to prevent fs.deny bypass vulnerability
     fs: {
       strict: true,
-      // Explicitly deny access to sensitive directories
+      // Only allow access to essential project directories
       allow: [
-        // Only allow the essential directories for the project
-        path.resolve(__dirname, "src"),
-        path.resolve(__dirname, "public"),
-        path.resolve(__dirname, "node_modules"),
+        // Current working directory and its subdirectories
+        process.cwd(),
       ],
+      // Explicitly deny access to sensitive directories and files
       deny: [
-        path.resolve(__dirname, ".git"),
-        path.resolve(__dirname, ".env"),
-        path.resolve(__dirname, "node_modules/.vite"),
+        "**/.env*",
+        "**/node_modules/.cache/**",
+        "**/.git/**",
+        "**/package-lock.json",
+        "**/yarn.lock",
+        "**/.npmrc",
+        "**/.*rc*",
+        "**/.*ignore",
       ],
     },
     // Add security headers
@@ -29,7 +32,11 @@ export default defineConfig({
       "X-Content-Type-Options": "nosniff",
       "X-Frame-Options": "DENY",
       "X-XSS-Protection": "1; mode=block",
+      "Referrer-Policy": "strict-origin-when-cross-origin",
+      "Permissions-Policy": "geolocation=(), microphone=(), camera=()",
     },
+    // Disable directory listing
+    cors: false,
   },
   // Enforce strict builds to prevent security issues
   build: {

@@ -1,77 +1,79 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faBrain,
+  faCloud,
   faCode,
-  faDatabase,
-  faLaptopCode,
-  faMobile,
-  faServer,
-  faTools,
+  faRobot,
+  faCogs,
 } from "@fortawesome/free-solid-svg-icons";
 import "./Skills.css";
 
 const Skills = () => {
-  const [activeTab, setActiveTab] = useState("frontend");
+  const [activeTab, setActiveTab] = useState("ml");
 
   const skillCategories = {
-    frontend: {
-      icon: faLaptopCode,
-      title: "Frontend Development",
+    ml: {
+      icon: faBrain,
+      title: "Machine Learning",
       skills: [
-        { name: "HTML", level: 90 },
-        { name: "CSS", level: 85 },
-        { name: "JavaScript", level: 88 },
-        { name: "React", level: 82 },
-        { name: "TypeScript", level: 75 },
-        { name: "Bootstrap", level: 80 },
+        "Python",
+        "TensorFlow",
+        "PyTorch",
+        "Scikit-learn",
+        "Pandas",
+        "NumPy",
+        "OpenCV",
+        "Matplotlib",
       ],
     },
-    backend: {
-      icon: faServer,
-      title: "Backend Development",
+    mlops: {
+      icon: faCogs,
+      title: "MLOps & DevOps",
       skills: [
-        { name: "Node.js", level: 80 },
-        { name: "Express", level: 78 },
-        { name: "Python", level: 85 },
-        { name: "Django", level: 70 },
-        { name: "RESTful APIs", level: 85 },
-        { name: "GraphQL", level: 65 },
+        "Docker",
+        "MLflow",
+        "Git",
+        "Model Monitoring",
       ],
     },
-    database: {
-      icon: faDatabase,
-      title: "Database",
+    cloud: {
+      icon: faCloud,
+      title: "Cloud & AWS",
       skills: [
-        { name: "MongoDB", level: 82 },
-        { name: "MySQL", level: 85 },
-        { name: "PostgreSQL", level: 75 },
-        { name: "Firebase", level: 70 },
-        { name: "Redis", level: 60 },
+        "AWS SageMaker",
+        "AWS Lambda",
+        "AWS S3",
+        "AWS EC2",
+        "AWS RDS",
+        "API Gateway",
+        "CloudWatch",
+        "IAM",
       ],
     },
     programming: {
       icon: faCode,
-      title: "Programming Languages",
+      title: "Programming",
       skills: [
-        { name: "JavaScript", level: 88 },
-        { name: "Python", level: 85 },
-        { name: "Java", level: 75 },
-        { name: "C++", level: 70 },
-        { name: "TypeScript", level: 75 },
+        "Python",
+        "JavaScript",
+        "SQL",
+        "React",
+        "Node.js",
+        "FastAPI",
       ],
     },
-    tools: {
-      icon: faTools,
-      title: "Tools & DevOps",
+    data: {
+      icon: faRobot,
+      title: "Data & Analytics",
       skills: [
-        { name: "Git", level: 90 },
-        { name: "Docker", level: 70 },
-        { name: "AWS", level: 65 },
-        { name: "Jenkins", level: 60 },
-        { name: "CI/CD", level: 75 },
+        "Data Analysis",
+        "Statistical Modeling",
+        "Feature Engineering",
+        "Data Visualization",
+        "ETL Pipelines",
       ],
     },
-
   };
 
   return (
@@ -96,19 +98,10 @@ const Skills = () => {
         </div>
 
         <div className="skills-content">
-          <div className="skills-group">
+          <div className="skills-grid">
             {skillCategories[activeTab].skills.map((skill, index) => (
-              <div className="skill-item" key={index}>
-                <div className="skill-info">
-                  <h4>{skill.name}</h4>
-                  <span>{skill.level}%</span>
-                </div>
-                <div className="skill-bar">
-                  <div
-                    className="skill-progress"
-                    style={{ width: `${skill.level}%` }}
-                  ></div>
-                </div>
+              <div className="skill-tag" key={index}>
+                <span>{skill}</span>
               </div>
             ))}
           </div>
