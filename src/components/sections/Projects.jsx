@@ -98,7 +98,7 @@ const Projects = () => {
       category: ["all", "web"],
       technologies: ["React", "TypeScript", "CSS Modules", "Webpack"],
       github: "https://github.com/ishubhgupta/sort-and-filter",
-      demo: "https://sortfilter.vercel.com",
+      demo: "https://sort-and-filter.vercel.com",
       video: null,
     },
     {
@@ -110,7 +110,7 @@ const Projects = () => {
       category: ["all", "web"],
       technologies: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "AWS S3"],
       github: "https://github.com/ishubhgupta/inkspace",
-      demo: "https://inkspace.netlify.app",
+      demo: "https://ink-space.netlify.app",
       video: null,
     },
   ];
