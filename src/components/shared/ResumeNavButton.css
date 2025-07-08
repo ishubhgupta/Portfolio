@@ -1,0 +1,95 @@
+/* Resume Navigation Button Styles */
+.resume-nav-button {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 100;
+  transition: all 0.5s ease;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.resume-nav-button.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(100px);
+}
+
+.resume-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border-radius: 30px;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(80, 200, 120, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.resume-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(80, 200, 120, 0.4);
+}
+
+.resume-btn:active {
+  transform: translateY(-1px);
+}
+
+.resume-btn svg {
+  font-size: 1rem;
+}
+
+.resume-btn span {
+  font-weight: 600;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .resume-nav-button {
+    right: 1rem;
+    bottom: 1.5rem;
+  }
+  
+  .resume-btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.8rem;
+  }
+  
+  .resume-btn svg {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .resume-nav-button {
+    right: 1rem;
+    bottom: 1rem;
+  }
+  
+  .resume-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.75rem;
+  }
+  
+  .resume-btn span {
+    display: none;
+  }
+  
+  .resume-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    justify-content: center;
+    padding: 0;
+  }
+}

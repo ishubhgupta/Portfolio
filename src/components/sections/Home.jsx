@@ -14,7 +14,6 @@ const Home = () => {
   const typingIntervalRef = useRef(null);
   const updateIntervalRef = useRef(null);
   const lastIndexRef = useRef(-1);
-  const [activeSection, setActiveSection] = useState("home");
 
   const professions = [
     "Software Developer.",
@@ -63,41 +62,12 @@ const Home = () => {
       typingIntervalRef.current = setTimeout(typeWriter, 100);
     }
 
-    // Add section tracking logic
-    const handleScroll = () => {
-      const sections = ["home", "about"];
-      const currentPosition = window.scrollY;
-
-      // Get heights of sections
-      const homeSection = document.getElementById("home");
-      const aboutSection = document.getElementById("about");
-
-      if (!homeSection || !aboutSection) return;
-
-      // Calculate the end of the about section
-      const aboutSectionBottom =
-        aboutSection.offsetTop + aboutSection.offsetHeight;
-
-      // If we're within home or about section, hide the social links
-      if (currentPosition < aboutSectionBottom) {
-        setActiveSection("hidden");
-      } else {
-        setActiveSection("visible");
-      }
-    };
-
-    // Initial check when component mounts
-    handleScroll();
-
-    window.addEventListener("scroll", handleScroll);
-
     // Start the typing effect when component mounts
     updateProfession();
 
     // Clean up timeouts when component unmounts
     return () => {
       clearIntervals();
-      window.removeEventListener("scroll", handleScroll);
     };
   }, []); // Empty dependency array to run only on mount
 
@@ -175,37 +145,6 @@ const Home = () => {
             />
           </div>
         </div>
-      </div>
-      <div
-        className={`social-links-vertical ${
-          activeSection === "hidden" ? "hidden" : ""
-        }`}
-      >
-        <a
-          href="https://github.com/ishubhgupta"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="GitHub Profile"
-        >
-          <FontAwesomeIcon icon={faGithub} />
-        </a>
-        <a
-          href="https://linkedin.com/in/ishubhgupta"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="LinkedIn Profile"
-        >
-          <FontAwesomeIcon icon={faLinkedin} />
-        </a>
-        <a
-          href="https://twitter.com/ishubhguptaa"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Twitter Profile"
-        >
-          <FontAwesomeIcon icon={faTwitter} />
-        </a>
-        <div className="social-line"></div>
       </div>
       <div className="scroll-down" onClick={scrollToNextSection}>
         <FontAwesomeIcon icon={faChevronDown} />

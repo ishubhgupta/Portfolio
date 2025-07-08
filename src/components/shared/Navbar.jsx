@@ -142,7 +142,7 @@ const Navbar = () => {
             Connect
           </a>
         </div>
-        <a
+        {/* <a
           href={getImagePath("assets/resume/resume.pdf")}
           className={`header-resume-btn ${isOpen ? "hidden" : ""} ${
             activeSection === "home" || activeSection === "about"
@@ -153,7 +153,7 @@ const Navbar = () => {
           rel="noopener noreferrer"
         >
           Resume
-        </a>
+        </a> */}
         <div className="menu-icon" onClick={toggleMenu}>
           <FontAwesomeIcon icon={isOpen ? faTimes : faBars} />
         </div>

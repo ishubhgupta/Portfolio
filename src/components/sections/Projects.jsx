@@ -153,12 +153,7 @@ const Projects = () => {
           >
             Web Apps
           </button>
-          <button
-            className={activeFilter === "mobile" ? "active" : ""}
-            onClick={() => handleFilterClick("mobile")}
-          >
-            Mobile Apps
-          </button>
+
           <button
             className={activeFilter === "ml" ? "active" : ""}
             onClick={() => handleFilterClick("ml")}
