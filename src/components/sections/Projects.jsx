@@ -134,6 +134,12 @@ const Projects = () => {
 
   return (
     <section id="projects" className="projects-section">
+      {/* Hidden SEO content */}
+      <div className="sr-only">
+        <h1>Shubh Gupta Machine Learning and Software Development Projects</h1>
+        <p>Portfolio of innovative projects including Arogyam healthcare platform, Energy Insight analytics, V-Rides sharing app, ResQMap design system, Review Insight AI analysis, and custom React components. Expertise in Python, React, Machine Learning, AI, and full-stack development.</p>
+      </div>
+      
       <div className="section-container">
         <div className="section-title">
           <h2>My Projects</h2>
@@ -166,7 +172,11 @@ const Projects = () => {
           {visibleProjects.map((project) => (
             <div className="project-card" key={project.id}>
               <div className="project-image">
-                <img src={project.image} alt={project.title} />
+                <img 
+                  src={project.image} 
+                  alt={`Shubh Gupta's ${project.title} - ${project.description.substring(0, 100)}... | Machine Learning and Software Development Portfolio`} 
+                  loading="lazy"
+                />
                 <div className="project-overlay">
                   <div className="project-links">
                     {project.github && (

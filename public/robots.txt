@@ -1,0 +1,43 @@
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.pdf
+Allow: /*.webp
+
+# Specifically allow important files
+Allow: /sitemap.xml
+Allow: /manifest.json
+Allow: /assets/resume/
+Allow: /assets/images/
+Allow: /assets/badges/
+Allow: /assets/certificates/
+
+# Disallow unnecessary paths (if any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Sitemap location
+Sitemap: https://ishubhgupta.github.io/Portfolio/sitemap.xml
+
+# Crawl delay (optional, in seconds) - be respectful to search engines
+Crawl-delay: 1
+
+# Additional instructions for specific search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1

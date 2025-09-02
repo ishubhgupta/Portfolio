@@ -109,6 +109,12 @@ const Contact = () => {
 
   return (
     <section id="contact" className="contact-section">
+      {/* Hidden SEO content */}
+      <div className="sr-only">
+        <h1>Contact Shubh Gupta - Software Developer and ML Engineer</h1>
+        <p>Get in touch with Shubh Gupta for software development projects, machine learning consultations, job opportunities, or collaboration. Based in Bhopal, India. Email: shubhorai12@gmail.com</p>
+      </div>
+      
       <div className="section-container">
         <div className="section-title">
           <h2>Get Connected</h2>

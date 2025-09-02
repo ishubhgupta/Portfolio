@@ -75,6 +75,12 @@ const About = () => {
 
   return (
     <section id="about" className="about-section">
+      {/* Hidden SEO content */}
+      <div className="sr-only">
+        <h1>Shubh Gupta - Software Developer and Machine Learning Engineer</h1>
+        <p>Professional portfolio showcasing expertise in artificial intelligence, machine learning, Python programming, React development, and software engineering projects. Based in Bhopal, India, VIT Bhopal University Computer Science student.</p>
+      </div>
+      
       <div className="section-container">
         <div className="section-title">
           <h2>About Me</h2>
@@ -146,8 +152,9 @@ const About = () => {
                   >
                     <img
                       src={badge.image}
-                      alt={badge.name}
+                      alt={`Shubh Gupta ${badge.name} - Professional certification badge showcasing expertise in artificial intelligence and machine learning`}
                       className="badge-image"
+                      loading="lazy"
                     />
                   </a>
                 ))}

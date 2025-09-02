@@ -78,6 +78,12 @@ const Skills = () => {
 
   return (
     <section id="skills" className="skills-section">
+      {/* Hidden SEO content */}
+      <div className="sr-only">
+        <h1>Shubh Gupta Technical Skills and Expertise</h1>
+        <p>Comprehensive technical skills in Machine Learning (TensorFlow, PyTorch, Scikit-learn), Programming (Python, C++, Java, React, Node.js), MLOps & DevOps (Docker, MLflow, Git), Cloud Technologies (AWS, Google Cloud), and Data Analytics (Pandas, NumPy, Matplotlib, Power BI).</p>
+      </div>
+      
       <div className="section-container">
         <div className="section-title">
           <h2>My Skills</h2>

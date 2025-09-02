@@ -83,6 +83,13 @@ const Home = () => {
 
   return (
     <section id="home" className="home-section">
+      {/* Hidden SEO content */}
+      <div className="sr-only">
+        <h1>Shubh Gupta - Professional Software Developer and Machine Learning Engineer Portfolio</h1>
+        <p>Welcome to Shubh Gupta's professional portfolio. Explore innovative machine learning projects, software development work, and technical expertise. VIT Bhopal Computer Science student specializing in AI, Python, React, and full-stack development.</p>
+        <h2>Software Developer | ML Engineer | AI Enthusiast | Problem Solver</h2>
+      </div>
+      
       <div className="home-content">
         <div className="home-text">
           <h3>Hello, I'm</h3>
@@ -141,7 +148,8 @@ const Home = () => {
           <div className="image-container">
             <img
               src={getImagePath("assets/images/shubhImage6.png")}
-              alt="Shubh Gupta"
+              alt="Shubh Gupta - Software Developer and Machine Learning Engineer | Professional Portfolio"
+              loading="eager"
             />
           </div>
         </div>
