@@ -5,7 +5,8 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   // Base path for GitHub Pages deployment
-  base: "/Portfolio/",
+  // base: "/Portfolio/",
+  base: "/",
   server: {
     // Enhanced security settings to prevent fs.deny bypass vulnerability
     fs: {
