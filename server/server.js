@@ -16,7 +16,12 @@ const PORT = process.env.PORT || 3001;
 
 // Configure CORS for production
 app.use(cors({
-  origin: ['https://ishubhgupta.me', 'https://www.ishubhgupta.me', 'http://localhost:5173'],
+  origin: [
+    'https://ishubhgupta.me', 
+    'https://www.ishubhgupta.me', 
+    'https://ishubhgupta.github.io',
+    'http://localhost:5173'
+  ],
   methods: ['GET', 'POST'],
   credentials: true
 }));
