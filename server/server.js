@@ -111,6 +111,19 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
+// Root endpoint
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'Portfolio Chatbot API',
+    status: 'running',
+    endpoints: {
+      chat: 'POST /api/chat',
+      health: 'GET /api/health',
+      clear: 'POST /api/chat/clear'
+    }
+  });
+});
+
 // Clear conversation history endpoint
 app.post('/api/chat/clear', (req, res) => {
   const { sessionId = 'default' } = req.body;
