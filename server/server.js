@@ -136,7 +136,13 @@ app.post('/api/chat/clear', (req, res) => {
   res.json({ message: 'Conversation history cleared' });
 });
 
-app.listen(PORT, () => {
-  console.log(`Chatbot server running on port ${PORT}`);
-  console.log(`API Key configured: ${!!process.env.GEMINI_API_KEY}`);
-});
+// For local development
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`Chatbot server running on port ${PORT}`);
+    console.log(`API Key configured: ${!!process.env.GEMINI_API_KEY}`);
+  });
+}
+
+// Export for Vercel serverless
+export default app;
