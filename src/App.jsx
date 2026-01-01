@@ -2,6 +2,7 @@ import Navbar from "./components/shared/Navbar";
 import Footer from "./components/shared/Footer";
 import SocialLinksVertical from "./components/shared/SocialLinksVertical";
 import ResumeNavButton from "./components/shared/ResumeNavButton";
+import Chatbot from "./components/shared/Chatbot";
 import Home from "./components/sections/Home";
 import About from "./components/sections/About";
 import Skills from "./components/sections/Skills";
@@ -52,6 +53,9 @@ function App() {
       
       {/* Resume Download Button - Hidden on Home section */}
       <ResumeNavButton isVisible={showSocialAndResume} />
+      
+      {/* AI Chatbot */}
+      <Chatbot />
     </div>
   );
 }

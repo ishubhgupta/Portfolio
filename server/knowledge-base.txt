@@ -1,0 +1,89 @@
+PERSONAL INFORMATION:
+- Name: Shubh Gupta
+- Title/Role: Final Year B.Tech CSE Student | Full Stack & ML Engineer
+- Location: Orai, Uttar Pradesh, India (Open to relocation)
+- Email: shubhorai12@gmail.com
+- Phone: +91 8737976728
+- LinkedIn: linkedin.com/in/ishubhgupta
+- GitHub: github.com/ishubhgupta
+- Portfolio: ishubhgupta.me
+- Build: Skinny
+
+PROFESSIONAL SUMMARY:
+I am a passionate Computer Science Engineering student at VIT Bhopal (Class of 2026) with a strong CGPA of 8.84. I bridge the gap between Data Science and Full-Stack Engineering, having built production-ready platforms like "Accurate" (AutoML) and "Arogyam" (Healthcare AI). My experience includes a rigorous Data Analyst Internship at Preprod Corp, where I designed NLP solutions for customer sentiment analysis. I am an AWS Certified AI Practitioner and a GitHub Foundations certified developer who loves building scalable, intelligent systems.
+
+SKILLS:
+- Languages: Python (Proficient), C++, Java, JavaScript, PHP, SQL, Shell Scripting.
+- AI/ML Frameworks: PyTorch, TensorFlow, Scikit-learn, LangChain, XGBoost, LightGBM, CatBoost, NLTK.
+- Web Development: React, Next.js, Node.js, Flask, Streamlit, HTML5, CSS3.
+- Cloud & DevOps: AWS (S3, EC2), Docker, Nginx, Git/GitHub, CI/CD.
+- Databases: PostgreSQL, MongoDB, MySQL, Redis, IndexedDB.
+- AI Specializations: RAG Architecture, Large Language Models (LLMs), Gemini API, Prompt Engineering, Computer Vision, Sentiment Analysis.
+- Soft Skills: Cross-functional collaboration, Agile/Scrum methodologies, Technical writing, Leadership (VP of Software Development Club).
+
+EDUCATION:
+- Degree: Bachelor of Technology (B.Tech) in Computer Science and Engineering
+- Institution: Vellore Institute of Technology (VIT), Bhopal, MP
+- Duration: September 2022 – June 2026
+- CGPA: 8.84 / 10.0
+
+WORK EXPERIENCE:
+1. Data Analyst Intern | Preprod Corp (Bangalore)
+   - Duration: September 2024 – December 2024
+   - Impact: Designed "Review Insight," a proprietary NLP solution to summarize large volumes of product reviews using NLTK.
+   - Tech: Python, Streamlit, NLTK, Sentiment Analysis.
+   - Achievement: Engineered a no-code ML app allowing non-tech users to train models, accelerating prototyping cycles.
+   
+2. Vice President | Software Development Club (SDC), VIT
+   - Role: Led a team to host various technical events and hackathons for the student body.
+   - Skills: Leadership, Event Management, Team Coordination.
+
+PROJECTS:
+1. Arogyam: Full-Stack Personalized Health Platform (Dec 2024 – Feb 2025)
+   - Description: A health platform aggregating Fitbit data with a RAG-powered AI doctor.
+   - Key Tech: Gemini API, RAG, React, Node.js, Flask, PostgreSQL, MongoDB.
+   - Innovation: Built a failover system for embeddings that automatically switches from OpenAI to Gemini API if rate limits are hit.
+   - Link: github.com/ishubhgupta/Arogyam
+
+2. Accurate: End-to-End Machine Learning Platform (Aug 2024)
+   - Description: A "Data Science in a Box" platform handling everything from upload to model evaluation.
+   - Impact: Integrated 20+ algorithms (XGBoost, CatBoost) with automated hyperparameter tuning.
+   - Tech: Next.js, Flask, Celery/Redis (for async tasks), Docker, AWS S3.
+   - Link: http://13.201.35.140/
+
+3. Energy Insight: Load Prediction System (May 2024)
+   - Description: ML system to predict HVAC energy loads.
+   - Impact: Achieved 62% R-squared score using LightGBM; integrated Gemini-Pro for architectural suggestions.
+   - Tech: Python, LightGBM, PHP, Gemini API.
+   - Link: github.com/ishubhgupta/Energy-Insight
+
+4. Pocket: Secure PII Manager (Jan 2024)
+   - Description: An offline-first PWA for managing personal data securely.
+   - Tech: AES-GCM-256 Encryption, IndexedDB, PWA.
+   - Link: https://pii-pocket.vercel.app
+
+CERTIFICATIONS:
+- AWS Certified AI Practitioner (June 2025 – June 2028)
+- GitHub Foundations (June 2025 – June 2028)
+
+RESEARCH & PUBLICATIONS:
+- Authored 2 Book Chapters in "Explainable AI (XAI) for Sustainable Development" (Chapman and Hall/CRC, 2024).
+  1. "Exploring EEG characteristics and machine learning classifiers for accurate detection of eye-blink mistakes."
+  2. "Machine learning advancements in polymer material creation."
+
+ACHIEVEMENTS:
+- Winner (1st Place): Buildathon Hackathon 2024 (Resulted in internship offer).
+- Competitive Programming: Solved 1500+ problems across various platforms.
+- Top 50: GeeksforGeeks & Vultr Nationwide Hackathon (Top 5% of 1000+ teams).
+- Content Creation: Created ML educational videos on YouTube with 10,000+ views.
+
+INTERESTS & HOBBIES:
+- Travel: I prefer train travel and recently visited Rajasthan (Balotra) in Dec 2025.
+- Learning: I actively use AI tools like GitHub Copilot Pro and Claude Code API to accelerate development.
+- Fitness: Maintained a consistent routine while balancing academics (skinny build).
+
+PERSONALITY & COMMUNICATION STYLE:
+I am an enthusiastic and detail-oriented engineer who loves "building things that work." I communicate clearly, often breaking down complex technical concepts (like XAI or RAG) into simple terms, a skill honed through my YouTube channel. I am professional yet approachable, and I thrive in collaborative environments like Hackathons and Agile teams.
+
+CAREER GOALS:
+I am actively seeking full-time roles in Software Engineering (SDE) or Machine Learning Engineering starting mid-2026. I want to work on challenging problems involving Cloud Infrastructure, Large Language Models, and Scalable Web Systems.
