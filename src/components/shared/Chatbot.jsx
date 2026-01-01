@@ -49,7 +49,7 @@ const Chatbot = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://localhost:3001/api/chat', {
+      const response = await fetch('https://ishubhgupta-portfolio-chatbot.vercel.app/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -93,7 +93,7 @@ const Chatbot = () => {
 
   const clearChat = async () => {
     try {
-      await fetch('http://localhost:3001/api/chat/clear', {
+      await fetch('https://ishubhgupta-portfolio-chatbot.vercel.app/api/chat/clear', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
